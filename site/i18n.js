@@ -204,6 +204,10 @@
     const preferred = navigator.languages?.[0] || navigator.language || 'en';
     return preferred.toLowerCase().startsWith('de') ? 'de' : 'en';
   }
+  function queryLocale() {
+    const value = new URLSearchParams(window.location.search).get('lang');
+    return value === 'de' || value === 'en' ? value : null;
+  }
   function savedLocale() {
     try {
       const value = localStorage.getItem(storageKey);
@@ -212,7 +216,7 @@
       return null;
     }
   }
-  let locale = savedLocale() || browserLocale();
+  let locale = queryLocale() || savedLocale() || browserLocale();
 
   function applyStatic() {
     document.documentElement.lang = locale;
@@ -235,6 +239,11 @@
   function setLocale(lang) {
     if (lang !== 'de' && lang !== 'en') return false;
     try { localStorage.setItem(storageKey, lang); } catch { /* Private browsing may block storage. */ }
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.set('lang', lang);
+      window.history.replaceState(window.history.state, '', url.toString());
+    } catch { /* Language switching also works when URL updates are unavailable. */ }
     if (locale === lang) return true;
     locale = lang;
     applyStatic();

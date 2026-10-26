@@ -11,6 +11,7 @@ Verified on 26 October 2026. These checks apply to the curated public package an
 | Clean local Git clone | Fresh history cloned into a separate directory; 85 engine tests, 18 dashboard tests, dashboard self-test and workflow smoke passed on Python 3.9.6 |
 | Generated run provenance | Engine location is `src`; no absolute source directory is serialized |
 | Static explorer | Both JavaScript files pass syntax checks; local HTML assets resolve; three JSON datasets parse |
+| Language links | Valid `?lang=en` / `?lang=de` overrides saved and browser preferences; manual selection updates the URL while retaining other parameters and the fragment; invalid queries and unavailable storage/history retain working fallbacks |
 | Publication boundary | No copied private history, original documents, employee roster or symlink |
 | Targeted text scan | No absolute user path, internal service URL, email, common credential signature or private document-path citation detected |
 

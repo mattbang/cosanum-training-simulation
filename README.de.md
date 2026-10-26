@@ -2,6 +2,8 @@
 
 **Sprache:** [English](README.md) · Deutsch
 
+[Fallstudie im Portfolio lesen](https://matthew-bangle-data-portfolio.mattbangle.chatgpt.site/de/work/logistics-training-simulation) · [Interaktive Ergebnisse erkunden](https://matthew-bangle-data-portfolio.mattbangle.chatgpt.site/examples/training-simulation/index.html?lang=de)
+
 Python-Ereignissimulation und Ergebnisauswertung aus dem ZHAW CAS Process Digitalization zur Schulungsorganisation in der Logistik bei Cosanum. Ich entwickelte das Modell und das lokale Dashboard, um Prozessregeln, Selbstlernen und Schulungskapazität vor einer Umsetzungsentscheidung zu prüfen.
 
 **Zentrale Erkenntnis:** Die individuelle Praxis bleibt im Modell der Engpass. In 50 gepaarten synthetischen Jahreslagen erhöht eine zweite qualifizierte Praxisbegleitung mit zusätzlichem Platz die mittlere Zahl vollständiger Abschlüsse von 312,96 auf 348,72. Das ist ein Modellvergleich, keine beobachtete betriebliche Verbesserung.

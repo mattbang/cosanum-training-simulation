@@ -2,6 +2,8 @@
 
 **Language:** English · [Deutsch](README.de.md)
 
+[Read the portfolio case study](https://matthew-bangle-data-portfolio.mattbangle.chatgpt.site/work/logistics-training-simulation) · [Explore the interactive results](https://matthew-bangle-data-portfolio.mattbangle.chatgpt.site/examples/training-simulation/index.html?lang=en)
+
 A Python discrete-event simulation and results explorer developed during the ZHAW CAS Process Digitalization project on logistics training at Cosanum. I built the model and local dashboard to test process rules, self-study and training capacity before treating them as implementation decisions.
 
 **Main finding:** individual practice remains the bottleneck in this model. Across 50 paired synthetic annual demand fixtures, adding a second qualified practice coach and place changes mean full completions from 312.96 to 348.72. This is a model comparison, not an observed operating improvement.
