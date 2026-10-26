@@ -152,12 +152,16 @@
     'Gespeicherte Einblicke hier. Neue Läufe im lokalen Dashboard.': 'Saved findings here. New runs in the local dashboard.',
     'Diese Seite erklärt geprüfte Ergebnisse aus dem 50-Paar-Vergleich, dem separaten Kapazitätssweep und dem fünf-Fixture-Sensitivitätsscreen. Das Python-Dashboard erlaubt neue gepaarte Experimente mit sichtbaren Annahmen, Seedmap, Ereignissen und Kostennachweis.': 'This page explains audited results from the 50-pair comparison, separate capacity sweep, and five-fixture sensitivity screen. The Python dashboard supports new paired experiments with visible assumptions, seed map, events, and cost records.',
     'LOKALER START': 'RUN LOCALLY',
+    'Code und Startanleitung': 'Code and setup guide',
+    'Zur Fallstudie': 'Back to the case study',
     'Im Repository-Hauptverzeichnis starten. Das Dashboard öffnet sich auf 127.0.0.1; die README erklärt die Installation.': 'Run from the repository root. The dashboard opens at 127.0.0.1; the README explains setup.',
     'Cosanum · Schulungssimulation · [DEMO]': 'Cosanum · training simulation · [DEMO]',
     'Quellenbasierte Annahmen · synthetische Personen · keine Betriebsmessung': 'Source-based assumptions · synthetic people · no operational measurement',
   };
 
   const attributeEn = {
+    'https://github.com/mattbang/cosanum-training-simulation/blob/main/README.de.md': 'https://github.com/mattbang/cosanum-training-simulation/blob/main/README.md',
+    'https://matthew-bangle-data-portfolio.mattbangle.chatgpt.site/de/work/logistics-training-simulation': 'https://matthew-bangle-data-portfolio.mattbangle.chatgpt.site/work/logistics-training-simulation',
     'Cosanum-Praxisprojekt im ZHAW CAS Process Digitalization: Simulation des manuellen Schulungsprozesses als Grundlage für Terminplanung, digitale Zertifizierung und E-Learning-Prüfung.': 'Cosanum applied project in the ZHAW CAS Process Digitalization: simulation of manual logistics training to inform scheduling, digital certification, and e-learning evaluation.',
     'Cosanum Fallstudie, zum Anfang': 'Cosanum case study, back to top',
     'Hauptnavigation': 'Main navigation',
