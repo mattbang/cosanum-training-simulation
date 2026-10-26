@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cosanum-sim"
+version = "0.10.0"
+description = "Source-labelled deterministic training queue simulation"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.optional-dependencies]
+figures = ["matplotlib==3.9.4"]
+
+[project.scripts]
+cosanum-sim = "cosanum_sim.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

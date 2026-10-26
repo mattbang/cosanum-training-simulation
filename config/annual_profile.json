@@ -1,0 +1,367 @@
+{
+  "schema_version": "1.0",
+  "profile_id": "daniel_informed_annual_theory_v1",
+  "source_status": "assumption",
+  "value_kind": "annual_interpretation_and_synthetic_mapping",
+  "scope": "Fixed annual ongoing demand; optional source backlog remains a separate initial cohort",
+  "source_statement": "DQ Q6: approximately 15 group trainings and 50 individual trainings; estimated, count period and phase scope not explicit.",
+  "inputs": [
+    {
+      "input_id": "historical_period_interpretation",
+      "value": "one_model_year",
+      "unit": "interpretation",
+      "scope": "Annual demand fixture",
+      "source_status": "assumption",
+      "value_kind": "prototype_interpretation",
+      "source": "DQ Q6",
+      "rationale": "Use the reported example to build a manageable annual demonstration without asserting a measured annual rate.",
+      "limitation": "Annual interpretation is a prototype assumption. Daniel does not explicitly date the 15/50 counts or identify their theory/practice phase scope.",
+      "sensitivity": "Retain unknown empirical period; compare alternative counts separately."
+    },
+    {
+      "input_id": "reported_count_phase_interpretation",
+      "value": "theory_sessions",
+      "unit": "interpretation",
+      "scope": "Annual group/individual counts",
+      "source_status": "assumption",
+      "value_kind": "prototype_interpretation",
+      "source": "DQ Q6; DQ Q3",
+      "rationale": "Count the 15 group and 50 individual occurrences as first theory sessions; add required practice separately from catalogue flags.",
+      "limitation": "Annual interpretation is a prototype assumption. Daniel does not explicitly date the 15/50 counts or identify their theory/practice phase scope.",
+      "sensitivity": "Alternative phase-count interpretations need a separate explicit profile."
+    },
+    {
+      "input_id": "horizon_days",
+      "value": 365,
+      "unit": "calendar_days",
+      "scope": "One model year",
+      "source_status": "assumption",
+      "value_kind": "experiment_horizon",
+      "source": "CURRENT_USER_REQUEST",
+      "rationale": "A declared fixed non-leap model year for annual comparison.",
+      "limitation": "Not a reconstructed dated year or workforce schedule.",
+      "sensitivity": [
+        365
+      ]
+    },
+    {
+      "input_id": "arrival_window_days",
+      "value": 330,
+      "unit": "calendar_days",
+      "scope": "Annual synthetic event detection",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source": "CURRENT_IMPLEMENTATION_DECISION",
+      "rationale": "Distribute fixed annual event counts within the first 330 days, leaving a derived 35-day closeout window.",
+      "limitation": "Reduces end-of-year arrival censoring but does not guarantee clearance; full-year arrivals remain a sensitivity.",
+      "sensitivity": [
+        330,
+        365
+      ]
+    },
+    {
+      "input_id": "arrival_time_rule",
+      "value": "uniform_fixed_event_count",
+      "unit": "distribution_rule",
+      "scope": "Annual detection times",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source": "CURRENT_IMPLEMENTATION_DECISION",
+      "rationale": "Independent identity-keyed uniform event times preserve the stated event totals and a common fixture across policies.",
+      "limitation": "Not measured seasonality, renewal timing, arrival intensity or an exponential annual process.",
+      "sensitivity": [
+        "uniform_fixed_event_count"
+      ]
+    },
+    {
+      "input_id": "group_training_count",
+      "value": 15,
+      "unit": "estimated_training_occurrences",
+      "scope": "DQ Q6 historical example interpreted as annual theory sessions",
+      "source_status": "Daniel-reported",
+      "value_kind": "rough_estimate",
+      "source": "Daniel Q6, reported estimates (original source retained privately) Q6",
+      "rationale": "Daniel reports approximately 15 group trainings; the separate period/phase interpretation above is assumed.",
+      "limitation": "Annual interpretation is a prototype assumption. Daniel does not explicitly date the 15/50 counts or identify their theory/practice phase scope.",
+      "sensitivity": [
+        10,
+        15,
+        20
+      ]
+    },
+    {
+      "input_id": "individual_training_count",
+      "value": 50,
+      "unit": "estimated_training_occurrences",
+      "scope": "DQ Q6 historical example interpreted as annual theory sessions",
+      "source_status": "Daniel-reported",
+      "value_kind": "rough_estimate",
+      "source": "Daniel Q6, reported estimates (original source retained privately) Q6",
+      "rationale": "Daniel reports approximately 50 individual trainings; the separate period/phase interpretation above is assumed.",
+      "limitation": "Annual interpretation is a prototype assumption. Daniel does not explicitly date the 15/50 counts or identify their theory/practice phase scope.",
+      "sensitivity": [
+        25,
+        50,
+        75
+      ]
+    },
+    {
+      "input_id": "reported_typical_group_size_range",
+      "value": [
+        15,
+        25
+      ],
+      "unit": "people_per_group",
+      "scope": "Previous-year typical group sizes in DQ Q6",
+      "source_status": "Daniel-reported",
+      "value_kind": "rough_estimate_range",
+      "source": "Daniel Q6, reported estimates (original source retained privately) Q6",
+      "rationale": "Preserve the stated usual range; Daniel also gives examples of five and twenty.",
+      "limitation": "The range is neither a measured distribution nor a hard capacity.",
+      "sensitivity": [
+        5,
+        15,
+        20,
+        25
+      ]
+    },
+    {
+      "input_id": "group_size",
+      "value": 20,
+      "unit": "synthetic_participations_per_group",
+      "scope": "Each compatible annual group batch",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source": "DQ Q6 midpoint of reported15\u201325",
+      "rationale": "Use the midpoint as a transparent representative batch size: 15\u00d720+50=350 person-topic participations.",
+      "limitation": "Not unique people, measured group size or annual person-topic demand. Group sizes are constant in this profile.",
+      "sensitivity": [
+        15,
+        20,
+        25
+      ]
+    },
+    {
+      "input_id": "topic_mix_rule",
+      "value": "uniform_source_eligible",
+      "unit": "distribution_rule",
+      "scope": "Annual synthetic topic assignment",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source": "data/processed/topic_catalog.csv",
+      "rationale": "Choose group topics uniformly among theory-group-eligible source topics and singles among all theory-required source topics.",
+      "limitation": "Eligibility is preserved; the uniform topic mix is not observed demand and determines synthetic practice counts.",
+      "sensitivity": [
+        "uniform_source_eligible"
+      ]
+    },
+    {
+      "input_id": "synthetic_internal_pool_size",
+      "value": 45,
+      "unit": "synthetic_person_ids",
+      "scope": "Annual and optional initial synthetic mapping",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source": "DQ Q2 reported reference population45",
+      "rationale": "Reuse a finite pool to retain realistic simultaneous participant conflicts without using real employee identities.",
+      "limitation": "Synthetic labels do not identify real employees or resolve external/special-person mappings, validity or required competence.",
+      "sensitivity": [
+        45
+      ]
+    },
+    {
+      "input_id": "initial_backlog_age_minutes",
+      "value": 0,
+      "unit": "elapsed_minutes",
+      "scope": "Optional initial source-stock cohort",
+      "source_status": "assumption",
+      "value_kind": "experiment_convention",
+      "source": "CURRENT_USER_DECISIONS",
+      "rationale": "Historical ages are unknown; keep a stated zero-age convention for the separate initial cohort.",
+      "limitation": "Not a claim that all source needs newly arose at the start.",
+      "sensitivity": [
+        0,
+        20160,
+        60480
+      ]
+    },
+    {
+      "input_id": "baseline_group_release_rule",
+      "value": "complete_batch_subject_to_capacity",
+      "unit": "policy_rule",
+      "scope": "Hinted annual IST group theory",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source": "CURRENT_IMPLEMENTATION_DECISION",
+      "rationale": "An interpreted historical group occurrence arrives as one already-compatible, formed batch. It and explicitly individual historical occurrences bypass the three-week collecting urgency review; unhinted initial stock retains that review. Ordinary collection preference must not split a formed batch's identity.",
+      "limitation": "Source eligibility, configured hard capacity and availability still apply. A cap below batch size changes realised session count; scarce resources can leave formed occurrences unfinished at the annual horizon.",
+      "sensitivity": [
+        "complete_batch_subject_to_capacity"
+      ]
+    },
+    {
+      "input_id": "resource_days_per_week",
+      "value": 2,
+      "unit": "available_days_per_week",
+      "scope": "Annual trainer/room calendar budget",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source": "CURRENT_IMPLEMENTATION_DECISION",
+      "rationale": "An independent demonstration budget of two eight-hour days per week, approximately832hours/year, is declared before comparing policies.",
+      "limitation": "Actual staffing and training availability remain unknown; this is not inferred from throughput or a staffing recommendation.",
+      "sensitivity": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "input_id": "resource_calendar_weekdays",
+      "value": [
+        1,
+        3
+      ],
+      "unit": "weekday_indices_Monday0",
+      "scope": "Annual trainer/room availability",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source": "CURRENT_IMPLEMENTATION_DECISION",
+      "rationale": "Use Tuesday and Thursday as deterministic weekly training windows; preserve paired capacity across policies.",
+      "limitation": "Not actual detailed shifts, holidays, absences or participant duties.",
+      "sensitivity": {
+        "one_day": [
+          2
+        ],
+        "base": [
+          1,
+          3
+        ],
+        "three_days": [
+          0,
+          2,
+          4
+        ]
+      }
+    },
+    {
+      "input_id": "resource_calendar_start_minute",
+      "value": 540,
+      "unit": "minute_of_calendar_day",
+      "scope": "Daily annual resource and participant window",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source": "CURRENT_IMPLEMENTATION_DECISION",
+      "rationale": "09:00 start matches the existing illustrative workday convention.",
+      "limitation": "Not observed shifts or guarantees of presence.",
+      "sensitivity": [
+        540
+      ]
+    },
+    {
+      "input_id": "resource_calendar_end_minute",
+      "value": 1020,
+      "unit": "minute_of_calendar_day",
+      "scope": "Daily annual resource and participant window",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source": "CURRENT_IMPLEMENTATION_DECISION",
+      "rationale": "17:00 end provides eight hours per selected weekday.",
+      "limitation": "P&Q also has other duties; real availability is unmeasured.",
+      "sensitivity": [
+        1020
+      ]
+    },
+    {
+      "input_id": "participant_calendar_weekdays",
+      "value": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "unit": "weekday_indices_Monday0",
+      "scope": "Annual synthetic participant availability",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source": "CURRENT_IMPLEMENTATION_DECISION",
+      "rationale": "Participant windows remain Monday\u2013Friday while the independent trainer/room budget uses selected days; self-study still requires participant time.",
+      "limitation": "No verified individual shifts or competing operational duties.",
+      "sensitivity": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      ]
+    },
+    {
+      "input_id": "recovery_aged_every",
+      "value": 4,
+      "unit": "recovery_selection_interval",
+      "scope": "Post-infeasible-first-start recovery fairness safeguard",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source": "CURRENT_IMPLEMENTATION_DECISION",
+      "rationale": "One eligible aged lower-priority appointment in every four recovery selections balances completion recovery with visible waiting.",
+      "limitation": "A declared policy hypothesis, not a reported IST rule or optimal quota; availability remains enforced.",
+      "sensitivity": [
+        2,
+        4,
+        8
+      ]
+    }
+  ],
+  "source_bindings": {
+    "file": "source_values.json",
+    "theory_minutes": "theory_standard_minutes",
+    "practice_minutes": "practice_standard_minutes",
+    "group_pq_hours": "theory_group_included_pq_hours"
+  },
+  "unresolved_source_fields": [
+    {
+      "input_id": "actual_annual_training_volume",
+      "value": null,
+      "source_status": "assumption",
+      "limitation": "No confirmed annual training/session or person-topic arrival counts."
+    },
+    {
+      "input_id": "reported_counts_period",
+      "value": null,
+      "source_status": "assumption",
+      "limitation": "Q6 count reply does not explicitly state a period."
+    },
+    {
+      "input_id": "reported_counts_phase_scope",
+      "value": null,
+      "source_status": "assumption",
+      "limitation": "No breakdown distinguishing theory sessions, practice sessions or full workflows."
+    },
+    {
+      "input_id": "actual_annual_training_cost",
+      "value": null,
+      "source_status": "assumption",
+      "limitation": "Workbook is a theoretical benchmark, not measured annual IST cost."
+    },
+    {
+      "input_id": "dated_employee_mapping",
+      "value": null,
+      "source_status": "assumption",
+      "limitation": "No reconstructed real person-topic-cycle assignment."
+    },
+    {
+      "input_id": "actual_resource_availability",
+      "value": null,
+      "source_status": "assumption",
+      "limitation": "No verified dated trainer/room/participant shifts."
+    },
+    {
+      "input_id": "annual_practice_demand",
+      "value": null,
+      "source_status": "assumption",
+      "limitation": "Cannot be inferred from Q6; prototype draws topics then applies source phase requirements."
+    }
+  ]
+}

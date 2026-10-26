@@ -1,0 +1,76 @@
+{
+  "plan_id": "annual-three-day-feasibility-v1",
+  "source_status": "assumption",
+  "value_kind": "fixed_paired_experiment_plan",
+  "minimum_n": 20,
+  "metrics": [
+    "training_completed",
+    "ongoing_completed",
+    "initial_completed",
+    "initial_priority1_completed",
+    "initial_priority1_remaining",
+    "year_end_training_stock",
+    "net_chf",
+    "trainer_used_hours",
+    "theory_group_sessions",
+    "theory_individual_sessions",
+    "practice_sessions",
+    "common_target_service",
+    "actual_policy_breaches",
+    "all_training_complete",
+    "lower_priority_backlog_request_days"
+  ],
+  "precision_targets": {
+    "training_completed": 10,
+    "initial_priority1_completed": 10,
+    "net_chf": 3000,
+    "common_target_service": 0.05
+  },
+  "rationale": "Declared before observing three-day annual-only results. The completed two-day annual block cannot finish350cases in most replicas; test a separately labelled independent three-day calendar for annual full-volume feasibility and equal-year output cost. Do not retune or pool the original plan.",
+  "cases": [
+    {
+      "case_id": "annual_same_volume_three_days",
+      "include_backlog": false,
+      "replications": [
+        300,
+        301,
+        302,
+        303,
+        304,
+        305,
+        306,
+        307,
+        308,
+        309,
+        310,
+        311,
+        312,
+        313,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319
+      ],
+      "profile_overrides": {
+        "resource_days_per_week": 3,
+        "resource_calendar_weekdays": [
+          0,
+          2,
+          4
+        ]
+      },
+      "drain_days": 0,
+      "scenarios": [
+        "S0",
+        "S7_RECOVERY"
+      ]
+    }
+  ],
+  "limitations": [
+    "Calendar is hypothetical availability, not measured staff capacity.",
+    "Feasibility in these20fixtures does not guarantee performance with other topic mix or real disruptions.",
+    "This additional study is separately planned and is not pooled into the primary235runs."
+  ]
+}

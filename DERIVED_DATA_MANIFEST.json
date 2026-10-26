@@ -1,0 +1,6 @@
+{
+  "dataset_path": "data/processed/topic_catalog.csv",
+  "dataset_sha256": "c807653165735a95721f45c0fb770e31fbf4710b552020be4d8c0ed53f442d9f",
+  "limitation": "Anonymized upstream aggregate catalogue; original snapshot is excluded",
+  "source_status": "derived"
+}

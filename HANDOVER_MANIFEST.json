@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "scope": "Canonical public engine and sanitized packaged inputs; frozen study projections have separate provenance.",
+  "files": [
+    {
+      "path": "DERIVED_DATA_MANIFEST.json",
+      "bytes": 265,
+      "sha256": "6653d3ccbbfcfd5e8d819fc0bd63d8c1c2135a003f068a06d8bf965ccc95af00"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "bytes": 2769,
+      "sha256": "5c6d933134ac5d670f1a34b147f5e6e9a22a163732297c79cb3e63ed3691e541"
+    },
+    {
+      "path": "config/annual_feasibility_plan.json",
+      "bytes": 2031,
+      "sha256": "5133618150e26295af663e13f8751332d7bf122bb0587ed3f5e49a4167777ae6"
+    },
+    {
+      "path": "config/annual_joined_study_plan.json",
+      "bytes": 5502,
+      "sha256": "627e315801cf7498d63979ee7dc99372c93c472732a7e0692263abcefa637b16"
+    },
+    {
+      "path": "config/annual_profile.json",
+      "bytes": 14693,
+      "sha256": "e2e2ddf1705375302765a15f5ccb0d90060eb2e6327da0f0f2cef5964a34771b"
+    },
+    {
+      "path": "config/annual_study_plan.json",
+      "bytes": 4887,
+      "sha256": "2e2a3eee8b1e564036d9e344b9a76173034bd56699a381c889e6d8b40e031304"
+    },
+    {
+      "path": "config/deterministic_fixture.json",
+      "bytes": 1132,
+      "sha256": "b02a0110294a1c27b00c7351d201d9f15cae5987aa4a34ce355426c608537622"
+    },
+    {
+      "path": "config/experiment_plan.json",
+      "bytes": 15630,
+      "sha256": "ecd9476448b67204a0883804618bcccbb0f8544aeab4dfd25d4f20a7282d1fe4"
+    },
+    {
+      "path": "config/group_capacity_screen.json",
+      "bytes": 2783,
+      "sha256": "8464016bb073b18bab8dc59b619a42ad23ac9187472e5854c876707d1c7ddb98"
+    },
+    {
+      "path": "config/handover_smoke_plan.json",
+      "bytes": 2604,
+      "sha256": "15db2a8018d1c280d1ae1ef209adb110bc79ab50a6afb7477ba9c0415a1c468c"
+    },
+    {
+      "path": "config/integrated_smoke_plan.json",
+      "bytes": 2934,
+      "sha256": "7b5857899567a408023dadf78c7f19708687b0f9194d30f499e176267b369f67"
+    },
+    {
+      "path": "config/integrated_study_plan.json",
+      "bytes": 12480,
+      "sha256": "082e4d9234c4c6a36c89610b205341863d636df6cf165dfebbecdb51c09667a7"
+    },
+    {
+      "path": "config/operating_configuration.json",
+      "bytes": 18050,
+      "sha256": "bb86d3eefe8cb16ab24c8a32bd090034934138cf51a5b35bef1d80eafcfe6552"
+    },
+    {
+      "path": "config/prototype_controls.json",
+      "bytes": 49103,
+      "sha256": "ca3db1cf8171f0e9f6337806670df5ed978c3d9b207fba700330bcd95af9f09b"
+    },
+    {
+      "path": "config/scenario_registry.json",
+      "bytes": 15348,
+      "sha256": "bc0d754bababe8264ecea324d124f9de0f58ebca690baaad9bd62ae68a8744c9"
+    },
+    {
+      "path": "config/source_values.json",
+      "bytes": 15678,
+      "sha256": "f28b56ac771a46f8a54f29b329aeb6b3fc44c81266be28cb71f04d12a7d30a8f"
+    },
+    {
+      "path": "config/workflow_fixture.json",
+      "bytes": 1266,
+      "sha256": "2fd69e6ada8c9f56009127e10ec32286e19dae2233e1118cb04d06369c34ca4f"
+    },
+    {
+      "path": "data/processed/topic_catalog.csv",
+      "bytes": 21495,
+      "sha256": "c807653165735a95721f45c0fb770e31fbf4710b552020be4d8c0ed53f442d9f"
+    },
+    {
+      "path": "src/cosanum_sim/__init__.py",
+      "bytes": 91,
+      "sha256": "fd135b8ba7673409526dfca33bf3184466425421efc98eb5264cdc9bfc9d5c60"
+    },
+    {
+      "path": "src/cosanum_sim/annual.py",
+      "bytes": 18300,
+      "sha256": "8fcdf925f6b7056003f0b6960ab32a140d4b4151bc9fa4db419a0a6c04bc36b7"
+    },
+    {
+      "path": "src/cosanum_sim/annual_demand.py",
+      "bytes": 15652,
+      "sha256": "4d9e453ee65b1887b551d8b3887099908662206addeafb5f8ac61ee157663d59"
+    },
+    {
+      "path": "src/cosanum_sim/baseline.py",
+      "bytes": 3312,
+      "sha256": "d39e387abd30b7ad8f96d57c6d36d6a1d2790e39b40665305366e4346f5bc23f"
+    },
+    {
+      "path": "src/cosanum_sim/cli.py",
+      "bytes": 1318,
+      "sha256": "c6f19b09243006b8fb99664fd51089290fd0b7c60ff4af1f2626dd17e6b73d89"
+    },
+    {
+      "path": "src/cosanum_sim/config.py",
+      "bytes": 12336,
+      "sha256": "b0cfec87bfd26882f72ec762fbc4dca2951a3ca62cf11d0287e2fe6b0c8f374e"
+    },
+    {
+      "path": "src/cosanum_sim/costs.py",
+      "bytes": 5545,
+      "sha256": "5345c17d8b79a066128691f83967d4cd812c99e5df780f4fe4b44dab652ce021"
+    },
+    {
+      "path": "src/cosanum_sim/demand.py",
+      "bytes": 7566,
+      "sha256": "ba37e936bddf29dca106e2258f8ebf2020517e1abc61972aa82916aebe9c554f"
+    },
+    {
+      "path": "src/cosanum_sim/domain.py",
+      "bytes": 2447,
+      "sha256": "92ab80a4345ee5c7c787ca043ba64d63395584280d83c7addd1a421a1b8a7f91"
+    },
+    {
+      "path": "src/cosanum_sim/engine.py",
+      "bytes": 29561,
+      "sha256": "81621ae50d4c4781e3e5207d7e57115bb6b3215ec857870a90e9e21bf359a07b"
+    },
+    {
+      "path": "src/cosanum_sim/experiments.py",
+      "bytes": 14290,
+      "sha256": "ae57f3c2cda83d83b7aeefbb86a0f87790302baefd2de4f83ba06d15ec1c359f"
+    },
+    {
+      "path": "src/cosanum_sim/inputs.py",
+      "bytes": 1901,
+      "sha256": "f67d0e9ed71af6be6304f425add6088ef2d4b658dbaa9bac7c497595ce47cc47"
+    },
+    {
+      "path": "src/cosanum_sim/integrated_study.py",
+      "bytes": 7849,
+      "sha256": "8be0723ce5adea605e5c2139d95e97122491ca2547024efd7fc2b39a29a1de09"
+    },
+    {
+      "path": "src/cosanum_sim/lms_workload.py",
+      "bytes": 6648,
+      "sha256": "9e59029e8ad2408311f2e0c828416c2995b18bc0bb451ab2d17af2f72710b5d4"
+    },
+    {
+      "path": "src/cosanum_sim/metrics.py",
+      "bytes": 10924,
+      "sha256": "8a7e9e77b05350bac388f2599680996f59f4246ecfe9ec998b4426b701c91609"
+    },
+    {
+      "path": "src/cosanum_sim/operating.py",
+      "bytes": 8322,
+      "sha256": "f8427e62de4a5c2e613521795c09b5e1e7017e95b35f04ce1483c108d8ea0b22"
+    },
+    {
+      "path": "src/cosanum_sim/policies/__init__.py",
+      "bytes": 7519,
+      "sha256": "1c2f0065ea88281b5e09a8b99423ba212180e35a6e49b641bf13eb3d34185818"
+    },
+    {
+      "path": "src/cosanum_sim/randomness.py",
+      "bytes": 1260,
+      "sha256": "4aecc5490d525fbd614a02955755b87931878d5b4a4875074e4b1f4fff9d6f5c"
+    },
+    {
+      "path": "src/cosanum_sim/scenarios.py",
+      "bytes": 5453,
+      "sha256": "0de71c14f4c0bfb613de57407ffece5cbd9cfff4ff8439cefd9a8b2429c3f12b"
+    },
+    {
+      "path": "src/cosanum_sim/scheduler.py",
+      "bytes": 19308,
+      "sha256": "a9c4a49755585fc4b235fb3c1a7e0d1ee81913865c6fd33c5051376b2400b784"
+    },
+    {
+      "path": "src/cosanum_sim/study.py",
+      "bytes": 6990,
+      "sha256": "d099684b5062f8a8eb0920eddb1065dc83afa2f03624031ae996d8e7d819c909"
+    },
+    {
+      "path": "src/cosanum_sim/uncertainty.py",
+      "bytes": 5659,
+      "sha256": "9c2600258a0865ea684d93650bbb40f8bc07bbdea99f5146c62b2b2c1c138982"
+    }
+  ]
+}

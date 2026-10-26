@@ -1,0 +1,45 @@
+{
+  "fixture_id": "deterministic-demo-v1",
+  "synthetic": true,
+  "cohort_id": "synthetic-demonstration",
+  "mode": "explicit_deterministic_arrivals",
+  "source_status": "assumption",
+  "value_kind": "behaviour_fixture",
+  "unit": "elapsed_minutes_and_requests",
+  "scope": "Synthetic first theory phase",
+  "rationale": "Hand-checkable staggered batches and separate topic; no mapping to real employees or annual arrivals",
+  "limitation": "Not backlog clearance or stochastic ongoing demand",
+  "sensitivity_range": "Threshold, capacity, deadline and calendars varied in tests",
+  "batches": [
+    {
+      "batch_id": "a",
+      "topic_id": "TC_R006",
+      "noticed_at": 0,
+      "size": 1
+    },
+    {
+      "batch_id": "b",
+      "topic_id": "TC_R006",
+      "noticed_at": 5760,
+      "size": 2
+    },
+    {
+      "batch_id": "c",
+      "topic_id": "TC_R006",
+      "noticed_at": 15840,
+      "size": 1
+    },
+    {
+      "batch_id": "d",
+      "topic_id": "TC_R006",
+      "noticed_at": 21600,
+      "size": 3
+    },
+    {
+      "batch_id": "e",
+      "topic_id": "TC_R007",
+      "noticed_at": 0,
+      "size": 1
+    }
+  ]
+}

@@ -1,0 +1,537 @@
+{
+  "schema_version": "1.0",
+  "source_status": "assumption",
+  "value_kind": "predeclared_prototype_experiment",
+  "scope": "Monte Carlo under hypothetical inputs, not empirical uncertainty or policy selection",
+  "confidence_level": 0.95,
+  "stopping_rule": "fixed_replications_no_optional_stopping",
+  "minimum_precision_replications": 20,
+  "precision_targets": {
+    "training_completed": 5,
+    "priority1_completed": 2,
+    "net_chf": 1000,
+    "common_target_service": 0.05
+  },
+  "precision_units": {
+    "training_completed": "person-topic records",
+    "priority1_completed": "priority 1 person-topic records",
+    "net_chf": "CHF",
+    "common_target_service": "fraction (0.05 = five percentage points)"
+  },
+  "precision_rationale": "Provisional absolute half-width targets chosen before results, not management acceptance limits; small screening/backlog cells will be explicitly insufficient.",
+  "interval_method": "Pointwise paired Student-t; approximate for skewed/count outputs; not simultaneous familywise claims; no selection from CI signs alone",
+  "metrics": [
+    "training_completed",
+    "proof_completed",
+    "priority1_completed",
+    "net_chf",
+    "gross_chf",
+    "common_target_service",
+    "actual_policy_breaches",
+    "priority1_backlog_request_days",
+    "lower_priority_backlog_request_days",
+    "trainer_work_minutes",
+    "participant_minutes",
+    "lms_assessments_passed",
+    "lms_instructor_fallbacks"
+  ],
+  "cost_scope_sensitivity": {
+    "chf_per_supervised_session": 100,
+    "unit": "CHF per started supervised non-proof session",
+    "source_status": "assumption",
+    "value_kind": "price_only_sensitivity",
+    "rationale": "Additional room/material cost beyond included trainer/P&Q allowances; no extra labour and no schedule change. Base excluded cost remains unknown, not measured zero.",
+    "sensitivity_range": [
+      0,
+      100
+    ],
+    "limitation": "Illustrative valuation only; not full organisational costing"
+  },
+  "cases": [
+    {
+      "case_id": "base_ongoing",
+      "mode": "ongoing_stochastic_demand",
+      "replication_ids": [
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119
+      ],
+      "scenarios": [
+        "S0",
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "S1_GROUPING_WITH_DEADLINE",
+        "DEADLINE_ONLY",
+        "S7_PLUS_LMS"
+      ],
+      "overrides": {},
+      "rationale": "Fixed twenty fresh replications, separate from mechanism smoke seeds; approximate pointwise paired intervals.",
+      "source_status": "assumption",
+      "value_kind": "experiment_design",
+      "scope": "Paired policies within this cell; cells are input alternatives, not pooled replications"
+    },
+    {
+      "case_id": "base_backlog",
+      "mode": "initial_backlog_clearance",
+      "replication_ids": [
+        100,
+        101,
+        102
+      ],
+      "scenarios": [
+        "S0",
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "S1_GROUPING_WITH_DEADLINE",
+        "DEADLINE_ONLY",
+        "S7_PLUS_LMS"
+      ],
+      "overrides": {},
+      "rationale": "Three full-stock mapping/selection replications form an explicit low-precision pilot; do not pretend it meets the twenty-replication precision floor.",
+      "source_status": "assumption",
+      "value_kind": "experiment_design",
+      "scope": "Paired policies within this cell; cells are input alternatives, not pooled replications"
+    },
+    {
+      "case_id": "demand_low",
+      "mode": "ongoing_stochastic_demand",
+      "replication_ids": [
+        100,
+        101,
+        102
+      ],
+      "scenarios": [
+        "S0",
+        "S1",
+        "S7"
+      ],
+      "overrides": {
+        "detection_intensity": 0.2
+      },
+      "rationale": "Source stock is never an annual arrival rate; vary the assumed ongoing intensity independently.",
+      "source_status": "assumption",
+      "value_kind": "experiment_design",
+      "scope": "Paired policies within this cell; cells are input alternatives, not pooled replications"
+    },
+    {
+      "case_id": "demand_high",
+      "mode": "ongoing_stochastic_demand",
+      "replication_ids": [
+        100,
+        101,
+        102
+      ],
+      "scenarios": [
+        "S0",
+        "S1",
+        "S7"
+      ],
+      "overrides": {
+        "detection_intensity": 2.0
+      },
+      "rationale": "Source stock is never an annual arrival rate; vary the assumed ongoing intensity independently.",
+      "source_status": "assumption",
+      "value_kind": "experiment_design",
+      "scope": "Paired policies within this cell; cells are input alternatives, not pooled replications"
+    },
+    {
+      "case_id": "larger_batches",
+      "mode": "ongoing_stochastic_demand",
+      "replication_ids": [
+        100,
+        101,
+        102
+      ],
+      "scenarios": [
+        "S0",
+        "S1",
+        "S7"
+      ],
+      "overrides": {
+        "batch_size_distribution": {
+          "1": 0.2,
+          "5": 0.8
+        }
+      },
+      "rationale": "Larger batch-size hypothesis; compare all policies on each same generated batch fixture.",
+      "source_status": "assumption",
+      "value_kind": "experiment_design",
+      "scope": "Paired policies within this cell; cells are input alternatives, not pooled replications"
+    },
+    {
+      "case_id": "two_trainers_ongoing",
+      "mode": "ongoing_stochastic_demand",
+      "replication_ids": [
+        100,
+        101,
+        102
+      ],
+      "scenarios": [
+        "S0",
+        "S5",
+        "S7",
+        "S7_PLUS_LMS"
+      ],
+      "overrides": {
+        "ist_trainer_count": 2
+      },
+      "rationale": "Two trainers with the original room count; inspect downstream practice/assessment under initial-start protection.",
+      "source_status": "assumption",
+      "value_kind": "experiment_design",
+      "scope": "Paired policies within this cell; cells are input alternatives, not pooled replications"
+    },
+    {
+      "case_id": "four_resources_ongoing",
+      "mode": "ongoing_stochastic_demand",
+      "replication_ids": [
+        100,
+        101,
+        102
+      ],
+      "scenarios": [
+        "S0",
+        "S5",
+        "S7",
+        "S7_PLUS_LMS"
+      ],
+      "overrides": {
+        "ist_trainer_count": 4,
+        "ist_room_count": 4
+      },
+      "rationale": "Explicit joint trainer/room capacity stress test; not the isolated effect of either resource.",
+      "source_status": "assumption",
+      "value_kind": "experiment_design",
+      "scope": "Paired policies within this cell; cells are input alternatives, not pooled replications"
+    },
+    {
+      "case_id": "two_trainers_backlog",
+      "mode": "initial_backlog_clearance",
+      "replication_ids": [
+        100,
+        101,
+        102
+      ],
+      "scenarios": [
+        "S0",
+        "S5",
+        "S7",
+        "S7_PLUS_LMS"
+      ],
+      "overrides": {
+        "ist_trainer_count": 2
+      },
+      "rationale": "Two trainers with the original room count; inspect downstream practice/assessment under initial-start protection.",
+      "source_status": "assumption",
+      "value_kind": "experiment_design",
+      "scope": "Paired policies within this cell; cells are input alternatives, not pooled replications"
+    },
+    {
+      "case_id": "four_resources_backlog",
+      "mode": "initial_backlog_clearance",
+      "replication_ids": [
+        100,
+        101,
+        102
+      ],
+      "scenarios": [
+        "S0",
+        "S5",
+        "S7",
+        "S7_PLUS_LMS"
+      ],
+      "overrides": {
+        "ist_trainer_count": 4,
+        "ist_room_count": 4
+      },
+      "rationale": "Explicit joint trainer/room capacity stress test; not the isolated effect of either resource.",
+      "source_status": "assumption",
+      "value_kind": "experiment_design",
+      "scope": "Paired policies within this cell; cells are input alternatives, not pooled replications"
+    },
+    {
+      "case_id": "threshold_two",
+      "mode": "ongoing_stochastic_demand",
+      "replication_ids": [
+        100,
+        101,
+        102
+      ],
+      "scenarios": [
+        "S0",
+        "S1",
+        "S7"
+      ],
+      "overrides": {
+        "preferred_group_threshold": 2
+      },
+      "rationale": "Vary preference threshold within unchanged hard capacity; no source-implied optimum.",
+      "source_status": "assumption",
+      "value_kind": "experiment_design",
+      "scope": "Paired policies within this cell; cells are input alternatives, not pooled replications"
+    },
+    {
+      "case_id": "threshold_six",
+      "mode": "ongoing_stochastic_demand",
+      "replication_ids": [
+        100,
+        101,
+        102
+      ],
+      "scenarios": [
+        "S0",
+        "S1",
+        "S7"
+      ],
+      "overrides": {
+        "preferred_group_threshold": 6
+      },
+      "rationale": "Vary preference threshold within unchanged hard capacity; no source-implied optimum.",
+      "source_status": "assumption",
+      "value_kind": "experiment_design",
+      "scope": "Paired policies within this cell; cells are input alternatives, not pooled replications"
+    },
+    {
+      "case_id": "wait_seven_days",
+      "mode": "ongoing_stochastic_demand",
+      "replication_ids": [
+        100,
+        101,
+        102
+      ],
+      "scenarios": [
+        "S0",
+        "S7"
+      ],
+      "overrides": {
+        "max_wait_minutes": 10080
+      },
+      "rationale": "Alter the prototype hard-wait target and the within-cell common analytical target; S0 still has no hard deadline.",
+      "source_status": "assumption",
+      "value_kind": "experiment_design",
+      "scope": "Paired policies within this cell; cells are input alternatives, not pooled replications"
+    },
+    {
+      "case_id": "wait_28_days",
+      "mode": "ongoing_stochastic_demand",
+      "replication_ids": [
+        100,
+        101,
+        102
+      ],
+      "scenarios": [
+        "S0",
+        "S7"
+      ],
+      "overrides": {
+        "max_wait_minutes": 40320
+      },
+      "rationale": "Alter the prototype hard-wait target and the within-cell common analytical target; S0 still has no hard deadline.",
+      "source_status": "assumption",
+      "value_kind": "experiment_design",
+      "scope": "Paired policies within this cell; cells are input alternatives, not pooled replications"
+    },
+    {
+      "case_id": "proof_share_30pct",
+      "mode": "ongoing_stochastic_demand",
+      "replication_ids": [
+        100,
+        101,
+        102
+      ],
+      "scenarios": [
+        "S0",
+        "S3",
+        "S7"
+      ],
+      "overrides": {
+        "proof_only_fraction": 0.3
+      },
+      "rationale": "Explicit unknown proof-only share; retain common case kinds and report training/proof separately.",
+      "source_status": "assumption",
+      "value_kind": "experiment_design",
+      "scope": "Paired policies within this cell; cells are input alternatives, not pooled replications"
+    },
+    {
+      "case_id": "zero_latencies",
+      "mode": "ongoing_stochastic_demand",
+      "replication_ids": [
+        100,
+        101,
+        102
+      ],
+      "scenarios": [
+        "S0",
+        "S2",
+        "S4",
+        "S7"
+      ],
+      "overrides": {
+        "comparison_ist_recognition_delay": 0,
+        "comparison_ist_planning_delay": 0
+      },
+      "rationale": "Zero-effect baseline controls test whether assumed digital/coordination gains disappear.",
+      "source_status": "assumption",
+      "value_kind": "experiment_design",
+      "scope": "Paired policies within this cell; cells are input alternatives, not pooled replications"
+    },
+    {
+      "case_id": "lms_pass_zero",
+      "mode": "ongoing_stochastic_demand",
+      "replication_ids": [
+        100,
+        101,
+        102
+      ],
+      "scenarios": [
+        "S0",
+        "S6",
+        "S7",
+        "S7_PLUS_LMS"
+      ],
+      "overrides": {
+        "lms_pass_probability": 0
+      },
+      "rationale": "Extreme assessment efficacy hypotheses; failure requires full instructor theory.",
+      "source_status": "assumption",
+      "value_kind": "experiment_design",
+      "scope": "Paired policies within this cell; cells are input alternatives, not pooled replications"
+    },
+    {
+      "case_id": "lms_pass_one",
+      "mode": "ongoing_stochastic_demand",
+      "replication_ids": [
+        100,
+        101,
+        102
+      ],
+      "scenarios": [
+        "S0",
+        "S6",
+        "S7",
+        "S7_PLUS_LMS"
+      ],
+      "overrides": {
+        "lms_pass_probability": 1
+      },
+      "rationale": "Extreme assessment efficacy hypotheses; failure requires full instructor theory.",
+      "source_status": "assumption",
+      "value_kind": "experiment_design",
+      "scope": "Paired policies within this cell; cells are input alternatives, not pooled replications"
+    },
+    {
+      "case_id": "lms_zero_portfolio",
+      "mode": "ongoing_stochastic_demand",
+      "replication_ids": [
+        100,
+        101,
+        102
+      ],
+      "scenarios": [
+        "S0",
+        "S6",
+        "S7",
+        "S7_PLUS_LMS"
+      ],
+      "overrides": {
+        "lms_implementation_chf": 0,
+        "lms_content_chf_per_topic": 0,
+        "lms_licence_chf_per_day": 0,
+        "lms_maintenance_chf_per_day": 0
+      },
+      "rationale": "Deliberately free portfolio lower bound, not a quote; participant/support/fallback labour remains charged.",
+      "source_status": "assumption",
+      "value_kind": "experiment_design",
+      "scope": "Paired policies within this cell; cells are input alternatives, not pooled replications"
+    },
+    {
+      "case_id": "lms_empty_pilot",
+      "mode": "ongoing_stochastic_demand",
+      "replication_ids": [
+        100,
+        101,
+        102
+      ],
+      "scenarios": [
+        "S0",
+        "S6"
+      ],
+      "overrides": {
+        "lms_suitable_topic_ids": []
+      },
+      "rationale": "No assumed suitable topics; deployment and recurring costs remain paid, no content production.",
+      "source_status": "assumption",
+      "value_kind": "experiment_design",
+      "scope": "Paired policies within this cell; cells are input alternatives, not pooled replications"
+    },
+    {
+      "case_id": "lms_long_study",
+      "mode": "ongoing_stochastic_demand",
+      "replication_ids": [
+        100,
+        101,
+        102
+      ],
+      "scenarios": [
+        "S0",
+        "S6",
+        "S7_PLUS_LMS"
+      ],
+      "overrides": {
+        "lms_study_minutes": 120
+      },
+      "rationale": "Longer learning effort hypothesis; do not assume digital teaching is always faster.",
+      "source_status": "assumption",
+      "value_kind": "experiment_design",
+      "scope": "Paired policies within this cell; cells are input alternatives, not pooled replications"
+    },
+    {
+      "case_id": "ageing_seven_days",
+      "mode": "ongoing_stochastic_demand",
+      "replication_ids": [
+        100,
+        101,
+        102
+      ],
+      "scenarios": [
+        "S0",
+        "S5",
+        "S7",
+        "S7_PLUS_LMS"
+      ],
+      "overrides": {
+        "priority_ageing_minutes": 10080
+      },
+      "rationale": "Earlier ageing release; check fairness and later phases while preserving hard-deadline protection.",
+      "source_status": "assumption",
+      "value_kind": "experiment_design",
+      "scope": "Paired policies within this cell; cells are input alternatives, not pooled replications"
+    }
+  ]
+}

@@ -1,0 +1,512 @@
+{
+  "schema_version": 1,
+  "engine_version": "0.10.0",
+  "date": "2026-10-04",
+  "scope": "Authoritative integrated release parameters. Historical root profile counts and immutable earlier studies preserved.",
+  "inputs": [
+    {
+      "input_id": "annual_cases",
+      "value": 350,
+      "unit": "person-topic cases/year",
+      "scope": "Common fixture",
+      "source_status": "assumption",
+      "value_kind": "retained_interpretation",
+      "rationale": "User keeps the already calculated350. Historical15×20+50 fixture remains; unformed arrivals are a separate sensitivity.",
+      "limitation": "No independently verified annual arrivals.",
+      "sensitivity": [
+        350
+      ],
+      "source": "User answers in this side conversation; no new employee matrix requested"
+    },
+    {
+      "input_id": "logistics_pool",
+      "value": 45,
+      "unit": "synthetic people",
+      "scope": "Common roster",
+      "source_status": "assumption",
+      "value_kind": "stakeholder_input",
+      "rationale": "User reports45 logistics employees; retain anonymous45-person fixture.",
+      "limitation": "No dated actual employee mapping.",
+      "sensitivity": [
+        45
+      ],
+      "source": "User answers in this side conversation; no new employee matrix requested"
+    },
+    {
+      "input_id": "physical_group_capacity",
+      "value": 45,
+      "unit": "people",
+      "scope": "Theory",
+      "source_status": "assumption",
+      "value_kind": "stakeholder_input",
+      "rationale": "Theory with45 considered feasible; large internal rooms do not bind.",
+      "limitation": "Does not guarantee operational release of everyone.",
+      "sensitivity": [
+        45
+      ],
+      "source": "User answers in this side conversation; no new employee matrix requested"
+    },
+    {
+      "input_id": "preferred_group",
+      "value": 30,
+      "unit": "people",
+      "scope": "Theory",
+      "source_status": "assumption",
+      "value_kind": "stakeholder_input",
+      "rationale": "User suggests30 so logistics stays staffed.",
+      "limitation": "Preferred size does not postpone deadline fallback.",
+      "sensitivity": [
+        5,
+        10,
+        20,
+        30,
+        45
+      ],
+      "source": "User answers in this side conversation; no new employee matrix requested"
+    },
+    {
+      "input_id": "minimum_logistics_working",
+      "value": 15,
+      "unit": "people",
+      "scope": "Simultaneous learner release",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "rationale": "45minus30 is a provisional coverage guard across all simultaneously booked learners, including LMS and practice.",
+      "limitation": "Real minimum staffing/shift overlaps remain unknown. A45-person sensitivity requires explicitly relaxing this guard.",
+      "sensitivity": [
+        0,
+        5,
+        15
+      ],
+      "source": "User answers in this side conversation; no new employee matrix requested"
+    },
+    {
+      "input_id": "theory_trainer_count",
+      "value": 1,
+      "unit": "people",
+      "scope": "Theory and LMS authoring",
+      "source_status": "assumption",
+      "value_kind": "stakeholder_input",
+      "rationale": "One P&Q trainer, separate from practice coach.",
+      "limitation": "Same person can prepare content or deliver theory, never both simultaneously.",
+      "sensitivity": [
+        1
+      ],
+      "source": "User answers in this side conversation; no new employee matrix requested"
+    },
+    {
+      "input_id": "practice_coach_count",
+      "value": 1,
+      "unit": "people",
+      "scope": "Practice",
+      "source_status": "assumption",
+      "value_kind": "stakeholder_input",
+      "rationale": "Independent coach and place permit practice alongside theory for different qualified participants.",
+      "limitation": "Participant practice still starts after accepted theory.",
+      "sensitivity": [
+        1
+      ],
+      "source": "User answers in this side conversation; no new employee matrix requested"
+    },
+    {
+      "input_id": "coordination_ist_minutes",
+      "value": 15,
+      "unit": "minutes/session",
+      "scope": "Human training appointment",
+      "source_status": "assumption",
+      "value_kind": "stakeholder_input",
+      "rationale": "User-approved planning effort; included within existing group preparation, additional only for individual theory/practice.",
+      "limitation": "No LMS self-study booking coordination; responsible session executor used as proxy.",
+      "sensitivity": [
+        15
+      ],
+      "source": "User answers in this side conversation; no new employee matrix requested"
+    },
+    {
+      "input_id": "coordination_soll_minutes",
+      "value": 5,
+      "unit": "minutes/session",
+      "scope": "Human training appointment",
+      "source_status": "assumption",
+      "value_kind": "stakeholder_input",
+      "rationale": "User-approved improved effort; group allowance is not charged twice.",
+      "limitation": "Same valuation rule as IST; no measured difference.",
+      "sensitivity": [
+        5
+      ],
+      "source": "User answers in this side conversation; no new employee matrix requested"
+    },
+    {
+      "input_id": "training_days",
+      "value": 2,
+      "unit": "days/week",
+      "scope": "Both qualified resources",
+      "source_status": "assumption",
+      "value_kind": "stakeholder_input",
+      "rationale": "User confirms two eight-hour days including preparation/follow-up.",
+      "limitation": "Actual shifts/overlap and minimum coverage still need operational calibration.",
+      "sensitivity": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "source": "User answers in this side conversation; no new employee matrix requested"
+    },
+    {
+      "input_id": "training_hours_per_day",
+      "value": 8,
+      "unit": "hours/day",
+      "scope": "Both resources",
+      "source_status": "assumption",
+      "value_kind": "stakeholder_input",
+      "rationale": "Confirmed calendar duration; reused from annual profile.",
+      "limitation": "Includes all reserved workload, not eight teaching hours plus overhead.",
+      "sensitivity": [
+        8
+      ],
+      "source": "User answers in this side conversation; no new employee matrix requested"
+    },
+    {
+      "input_id": "theory_only_coverage",
+      "value": 1.0,
+      "unit": "fraction of theory-only topics",
+      "scope": "Independent LMS experiment",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source": "User request2026-10-04",
+      "rationale": "All theory-only topics use LMS; suitability is assumed.",
+      "limitation": "Prototype choice; no Cosanum measurement.",
+      "sensitivity": [
+        0.5,
+        1
+      ]
+    },
+    {
+      "input_id": "mixed_topic_coverage",
+      "value": 0.5,
+      "unit": "fraction of theory+practice topics",
+      "scope": "Independent LMS experiment",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source": "User request2026-10-04",
+      "rationale": "Fixed half of mixed topics selected by stable identity hash, rounded up for an odd count. Only theory moves to LMS.",
+      "limitation": "50% means topic suitability, not half the minutes of each practice or exactly half of cases.",
+      "sensitivity": [
+        0.25,
+        0.5,
+        0.75
+      ]
+    },
+    {
+      "input_id": "study_minutes",
+      "value": 60,
+      "unit": "minutes per complete study-and-quiz attempt",
+      "scope": "Independent LMS experiment",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source": "Derived prototype from Daniel Q3 standard theory allowance",
+      "rationale": "Self-study duration retained by user; quiz included. Daniel did not report LMS duration.",
+      "limitation": "Prototype choice; no Cosanum measurement.",
+      "sensitivity": [
+        30,
+        60,
+        90
+      ]
+    },
+    {
+      "input_id": "max_self_retries",
+      "value": 1,
+      "unit": "additional independent attempts",
+      "scope": "Independent LMS experiment",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source": "User request2026-10-04",
+      "rationale": "One full self-paced repeat before human fallback.",
+      "limitation": "Prototype choice; no Cosanum measurement.",
+      "sensitivity": [
+        0,
+        1
+      ]
+    },
+    {
+      "input_id": "pass_probability",
+      "value": 0.9,
+      "unit": "probability per attempt",
+      "scope": "Independent LMS experiment",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source": "User request2026-10-04",
+      "rationale": "Dedicated identity-keyed draw per attempt; independent attempts imply99% pass within two.",
+      "limitation": "Favourable efficacy assumption; retry outcomes may be correlated in reality. No measured learning gain.",
+      "sensitivity": [
+        0.8,
+        0.9,
+        0.95
+      ]
+    },
+    {
+      "input_id": "supplier_usd_per_account_month",
+      "value": 8,
+      "unit": "USD/account/month",
+      "scope": "Independent LMS experiment",
+      "source_status": "verified",
+      "value_kind": "published_reference",
+      "source": "360_TEAM",
+      "rationale": "360Learning Team selected from brochure preference; core LMS only.",
+      "limitation": "Published list price verified2026-10-04; includes all user roles, not a procurement quote.",
+      "sensitivity": [
+        8
+      ]
+    },
+    {
+      "input_id": "supplier_setup_chf",
+      "value": 0,
+      "unit": "CHF",
+      "scope": "Independent LMS experiment",
+      "source_status": "verified",
+      "value_kind": "published_reference",
+      "source": "360_TEAM",
+      "rationale": "No supplier setup fee; internal implementation budget is separate.",
+      "limitation": "Does not make internal configuration or course preparation free.",
+      "sensitivity": [
+        0
+      ]
+    },
+    {
+      "input_id": "provider_user_limit",
+      "value": 100,
+      "unit": "accounts",
+      "scope": "Independent LMS experiment",
+      "source_status": "verified",
+      "value_kind": "published_reference",
+      "source": "360_TEAM",
+      "rationale": "Reject an unpriced rollout beyond published Team scope.",
+      "limitation": "Confirm contract and add-ons before procurement.",
+      "sensitivity": [
+        100
+      ]
+    },
+    {
+      "input_id": "additional_admin_accounts",
+      "value": 2,
+      "unit": "accounts",
+      "scope": "Independent LMS experiment",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source": "Prototype allowance",
+      "rationale": "Two distinct author/admin accounts added to45 synthetic learner accounts.",
+      "limitation": "Prototype choice; no Cosanum measurement.",
+      "sensitivity": [
+        0,
+        2,
+        5
+      ]
+    },
+    {
+      "input_id": "fx_chf_per_usd",
+      "value": 0.8283,
+      "unit": "CHF/USD",
+      "scope": "Independent LMS experiment",
+      "source_status": "verified",
+      "value_kind": "published_reference",
+      "source": "SNB_FX,2October2026",
+      "rationale": "Freeze freshly read SNB reference for CHF comparisons.",
+      "limitation": "Dated reference; excludes bank spread, tax and future FX changes.",
+      "sensitivity": [
+        0.75,
+        0.8283,
+        0.9
+      ]
+    },
+    {
+      "input_id": "monthly_periods_per_model_year",
+      "value": 12,
+      "unit": "months",
+      "scope": "Independent LMS experiment",
+      "source_status": "derived",
+      "value_kind": "published_reference",
+      "source": "Accounting convention",
+      "rationale": "Full annual account subscription; no trial discount.",
+      "limitation": "Synthetic365-day year; fixed subscriptions do not depend on completed cases.",
+      "sensitivity": null
+    },
+    {
+      "input_id": "calendar_days_per_model_year",
+      "value": 365,
+      "unit": "days",
+      "scope": "Independent LMS experiment",
+      "source_status": "derived",
+      "value_kind": "published_reference",
+      "source": "config/annual_profile.json:horizon_days",
+      "rationale": "Convert monthly subscription to existing accrued daily ledger.",
+      "limitation": "Drain continues subscriptions for its declared horizon.",
+      "sensitivity": null
+    },
+    {
+      "input_id": "extra_paid_addon_count",
+      "value": 0,
+      "unit": "add-ons",
+      "scope": "Independent LMS experiment",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source": "Prototype scope",
+      "rationale": "Core LMS supports this hypothesis; optional Live would addUSD2/account/month.",
+      "limitation": "No new Live/HRIS/Coaching integration benefit claimed.",
+      "sensitivity": [
+        0,
+        1
+      ]
+    },
+    {
+      "input_id": "addon_usd_per_account_month",
+      "value": 2,
+      "unit": "USD/account/month/add-on",
+      "scope": "Independent LMS experiment",
+      "source_status": "verified",
+      "value_kind": "published_reference",
+      "source": "360_TEAM",
+      "rationale": "Published optional addon price, separate from base licence.",
+      "limitation": "Only counted when extra_paid_addon_count>0.",
+      "sensitivity": [
+        2
+      ]
+    },
+    {
+      "input_id": "authoring_rate_binding",
+      "value": "pq_hourly_chf",
+      "unit": "source input ID",
+      "scope": "LMS authoring and maintenance valuation",
+      "source_status": "assumption",
+      "value_kind": "prototype_binding",
+      "source": "Existing source_values.json",
+      "rationale": "Infer explicit effort from the prior internal budgets at the model's P&Q rate. This is not a measured Daniel authoring rate.",
+      "limitation": "Same task valuation in both actor cases; no duplicate trainer charge.",
+      "sensitivity": [
+        "pq_hourly_chf",
+        "coach_hourly_chf"
+      ]
+    },
+    {
+      "input_id": "maintenance_batch_days",
+      "value": 7,
+      "unit": "calendar days per workload booking",
+      "scope": "Both LMS overhead cases",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source": "Workload planning choice",
+      "rationale": "Reserve the accrued daily maintenance effort in weekly batches; final partial week is prorated.",
+      "limitation": "Routine effort only; major content revisions remain unknown.",
+      "sensitivity": [
+        1,
+        7,
+        14
+      ]
+    },
+    {
+      "input_id": "course_order",
+      "value": "priority_then_topic_id",
+      "unit": "ordering rule",
+      "scope": "Daniel startup workload",
+      "source_status": "assumption",
+      "value_kind": "prototype_policy",
+      "source": "Priority-1 management objective",
+      "rationale": "Prepare selected priority-1 courses first, then remaining topics in stable order.",
+      "limitation": "Preparation is scheduled first within the assumed calendar; not a jointly optimal project/training plan.",
+      "sensitivity": [
+        "priority_then_topic_id"
+      ]
+    },
+    {
+      "input_id": "weekday_patterns",
+      "value": {
+        "1": [
+          1
+        ],
+        "2": [
+          1,
+          3
+        ],
+        "3": [
+          1,
+          3,
+          4
+        ],
+        "4": [
+          0,
+          1,
+          3,
+          4
+        ]
+      },
+      "unit": "weekday IDs0=Monday",
+      "scope": "Resource calendar",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source": "User-authorized release integration2026-10-04",
+      "rationale": "Keep current Tuesday/Thursday pattern; add teaching days explicitly.",
+      "limitation": "Explicit prototype choice; not an observed operating rule",
+      "sensitivity": [
+        {
+          "1": [
+            1
+          ],
+          "2": [
+            1,
+            3
+          ],
+          "3": [
+            1,
+            3,
+            4
+          ],
+          "4": [
+            0,
+            1,
+            3,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "input_id": "pq_practice_qualified",
+      "value": false,
+      "unit": "boolean",
+      "scope": "P&Q phase qualification",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source": "User-authorized release integration2026-10-04",
+      "rationale": "Default strict role specialization retained; test cross-qualification explicitly rather than inventing it.",
+      "limitation": "Explicit prototype choice; not an observed operating rule",
+      "sensitivity": [
+        false,
+        true
+      ]
+    },
+    {
+      "input_id": "default_lms_actor",
+      "value": "daniel_calendar",
+      "unit": "allocation mode",
+      "scope": "LMS introduction",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source": "User-authorized release integration2026-10-04",
+      "rationale": "User requests both cases and recommends Daniel; dashboard default reflects this.",
+      "limitation": "Explicit prototype choice; not an observed operating rule",
+      "sensitivity": [
+        "daniel_calendar",
+        "prelaunch_team"
+      ]
+    }
+  ],
+  "provider_evidence": "extensions/independent_lms_2026_10_04/options.json",
+  "limitations": [
+    "Hours inferred from budgets are explicit prototypes, not measurements or industry standards.",
+    "Separate team prepares before day0 and maintains on its own weekday calendar.",
+    "Daniel reserves maintenance and then preparation first; shared training time is removed, courses release progressively.",
+    "Until a course is ready, instructor theory remains possible. Unstarted waiting cases can switch to LMS without resetting notices, ages or deadlines.",
+    "Labour is already included in implementation/content/maintenance charges; do not add another coach-hour charge.",
+    "The licence is charged for the full observation horizon including startup. No recurring content rebuild or extra licence add-ons are invented."
+  ]
+}

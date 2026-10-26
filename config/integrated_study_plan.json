@@ -1,0 +1,568 @@
+{
+  "plan_id": "integrated-operating-lms-v0.10.0-2026-10-04",
+  "minimum_n": 20,
+  "metrics": [
+    "training_completed",
+    "ongoing_completed",
+    "initial_completed",
+    "initial_priority1_completed",
+    "initial_priority1_remaining",
+    "year_end_training_stock",
+    "net_chf",
+    "trainer_used_hours",
+    "common_target_service",
+    "actual_policy_breaches",
+    "full_cohort_reconciled",
+    "theory_group_sessions",
+    "theory_individual_sessions",
+    "practice_sessions",
+    "lower_priority_backlog_request_days",
+    "practice_required_needs",
+    "practice_completed",
+    "theory_complete_practice_unfinished",
+    "practice_waiting_request_days",
+    "practice_started",
+    "practice_ready_censored",
+    "joined_practice_reservations",
+    "joined_bundles",
+    "joined_planning_failures",
+    "trainer_total_hours",
+    "trainer_lms_hours",
+    "lms_portfolio_chf",
+    "training_work_chf",
+    "cohort_completion_days"
+  ],
+  "precision_targets": {
+    "training_completed": 10,
+    "initial_priority1_completed": 10,
+    "net_chf": 3000,
+    "common_target_service": 0.05
+  },
+  "contrasts": [
+    {
+      "scenario": "LMS_TEAM",
+      "reference": "S7_RECOVERY"
+    },
+    {
+      "scenario": "LMS_DANIEL",
+      "reference": "S7_RECOVERY"
+    },
+    {
+      "scenario": "LMS_DANIEL",
+      "reference": "LMS_TEAM"
+    },
+    {
+      "scenario": "S7_RECOVERY_JOINED",
+      "reference": "S7_RECOVERY"
+    },
+    {
+      "scenario": "LMS_TEAM_JOINED",
+      "reference": "LMS_TEAM"
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "annual_same_volume",
+      "include_backlog": false,
+      "include_ongoing": true,
+      "drain_days": 0,
+      "scenarios": [
+        "S0",
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S7_RECOVERY",
+        "S7_RECOVERY_JOINED",
+        "LMS_TEAM",
+        "LMS_DANIEL",
+        "LMS_TEAM_JOINED"
+      ],
+      "replications": [
+        600,
+        601,
+        602,
+        603,
+        604,
+        605,
+        606,
+        607,
+        608,
+        609,
+        610,
+        611,
+        612,
+        613,
+        614,
+        615,
+        616,
+        617,
+        618,
+        619
+      ]
+    },
+    {
+      "case_id": "same_cohort_drain",
+      "include_backlog": false,
+      "include_ongoing": true,
+      "drain_days": 365,
+      "scenarios": [
+        "S0",
+        "S7_RECOVERY",
+        "LMS_TEAM",
+        "LMS_DANIEL"
+      ],
+      "replications": [
+        600,
+        601,
+        602,
+        603,
+        604,
+        605,
+        606,
+        607,
+        608,
+        609,
+        610,
+        611,
+        612,
+        613,
+        614,
+        615,
+        616,
+        617,
+        618,
+        619
+      ]
+    },
+    {
+      "case_id": "annual_backlog",
+      "include_backlog": true,
+      "include_ongoing": true,
+      "scenarios": [
+        "S0",
+        "S7_RECOVERY",
+        "LMS_TEAM",
+        "LMS_DANIEL"
+      ],
+      "replications": [
+        600,
+        601,
+        602,
+        603,
+        604
+      ]
+    },
+    {
+      "case_id": "frozen_backlog",
+      "include_backlog": true,
+      "include_ongoing": false,
+      "scenarios": [
+        "S0",
+        "S7_RECOVERY",
+        "LMS_TEAM",
+        "LMS_DANIEL"
+      ],
+      "replications": [
+        600,
+        601,
+        602,
+        603,
+        604
+      ]
+    },
+    {
+      "case_id": "capacity_d1_g5",
+      "include_backlog": false,
+      "include_ongoing": true,
+      "scenarios": [
+        "S0",
+        "S7_RECOVERY"
+      ],
+      "replications": [
+        600
+      ],
+      "operating_overrides": {
+        "training_days": 1,
+        "preferred_group": 5,
+        "minimum_logistics_working": 15
+      }
+    },
+    {
+      "case_id": "capacity_d1_g10",
+      "include_backlog": false,
+      "include_ongoing": true,
+      "scenarios": [
+        "S0",
+        "S7_RECOVERY"
+      ],
+      "replications": [
+        600
+      ],
+      "operating_overrides": {
+        "training_days": 1,
+        "preferred_group": 10,
+        "minimum_logistics_working": 15
+      }
+    },
+    {
+      "case_id": "capacity_d1_g20",
+      "include_backlog": false,
+      "include_ongoing": true,
+      "scenarios": [
+        "S0",
+        "S7_RECOVERY"
+      ],
+      "replications": [
+        600
+      ],
+      "operating_overrides": {
+        "training_days": 1,
+        "preferred_group": 20,
+        "minimum_logistics_working": 15
+      }
+    },
+    {
+      "case_id": "capacity_d1_g30",
+      "include_backlog": false,
+      "include_ongoing": true,
+      "scenarios": [
+        "S0",
+        "S7_RECOVERY"
+      ],
+      "replications": [
+        600
+      ],
+      "operating_overrides": {
+        "training_days": 1,
+        "preferred_group": 30,
+        "minimum_logistics_working": 15
+      }
+    },
+    {
+      "case_id": "capacity_d1_g45",
+      "include_backlog": false,
+      "include_ongoing": true,
+      "scenarios": [
+        "S0",
+        "S7_RECOVERY"
+      ],
+      "replications": [
+        600
+      ],
+      "operating_overrides": {
+        "training_days": 1,
+        "preferred_group": 45,
+        "minimum_logistics_working": 0
+      }
+    },
+    {
+      "case_id": "capacity_d2_g5",
+      "include_backlog": false,
+      "include_ongoing": true,
+      "scenarios": [
+        "S0",
+        "S7_RECOVERY"
+      ],
+      "replications": [
+        600
+      ],
+      "operating_overrides": {
+        "training_days": 2,
+        "preferred_group": 5,
+        "minimum_logistics_working": 15
+      }
+    },
+    {
+      "case_id": "capacity_d2_g10",
+      "include_backlog": false,
+      "include_ongoing": true,
+      "scenarios": [
+        "S0",
+        "S7_RECOVERY"
+      ],
+      "replications": [
+        600
+      ],
+      "operating_overrides": {
+        "training_days": 2,
+        "preferred_group": 10,
+        "minimum_logistics_working": 15
+      }
+    },
+    {
+      "case_id": "capacity_d2_g20",
+      "include_backlog": false,
+      "include_ongoing": true,
+      "scenarios": [
+        "S0",
+        "S7_RECOVERY"
+      ],
+      "replications": [
+        600
+      ],
+      "operating_overrides": {
+        "training_days": 2,
+        "preferred_group": 20,
+        "minimum_logistics_working": 15
+      }
+    },
+    {
+      "case_id": "capacity_d2_g30",
+      "include_backlog": false,
+      "include_ongoing": true,
+      "scenarios": [
+        "S0",
+        "S7_RECOVERY"
+      ],
+      "replications": [
+        600
+      ],
+      "operating_overrides": {
+        "training_days": 2,
+        "preferred_group": 30,
+        "minimum_logistics_working": 15
+      }
+    },
+    {
+      "case_id": "capacity_d2_g45",
+      "include_backlog": false,
+      "include_ongoing": true,
+      "scenarios": [
+        "S0",
+        "S7_RECOVERY"
+      ],
+      "replications": [
+        600
+      ],
+      "operating_overrides": {
+        "training_days": 2,
+        "preferred_group": 45,
+        "minimum_logistics_working": 0
+      }
+    },
+    {
+      "case_id": "capacity_d3_g5",
+      "include_backlog": false,
+      "include_ongoing": true,
+      "scenarios": [
+        "S0",
+        "S7_RECOVERY"
+      ],
+      "replications": [
+        600
+      ],
+      "operating_overrides": {
+        "training_days": 3,
+        "preferred_group": 5,
+        "minimum_logistics_working": 15
+      }
+    },
+    {
+      "case_id": "capacity_d3_g10",
+      "include_backlog": false,
+      "include_ongoing": true,
+      "scenarios": [
+        "S0",
+        "S7_RECOVERY"
+      ],
+      "replications": [
+        600
+      ],
+      "operating_overrides": {
+        "training_days": 3,
+        "preferred_group": 10,
+        "minimum_logistics_working": 15
+      }
+    },
+    {
+      "case_id": "capacity_d3_g20",
+      "include_backlog": false,
+      "include_ongoing": true,
+      "scenarios": [
+        "S0",
+        "S7_RECOVERY"
+      ],
+      "replications": [
+        600
+      ],
+      "operating_overrides": {
+        "training_days": 3,
+        "preferred_group": 20,
+        "minimum_logistics_working": 15
+      }
+    },
+    {
+      "case_id": "capacity_d3_g30",
+      "include_backlog": false,
+      "include_ongoing": true,
+      "scenarios": [
+        "S0",
+        "S7_RECOVERY"
+      ],
+      "replications": [
+        600
+      ],
+      "operating_overrides": {
+        "training_days": 3,
+        "preferred_group": 30,
+        "minimum_logistics_working": 15
+      }
+    },
+    {
+      "case_id": "capacity_d3_g45",
+      "include_backlog": false,
+      "include_ongoing": true,
+      "scenarios": [
+        "S0",
+        "S7_RECOVERY"
+      ],
+      "replications": [
+        600
+      ],
+      "operating_overrides": {
+        "training_days": 3,
+        "preferred_group": 45,
+        "minimum_logistics_working": 0
+      }
+    },
+    {
+      "case_id": "capacity_d4_g5",
+      "include_backlog": false,
+      "include_ongoing": true,
+      "scenarios": [
+        "S0",
+        "S7_RECOVERY"
+      ],
+      "replications": [
+        600
+      ],
+      "operating_overrides": {
+        "training_days": 4,
+        "preferred_group": 5,
+        "minimum_logistics_working": 15
+      }
+    },
+    {
+      "case_id": "capacity_d4_g10",
+      "include_backlog": false,
+      "include_ongoing": true,
+      "scenarios": [
+        "S0",
+        "S7_RECOVERY"
+      ],
+      "replications": [
+        600
+      ],
+      "operating_overrides": {
+        "training_days": 4,
+        "preferred_group": 10,
+        "minimum_logistics_working": 15
+      }
+    },
+    {
+      "case_id": "capacity_d4_g20",
+      "include_backlog": false,
+      "include_ongoing": true,
+      "scenarios": [
+        "S0",
+        "S7_RECOVERY"
+      ],
+      "replications": [
+        600
+      ],
+      "operating_overrides": {
+        "training_days": 4,
+        "preferred_group": 20,
+        "minimum_logistics_working": 15
+      }
+    },
+    {
+      "case_id": "capacity_d4_g30",
+      "include_backlog": false,
+      "include_ongoing": true,
+      "scenarios": [
+        "S0",
+        "S7_RECOVERY"
+      ],
+      "replications": [
+        600
+      ],
+      "operating_overrides": {
+        "training_days": 4,
+        "preferred_group": 30,
+        "minimum_logistics_working": 15
+      }
+    },
+    {
+      "case_id": "capacity_d4_g45",
+      "include_backlog": false,
+      "include_ongoing": true,
+      "scenarios": [
+        "S0",
+        "S7_RECOVERY"
+      ],
+      "replications": [
+        600
+      ],
+      "operating_overrides": {
+        "training_days": 4,
+        "preferred_group": 45,
+        "minimum_logistics_working": 0
+      }
+    },
+    {
+      "case_id": "qualified_pq",
+      "include_backlog": false,
+      "include_ongoing": true,
+      "scenarios": [
+        "S0",
+        "S7_RECOVERY",
+        "LMS_TEAM",
+        "LMS_DANIEL"
+      ],
+      "replications": [
+        600,
+        601,
+        602,
+        603,
+        604
+      ],
+      "operating_overrides": {
+        "pq_practice_qualified": true
+      }
+    },
+    {
+      "case_id": "second_practice_coach",
+      "include_backlog": false,
+      "include_ongoing": true,
+      "scenarios": [
+        "S0",
+        "S7_RECOVERY",
+        "LMS_TEAM",
+        "LMS_DANIEL"
+      ],
+      "replications": [
+        600,
+        601,
+        602,
+        603,
+        604
+      ],
+      "operating_overrides": {
+        "practice_coach_count": 2
+      }
+    }
+  ],
+  "limitations": [
+    "20 paired replications for annual individual/combined policies and equal cohort; five-replication stock/qualification screens and one-pair grid are descriptive only",
+    "350 retained synthetic person-topic cycles;15 preformed20-person groups plus50 singles; not measured demand or350 unique employees",
+    "45 synthetic logistics people; minimum15 working is provisional;45-person stress explicitly relaxes staffing guard to0",
+    "Strict theory/practice roles are unconfirmed; tested qualification/extra-coach sensitivities are not current source facts",
+    "LMS60min,90% passing per attempt, independent retry,63 courses and all internal preparation/maintenance budgets are prototype assumptions",
+    "Daniel materials-first launch differs from selective staged preparation; no optimized rollout or measured revenue claim",
+    "First-year work valuation is not cash expenditure; equal-cohort costs include730-day licence/maintenance, introduction once",
+    "Intervals cover simulation draws, not uncertainty in source facts; ADONIS and native Windows checks remain separate"
+  ]
+}

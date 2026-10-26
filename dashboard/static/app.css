@@ -1,0 +1,106 @@
+
+    #cosanum-review-app{--cs-page:light-dark(#491966,#37124e);--cs-surface:light-dark(#542374,#451c60);--cs-ink:light-dark(#ffccff,#ffccff);--cs-muted:light-dark(#deb7e6,#dec3e9);--cs-line:light-dark(#a97cbd,#9f76b4);--cs-accent:light-dark(#f08261,#f59b7f);--cs-on-accent:light-dark(#491966,#37124e);--cs-highlight:light-dark(#ffffff,#ffffff);--cs-soft:light-dark(#4f1e6e,#401458);--cs-ist:light-dark(#bfadc9,#bdb0c9);--cs-joined:light-dark(#c58ce8,#c992ec);font-family:Arial,sans-serif;font-size:14px;line-height:1.45;background:var(--cs-page);color:var(--cs-ink);min-width:0;width:100%;box-sizing:border-box}
+    #cosanum-review-app *{box-sizing:border-box}
+    #cosanum-review-app [hidden]{display:none!important}
+    #cosanum-review-app button,#cosanum-review-app select,#cosanum-review-app input{font:inherit}
+    #cosanum-review-app button{border:1px solid var(--cs-line);background:var(--cs-page);color:var(--cs-ink);padding:9px 13px;border-radius:4px}
+    #cosanum-review-app button:disabled{opacity:.5}
+    #cosanum-review-app .cs-primary{background:var(--cs-accent);border-color:var(--cs-accent);color:var(--cs-on-accent);font-weight:700}
+    #cosanum-review-app .cs-shell{background:var(--cs-page);color:var(--cs-ink);padding:24px 26px 17px}
+    #cosanum-review-app .cs-topline{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    #cosanum-review-app .cs-identity{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;flex-wrap:wrap;width:100%}
+    #cosanum-review-app .cs-brand{font-size:30px;font-weight:400;letter-spacing:.015em;line-height:1.12;text-align:right;color:var(--cs-highlight);margin-left:auto}
+    #cosanum-review-app .cs-brand span{display:block;font-size:11px;font-weight:400;letter-spacing:.025em;color:var(--cs-ink);margin-top:6px}
+    #cosanum-review-app .cs-product{font-size:21px;font-weight:700;line-height:1.2}
+    #cosanum-review-app .cs-product span{display:block;font-size:11px;font-weight:400;color:var(--cs-muted);margin-top:7px}
+    #cosanum-review-app .cs-version{display:inline-block;font-size:11px;color:var(--cs-muted)}
+    #cosanum-review-app .cs-navigation{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;align-items:center}
+    #cosanum-review-app .cs-navigation button{background:transparent;color:var(--cs-ink);border-color:transparent;font-weight:700;font-size:12px;letter-spacing:.025em;text-transform:uppercase}
+    #cosanum-review-app .cs-navigation button[aria-selected="true"],#cosanum-review-app .cs-navigation button[aria-pressed="true"]{background:var(--cs-accent);color:var(--cs-on-accent);border-color:var(--cs-accent)}
+    #cosanum-review-app .cs-navigation .cs-master-button{margin-left:auto;border-color:var(--cs-line)}
+    #cosanum-review-app main{padding:24px 26px 20px}
+    #cosanum-review-app h1{font-size:28px;line-height:1.18;font-weight:700;letter-spacing:-.025em;margin:0 0 8px}
+    #cosanum-review-app h2{font-size:17px;line-height:1.3;font-weight:700;margin:0 0 14px}
+    #cosanum-review-app h3{font-size:14px;font-weight:700;margin:0 0 9px}
+    #cosanum-review-app p{margin:0 0 12px}
+    #cosanum-review-app .cs-muted{color:var(--cs-muted)}
+    #cosanum-review-app .cs-small{font-size:12px}
+    #cosanum-review-app .cs-kicker{font-size:11px;font-weight:500;color:var(--cs-accent);letter-spacing:.095em;text-transform:uppercase;margin-bottom:7px}
+    #cosanum-review-app .cs-title-row{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:20px}
+    #cosanum-review-app .cs-badge{display:inline-block;font-size:12px;padding:4px 8px;border-radius:3px;background:var(--cs-soft);color:var(--cs-accent)}
+    #cosanum-review-app .cs-kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin:24px 0}
+    #cosanum-review-app .cs-kpi{border-top:3px solid var(--cs-accent);padding-top:12px}
+    #cosanum-review-app .cs-number{font-size:30px;font-weight:700;line-height:1.1;margin:6px 0;font-variant-numeric:tabular-nums;letter-spacing:-.035em;color:var(--cs-highlight)}
+    #cosanum-review-app .cs-two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px}
+    #cosanum-review-app .cs-section{margin:22px 0;padding-top:20px;border-top:1px solid var(--cs-line)}
+    #cosanum-review-app .cs-recommendation{background:var(--cs-soft);padding:18px 20px;margin-top:20px;border-left:3px solid var(--cs-accent)}
+    #cosanum-review-app .cs-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:15px 0 20px}
+    #cosanum-review-app .cs-flow-step{position:relative;background:var(--cs-surface);padding:12px;border-radius:3px;font-size:13px}
+    #cosanum-review-app .cs-flow-step:not(:last-child)::after{content:'→';position:absolute;right:-14px;top:14px;color:var(--cs-muted)}
+    #cosanum-review-app .cs-flow-step b{display:block;font-weight:500;margin-bottom:4px}
+    #cosanum-review-app .cs-bars{margin:0}
+    #cosanum-review-app .cs-bar-row{margin:12px 0}
+    #cosanum-review-app .cs-bar-label{display:flex;justify-content:space-between;gap:12px;font-size:13px;margin-bottom:5px}
+    #cosanum-review-app .cs-track{height:13px;background:var(--cs-surface)}
+    #cosanum-review-app .cs-track span{display:block;height:100%;background:var(--cs-accent)}
+    #cosanum-review-app .cs-track .cs-ist{background:var(--cs-ist)}
+    #cosanum-review-app .cs-track .cs-joined{background:var(--cs-joined)}
+    #cosanum-review-app .cs-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    #cosanum-review-app .cs-controls{display:flex;align-items:end;gap:16px;flex-wrap:wrap;margin:18px 0}
+    #cosanum-review-app .cs-field{display:grid;gap:6px;min-width:0;flex:1}
+    #cosanum-review-app .cs-field select{width:100%;border:1px solid var(--cs-line);background:var(--cs-page);color:var(--cs-ink);border-radius:4px;padding:9px;min-width:0}
+    #cosanum-review-app .cs-field label{font-size:12px;color:var(--cs-muted)}
+    #cosanum-review-app .cs-subnav{display:flex;flex-wrap:wrap;gap:8px;padding-bottom:14px;border-bottom:1px solid var(--cs-line);margin:18px 0}
+    #cosanum-review-app .cs-subnav button[aria-pressed="true"]{background:var(--cs-soft);border-color:var(--cs-accent);color:var(--cs-accent)}
+    #cosanum-review-app .cs-chart{width:100%;min-height:160px;margin-top:12px}
+    #cosanum-review-app .cs-chart svg{display:block;width:100%;overflow:visible}
+    #cosanum-review-app .cs-chart text{font-family:Arial,sans-serif;font-size:12px;fill:var(--cs-ink)}
+    #cosanum-review-app .cs-chart .cs-axis{stroke:var(--cs-line);stroke-width:1}
+    #cosanum-review-app .cs-chart .cs-interval{stroke:var(--cs-accent);stroke-width:2}
+    #cosanum-review-app .cs-chart .cs-estimate{fill:var(--cs-accent)}
+    #cosanum-review-app .cs-gridline{stroke:var(--cs-line);stroke-width:1}
+    #cosanum-review-app table{width:100%;border-collapse:collapse;font-size:13px}
+    #cosanum-review-app th{font-size:12px;font-weight:500;color:var(--cs-muted);text-align:left;background:var(--cs-surface)}
+    #cosanum-review-app td,#cosanum-review-app th{padding:10px 9px;border-bottom:1px solid var(--cs-line);vertical-align:top;overflow-wrap:anywhere}
+    #cosanum-review-app .cs-numeric{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+    #cosanum-review-app .cs-table-scroll{overflow-x:auto}
+    #cosanum-review-app .cs-table-scroll table{min-width:480px}
+    #cosanum-review-app .cs-notice{background:var(--cs-surface);padding:12px 14px;margin:14px 0;border-left:3px solid var(--cs-ist)}
+    #cosanum-review-app .cs-experiment{display:grid;grid-template-columns:minmax(240px,.85fr) minmax(0,1.45fr);gap:28px}
+    #cosanum-review-app .cs-settings{background:var(--cs-surface);padding:18px;border-radius:4px}
+    #cosanum-review-app .cs-slider{margin:15px 0 22px}
+    #cosanum-review-app .cs-slider-label{display:flex;justify-content:space-between;gap:14px;font-size:13px;margin-bottom:6px}
+    #cosanum-review-app .cs-slider-label output{font-weight:500;white-space:nowrap;font-variant-numeric:tabular-nums}
+    #cosanum-review-app .cs-range-wrap{position:relative;padding:0 7px}
+    #cosanum-review-app input[type="range"]{display:block;width:100%;margin:0;accent-color:var(--cs-accent);height:26px}
+    #cosanum-review-app .cs-default-tick{position:absolute;width:1px;height:7px;background:var(--cs-muted);top:25px;pointer-events:none}
+    #cosanum-review-app .cs-default-label{margin-top:5px;font-size:11px;color:var(--cs-muted)}
+    #cosanum-review-app .cs-check{display:flex;align-items:start;gap:8px;padding:7px 0;font-size:13px}
+    #cosanum-review-app .cs-check input{accent-color:var(--cs-accent);margin:3px 0 0;flex-shrink:0}
+    #cosanum-review-app .cs-check span{min-width:0}
+    #cosanum-review-app .cs-value-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:14px 0}
+    #cosanum-review-app .cs-value{border-bottom:1px solid var(--cs-line);padding:8px 0 12px}
+    #cosanum-review-app .cs-value strong{display:block;font-size:23px;font-weight:700;font-variant-numeric:tabular-nums;margin-top:4px;color:var(--cs-highlight)}
+    #cosanum-review-app details{margin:15px 0;border-top:1px solid var(--cs-line);padding-top:12px}
+    #cosanum-review-app summary{font-weight:500;margin-bottom:10px}
+    #cosanum-review-app .cs-ledger{display:grid;grid-template-columns:1fr auto;gap:9px;font-variant-numeric:tabular-nums;margin:14px 0}
+    #cosanum-review-app .cs-ledger b{font-weight:500}
+    #cosanum-review-app .cs-reconcile{padding-top:9px;border-top:1px solid var(--cs-line)}
+    #cosanum-review-app .cs-rules{padding-left:18px;margin:12px 0}
+    #cosanum-review-app .cs-rules li{margin-bottom:8px}
+    #cosanum-review-app .cs-footer{padding:13px 26px;border-top:1px solid var(--cs-line);font-size:11px;color:var(--cs-muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    #cosanum-review-app .cs-pager{display:flex;gap:10px;justify-content:space-between;align-items:center;margin-top:14px;flex-wrap:wrap}
+    #cosanum-review-app code{font-size:11px;word-break:break-word;color:var(--cs-muted);background:transparent}
+    @media(max-width:650px){#cosanum-review-app main{padding:20px 16px}#cosanum-review-app .cs-shell{padding:16px}#cosanum-review-app .cs-identity{gap:13px}#cosanum-review-app .cs-product{border-left:0;padding-left:0}#cosanum-review-app .cs-navigation{gap:4px}#cosanum-review-app .cs-navigation button{padding:9px 8px;font-size:11px}#cosanum-review-app .cs-navigation .cs-master-button{margin-left:0}#cosanum-review-app .cs-two,#cosanum-review-app .cs-experiment{grid-template-columns:1fr;gap:20px}#cosanum-review-app .cs-kpis{grid-template-columns:1fr;gap:15px}#cosanum-review-app .cs-kpi{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px}#cosanum-review-app .cs-kpi .cs-number{grid-column:2;grid-row:1/3;text-align:right}#cosanum-review-app .cs-kpi .cs-small{grid-column:1/-1}#cosanum-review-app .cs-title-row{display:block}#cosanum-review-app .cs-title-row .cs-badge{margin-top:8px}#cosanum-review-app .cs-flow{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}#cosanum-review-app .cs-flow-step::after{display:none}#cosanum-review-app .cs-controls{display:grid;grid-template-columns:1fr}#cosanum-review-app h1{font-size:24px}#cosanum-review-app .cs-footer{padding:13px 16px}}
+    @media(pointer:coarse){#cosanum-review-app button,#cosanum-review-app select,#cosanum-review-app .cs-check{min-height:44px}#cosanum-review-app select{font-size:16px}}
+  
+body{margin:0;background:#491966} #cosanum-review-app .cs-field input[type=number]{background:var(--cs-page);color:var(--cs-ink);border:1px solid var(--cs-line);border-radius:4px;padding:9px;width:100%} #cosanum-review-app .cs-error{border-left-color:var(--cs-accent)}
+
+/* Saved LMS study: preserve readable columns inside the existing scroll wrapper. */
+#cs-lms-overhead table { min-width:850px; table-layout:auto; }
+#cs-lms-overhead th:first-child, #cs-lms-overhead td:first-child { min-width:160px; word-break:normal; overflow-wrap:normal; }
+#cs-lms-overhead h3 { margin-top:20px; }
+
+.cs-lms-options{padding:12px;border:1px solid #ccc}.cs-lms-options label{display:block;margin:10px 0}.cs-lms-options input[type=number],.cs-lms-options select{display:block;max-width:100%;width:100%;padding:6px;box-sizing:border-box}
+#cosanum-review-app .cs-experiment > *,#cosanum-review-app .cs-two > *{min-width:0}
+@media(max-width:650px){#cosanum-review-app .cs-experiment,#cosanum-review-app .cs-two,#cosanum-review-app .cs-controls{grid-template-columns:minmax(0,1fr)}}

@@ -1,0 +1,11 @@
+{
+  "engine_version": "0.10.0",
+  "study_id": "integrated-v0.10.0-study-v5",
+  "runs": 420,
+  "library_sha256": "1871c83a595184652d39528b06dd69fdfcb6cdfdf636b8928ceda3f063c18e2d",
+  "study_manifest_sha256": "a8e71092a37b4e98f210e7363aba49c9c7cd7998398bc94ef6c38c63e0b39b22",
+  "artifact_audit_sha256": "d27b204284b273f0fff169e55e409c21cbb46fec956428fc7b49290f6a350b13",
+  "scope": "Frozen aggregate projection of original 420-run study; public citation strings sanitized, numerical values unchanged. This is not a rerun using the public release.",
+  "original_library_sha256": "998cb9ea0642d1eafcc181f6a2dc3c05d6367b094d1248de4773a0f22d9f7556",
+  "public_input_manifest_sha256": "5c6d933134ac5d670f1a34b147f5e6e9a22a163732297c79cb3e63ed3691e541"
+}

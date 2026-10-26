@@ -1,0 +1,344 @@
+{
+  "schema_version": "1.0",
+  "template_only": false,
+  "composition_rule": "Resolve overrides against S0 once before running; exports must show which baseline component is replaced. Empty parameter_overrides are not an implemented or quantified improvement.",
+  "scenarios": [
+    {
+      "scenario_id": "S0",
+      "label": "IST",
+      "extends": null,
+      "active_components": [
+        "assumed_topic_routing",
+        "ist_urgency_review",
+        "resource_constrained_planning",
+        "prototype_proof_workflow",
+        "individual_practice",
+        "accrued_costs"
+      ],
+      "intended_changes": [],
+      "source_status": "assumption",
+      "implementation_state": "prototype_implemented",
+      "source_basis": "DQ and current user directions; recommendations are policies, not measured improvements",
+      "parameter_overrides": {
+        "deadline_enabled": false,
+        "grouping_topics": "resolved per replication from ist_group_topic_fraction and routing stream",
+        "urgency_review": "source three-week interval and ist_urgent_review_probability"
+      },
+      "overrides_resolved": false,
+      "recipe": "cosanum_sim.baseline.compose_ist",
+      "limitations": [
+        "Routing/review outcomes and calendars are assumptions, not calibration",
+        "Manual coordination overhead is not quantified; extra individual administration excluded",
+        "Constant durations and disabled random disruptions; corresponding streams explicitly inactive",
+        "Comparison runner adds explicit recognition/planning latency hypotheses; legacy IST smoke recipe unchanged"
+      ],
+      "comparison_recipe": "cosanum_sim.scenarios.compose_scenario",
+      "implemented_component_ids": [],
+      "resolution_note": "Numeric values and resource basis resolved per run from prototype controls; run manifest saves parameter diff and baseline extensions"
+    },
+    {
+      "scenario_id": "S1",
+      "label": "AN1 Common theory",
+      "extends": "S0",
+      "active_components": [
+        "systematic_theory_grouping",
+        "individual_practice"
+      ],
+      "intended_changes": [
+        "theory grouping"
+      ],
+      "source_status": "assumption",
+      "implementation_state": "prototype_implemented",
+      "source_basis": "DQ and current user directions; recommendations are policies, not measured improvements",
+      "parameter_overrides": {},
+      "overrides_resolved": false,
+      "comparison_recipe": "cosanum_sim.scenarios.compose_scenario",
+      "implemented_component_ids": [
+        "grouping"
+      ],
+      "resolution_note": "Numeric values and resource basis resolved per run from prototype controls; run manifest saves parameter diff and baseline extensions",
+      "limitations": [
+        "Effect sizes are labelled prototype assumptions; not empirically measured",
+        "S2 does not alter already-noticed frozen backlog",
+        "S3 models proof lag/recovery, not learning efficacy or unmeasured rework",
+        "S4 models passive coordination latency, not extra capacity or quantified staff savings"
+      ]
+    },
+    {
+      "scenario_id": "S2",
+      "label": "AN2 Demand and coverage",
+      "extends": "S0",
+      "active_components": [
+        "improved_recognition_and_followup"
+      ],
+      "intended_changes": [
+        "recognition and reporting"
+      ],
+      "source_status": "assumption",
+      "implementation_state": "prototype_implemented",
+      "source_basis": "DQ and current user directions; recommendations are policies, not measured improvements",
+      "parameter_overrides": {},
+      "overrides_resolved": false,
+      "comparison_recipe": "cosanum_sim.scenarios.compose_scenario",
+      "implemented_component_ids": [
+        "recognition"
+      ],
+      "resolution_note": "Numeric values and resource basis resolved per run from prototype controls; run manifest saves parameter diff and baseline extensions",
+      "limitations": [
+        "Effect sizes are labelled prototype assumptions; not empirically measured",
+        "S2 does not alter already-noticed frozen backlog",
+        "S3 models proof lag/recovery, not learning efficacy or unmeasured rework",
+        "S4 models passive coordination latency, not extra capacity or quantified staff savings"
+      ]
+    },
+    {
+      "scenario_id": "S3",
+      "label": "AN3 Proof consistency",
+      "extends": "S0",
+      "active_components": [
+        "improved_proof_workflow"
+      ],
+      "intended_changes": [
+        "proof effort, delays and rework"
+      ],
+      "source_status": "assumption",
+      "implementation_state": "prototype_implemented",
+      "source_basis": "DQ and current user directions; recommendations are policies, not measured improvements",
+      "parameter_overrides": {},
+      "overrides_resolved": false,
+      "comparison_recipe": "cosanum_sim.scenarios.compose_scenario",
+      "implemented_component_ids": [
+        "proof"
+      ],
+      "resolution_note": "Numeric values and resource basis resolved per run from prototype controls; run manifest saves parameter diff and baseline extensions",
+      "limitations": [
+        "Effect sizes are labelled prototype assumptions; not empirically measured",
+        "S2 does not alter already-noticed frozen backlog",
+        "S3 models proof lag/recovery, not learning efficacy or unmeasured rework",
+        "S4 models passive coordination latency, not extra capacity or quantified staff savings"
+      ]
+    },
+    {
+      "scenario_id": "S4",
+      "label": "AN4 Appointment planning",
+      "extends": "S0",
+      "active_components": [
+        "improved_slot_coordination"
+      ],
+      "intended_changes": [
+        "coordination and avoidable rescheduling"
+      ],
+      "source_status": "assumption",
+      "implementation_state": "prototype_implemented",
+      "source_basis": "DQ and current user directions; recommendations are policies, not measured improvements",
+      "parameter_overrides": {},
+      "overrides_resolved": false,
+      "comparison_recipe": "cosanum_sim.scenarios.compose_scenario",
+      "implemented_component_ids": [
+        "planning"
+      ],
+      "resolution_note": "Numeric values and resource basis resolved per run from prototype controls; run manifest saves parameter diff and baseline extensions",
+      "limitations": [
+        "Effect sizes are labelled prototype assumptions; not empirically measured",
+        "S2 does not alter already-noticed frozen backlog",
+        "S3 models proof lag/recovery, not learning efficacy or unmeasured rework",
+        "S4 models passive coordination latency, not extra capacity or quantified staff savings"
+      ]
+    },
+    {
+      "scenario_id": "S5",
+      "label": "Prioritisation",
+      "extends": "S0",
+      "active_components": [
+        "deadline_urgency_priority_age_order",
+        "lower_priority_ageing_guard"
+      ],
+      "intended_changes": [
+        "selection ordering"
+      ],
+      "source_status": "assumption",
+      "implementation_state": "prototype_implemented",
+      "source_basis": "DQ and current user directions; recommendations are policies, not measured improvements",
+      "parameter_overrides": {},
+      "overrides_resolved": false,
+      "comparison_recipe": "cosanum_sim.scenarios.compose_scenario",
+      "implemented_component_ids": [
+        "priority"
+      ],
+      "resolution_note": "Numeric values and resource basis resolved per run from prototype controls; run manifest saves parameter diff and baseline extensions",
+      "limitations": [
+        "Effect sizes are labelled prototype assumptions; not empirically measured",
+        "S2 does not alter already-noticed frozen backlog",
+        "S3 models proof lag/recovery, not learning efficacy or unmeasured rework",
+        "S4 models passive coordination latency, not extra capacity or quantified staff savings"
+      ]
+    },
+    {
+      "scenario_id": "S6",
+      "label": "LMS hypothesis",
+      "extends": "S0",
+      "active_components": [
+        "eligible_self_learning",
+        "equivalent_assessment_and_support"
+      ],
+      "intended_changes": [
+        "learning mode, support and full cost scope"
+      ],
+      "source_status": "assumption",
+      "implementation_state": "prototype_implemented",
+      "source_basis": "DQ and current user directions; recommendations are policies, not measured improvements",
+      "parameter_overrides": {},
+      "overrides_resolved": false,
+      "limitations": [
+        "Suitability, assessment equivalence, first-pass probability and all LMS costs are unmeasured hypotheses",
+        "Required practice remains unchanged; a failed assessment requires individual instructor-led theory",
+        "Implementation/content costs charged at time zero; recurring licence/maintenance accrued; no measured savings"
+      ],
+      "comparison_recipe": "cosanum_sim.scenarios.compose_scenario",
+      "implemented_component_ids": [
+        "learning"
+      ],
+      "resolution_note": "Explicit suitability, learning/assessment/support, failure fallback and portfolio costs resolved from prototype controls"
+    },
+    {
+      "scenario_id": "S7",
+      "label": "Combined S1 to S5",
+      "extends": "S0",
+      "active_components": [
+        "systematic_theory_grouping",
+        "individual_practice",
+        "improved_recognition_and_followup",
+        "improved_proof_workflow",
+        "improved_slot_coordination",
+        "deadline_urgency_priority_age_order",
+        "lower_priority_ageing_guard",
+        "hard_wait_small_group_or_individual_fallback"
+      ],
+      "intended_changes": [
+        "S1 to S5 and explicit hard-wait component"
+      ],
+      "source_status": "assumption",
+      "implementation_state": "prototype_implemented",
+      "source_basis": "DQ and current user directions; recommendations are policies, not measured improvements",
+      "parameter_overrides": {},
+      "overrides_resolved": false,
+      "comparison_recipe": "cosanum_sim.scenarios.compose_scenario",
+      "implemented_component_ids": [
+        "grouping",
+        "recognition",
+        "proof",
+        "planning",
+        "priority",
+        "hard_wait"
+      ],
+      "resolution_note": "Numeric values and resource basis resolved per run from prototype controls; run manifest saves parameter diff and baseline extensions",
+      "limitations": [
+        "Effect sizes are labelled prototype assumptions; not empirically measured",
+        "S2 does not alter already-noticed frozen backlog",
+        "S3 models proof lag/recovery, not learning efficacy or unmeasured rework",
+        "S4 models passive coordination latency, not extra capacity or quantified staff savings"
+      ]
+    }
+  ],
+  "analytical_subvariants": [
+    {
+      "variant_id": "S1_GROUPING_ONLY",
+      "scenario_id": "S1",
+      "hard_wait_fallback": false
+    },
+    {
+      "variant_id": "S1_GROUPING_WITH_DEADLINE",
+      "scenario_id": "S1",
+      "hard_wait_fallback": true
+    },
+    {
+      "variant_id": "DEADLINE_ONLY",
+      "scenario_id": "S0",
+      "hard_wait_fallback": true,
+      "note": "Counterfactual, not reported IST"
+    },
+    {
+      "variant_id": "S7_PLUS_LMS",
+      "scenario_id": "S7",
+      "add_components": [
+        "eligible_self_learning",
+        "equivalent_assessment_and_support"
+      ],
+      "enabled_by_default": false
+    }
+  ],
+  "experiment_modes": [
+    "initial_backlog_clearance",
+    "ongoing_stochastic_demand"
+  ],
+  "winner": null,
+  "analytical_variants": [
+    {
+      "scenario_id": "S0_JOINED",
+      "label": "IST with isolated joined theory/practice appointments",
+      "extends": "S0",
+      "implemented_component_ids": ["joined_scheduling"],
+      "source_status": "assumption",
+      "value_kind": "prototype_policy",
+      "implementation_state": "prototype_implemented",
+      "recipe": "cosanum_sim.scenarios.compose_scenario",
+      "parameter_overrides": {"joined_scheduling": true},
+      "unit": "boolean policy switch",
+      "scope": "At each instructor theory commitment, reserve source-required individual practices using the actual shared resource calendars",
+      "source": "USER_REQUEST_2026_10_04",
+      "rationale": "Test whether planning the prerequisite chain together improves completed training without shortening practice, changing learning quality or adding capacity.",
+      "limitations": [
+        "Additional synthetic policy, not a Daniel-reported or Annina-reported process rule.",
+        "Greedy, stable participant order; no global packing optimality or forecast of future arrivals.",
+        "All follow-ups must finish inside the existing observation horizon; no additional maximum-wait assumption introduced.",
+        "Known feasible first-start deadlines are held before practice planning. A failed complete chain commits no partial practice bookings, preserves feasible theory and explicitly escalates normal follow-up planning.",
+        "Source durations, individual practice and accrued work costing remain unchanged; no measured savings assumed."
+      ]
+    },
+    {
+      "scenario_id": "S7_RECOVERY_JOINED",
+      "label": "Combined S7 recovery with joined theory/practice appointments",
+      "extends": "S7_RECOVERY",
+      "implemented_component_ids": ["grouping", "recognition", "proof", "planning", "priority", "hard_wait", "recovery", "joined_scheduling"],
+      "source_status": "assumption",
+      "value_kind": "prototype_policy",
+      "implementation_state": "prototype_implemented",
+      "recipe": "cosanum_sim.scenarios.compose_scenario",
+      "controls": "config/annual_profile.json",
+      "parameter_overrides": {"joined_scheduling": true},
+      "unit": "boolean policy switch",
+      "scope": "Joined follow-up reservations added to the explicit post-breach recovery component",
+      "source": "USER_REQUEST_2026_10_04",
+      "rationale": "Compare the scheduling component both alone and in the combined recovery policy using identical annual demand and resources.",
+      "limitations": [
+        "The S0_JOINED mechanism and limitations apply; original S7 and S7_RECOVERY are retained as separate comparisons.",
+        "No new training duration, competence equivalence, trainer availability or cost saving is assumed.",
+        "Booking practice early can delay later or lower-priority arrivals; future demand is not known at reservation time."
+      ]
+    },
+    {
+      "scenario_id": "S7_RECOVERY",
+      "label": "Combined S7 with explicit post-infeasibility recovery",
+      "extends": "S7",
+      "implemented_component_ids": [
+        "grouping",
+        "recognition",
+        "proof",
+        "planning",
+        "priority",
+        "hard_wait",
+        "recovery"
+      ],
+      "source_status": "assumption",
+      "implementation_state": "prototype_implemented",
+      "recipe": "cosanum_sim.scenarios.compose_scenario",
+      "controls": "config/annual_profile.json",
+      "limitations": [
+        "Keeps original S7 unchanged; new policy variant requires explicit recovery quota.",
+        "Protect physically feasible original start deadlines, then favour priority1 whole-workflow progress with aged lower-priority appointment share.",
+        "Preserve compatible grouping after ageing; greedy calendar feasibility is not a global optimum.",
+        "No measured annual volume, staffing, cash saving or revenue benefit."
+      ]
+    }
+  ]
+}

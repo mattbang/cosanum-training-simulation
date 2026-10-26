@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="505" viewBox="0 0 820 505" role="img" xml:lang="de" aria-label="Mittlere vollständige Schulungsabschlüsse bei 350, 450, 550 und 650 Fällen mit einem oder zwei Praxis-Coaches; je 20 gepaarte synthetische Läufe">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="80" y="34" fill="#321943" font-family="Arial,sans-serif" font-size="22" font-weight="700">Kombiniertes SOLL: Bedarf und Abschlüsse</text>
+<text x="80" y="57" fill="#4d4653" font-family="Arial,sans-serif" font-size="13">20 gepaarte synthetische Läufe je Menge · feste Regeln · 365 Tage</text>
+<line x1="80" y1="405.0" x2="785" y2="405.0" stroke="#e9e5eb"/>
+<text x="68" y="410.0" text-anchor="end" fill="#574f5c" font-family="Arial,sans-serif" font-size="12">0</text>
+<line x1="80" y1="357.9" x2="785" y2="357.9" stroke="#e9e5eb"/>
+<text x="68" y="362.9" text-anchor="end" fill="#574f5c" font-family="Arial,sans-serif" font-size="12">100</text>
+<line x1="80" y1="310.7" x2="785" y2="310.7" stroke="#e9e5eb"/>
+<text x="68" y="315.7" text-anchor="end" fill="#574f5c" font-family="Arial,sans-serif" font-size="12">200</text>
+<line x1="80" y1="263.6" x2="785" y2="263.6" stroke="#e9e5eb"/>
+<text x="68" y="268.6" text-anchor="end" fill="#574f5c" font-family="Arial,sans-serif" font-size="12">300</text>
+<line x1="80" y1="216.4" x2="785" y2="216.4" stroke="#e9e5eb"/>
+<text x="68" y="221.4" text-anchor="end" fill="#574f5c" font-family="Arial,sans-serif" font-size="12">400</text>
+<line x1="80" y1="169.3" x2="785" y2="169.3" stroke="#e9e5eb"/>
+<text x="68" y="174.3" text-anchor="end" fill="#574f5c" font-family="Arial,sans-serif" font-size="12">500</text>
+<line x1="80" y1="122.1" x2="785" y2="122.1" stroke="#e9e5eb"/>
+<text x="68" y="127.1" text-anchor="end" fill="#574f5c" font-family="Arial,sans-serif" font-size="12">600</text>
+<line x1="80" y1="75.0" x2="785" y2="75.0" stroke="#e9e5eb"/>
+<text x="68" y="80.0" text-anchor="end" fill="#574f5c" font-family="Arial,sans-serif" font-size="12">700</text>
+<line x1="80.0" y1="75" x2="80.0" y2="405" stroke="#f1eef2"/>
+<text x="80.0" y="428" text-anchor="middle" fill="#574f5c" font-family="Arial,sans-serif" font-size="12">350</text>
+<line x1="315.0" y1="75" x2="315.0" y2="405" stroke="#f1eef2"/>
+<text x="315.0" y="428" text-anchor="middle" fill="#574f5c" font-family="Arial,sans-serif" font-size="12">450</text>
+<line x1="550.0" y1="75" x2="550.0" y2="405" stroke="#f1eef2"/>
+<text x="550.0" y="428" text-anchor="middle" fill="#574f5c" font-family="Arial,sans-serif" font-size="12">550</text>
+<line x1="785.0" y1="75" x2="785.0" y2="405" stroke="#f1eef2"/>
+<text x="785.0" y="428" text-anchor="middle" fill="#574f5c" font-family="Arial,sans-serif" font-size="12">650</text>
+<line x1="80" y1="405" x2="785" y2="405" stroke="#6a5b70"/>
+<line x1="80" y1="75" x2="80" y2="405" stroke="#6a5b70"/>
+<text x="432.5" y="447" text-anchor="middle" fill="#321943" font-family="Arial,sans-serif" font-size="13">Jährliche Person-Thema-Fälle</text>
+<text transform="translate(25,240.0) rotate(-90)" text-anchor="middle" fill="#321943" font-family="Arial,sans-serif" font-size="13">Abschlüsse bis Tag 365</text>
+<polyline points="80.0,240.0 315.0,192.9 550.0,145.7 785.0,98.6" fill="none" stroke="#8b8790" stroke-width="3" stroke-dasharray="6 5"/>
+<circle cx="80.0" cy="240.0" r="4.5" fill="#8b8790"/>
+<circle cx="315.0" cy="192.9" r="4.5" fill="#8b8790"/>
+<circle cx="550.0" cy="145.7" r="4.5" fill="#8b8790"/>
+<circle cx="785.0" cy="98.6" r="4.5" fill="#8b8790"/>
+<polyline points="80.0,255.7 315.0,233.0 550.0,210.7 785.0,187.5" fill="none" stroke="#6d376e" stroke-width="3"/>
+<circle cx="80.0" cy="255.7" r="4.5" fill="#6d376e"/>
+<circle cx="315.0" cy="233.0" r="4.5" fill="#6d376e"/>
+<circle cx="550.0" cy="210.7" r="4.5" fill="#6d376e"/>
+<circle cx="785.0" cy="187.5" r="4.5" fill="#6d376e"/>
+<polyline points="80.0,240.0 315.0,193.4 550.0,151.1 785.0,113.9" fill="none" stroke="#ed7a74" stroke-width="3"/>
+<circle cx="80.0" cy="240.0" r="4.5" fill="#ed7a74"/>
+<circle cx="315.0" cy="193.4" r="4.5" fill="#ed7a74"/>
+<circle cx="550.0" cy="151.1" r="4.5" fill="#ed7a74"/>
+<circle cx="785.0" cy="113.9" r="4.5" fill="#ed7a74"/>
+<line x1="135" y1="474" x2="159" y2="474" stroke="#8b8790" stroke-width="3" stroke-dasharray="6 5"/>
+<text x="167" y="478" fill="#4d4653" font-family="Arial,sans-serif" font-size="12">Bedarf</text>
+<line x1="340" y1="474" x2="364" y2="474" stroke="#6d376e" stroke-width="3"/>
+<text x="372" y="478" fill="#4d4653" font-family="Arial,sans-serif" font-size="12">Ein Coach</text>
+<line x1="545" y1="474" x2="569" y2="474" stroke="#ed7a74" stroke-width="3"/>
+<text x="577" y="478" fill="#4d4653" font-family="Arial,sans-serif" font-size="12">Zwei Coaches + Platz</text>
+</svg>

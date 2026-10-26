@@ -1,0 +1,75 @@
+{
+  "cases": [
+    {
+      "case_id": "annual_same_volume",
+      "drain_days": 0,
+      "include_backlog": false,
+      "include_ongoing": true,
+      "profile_overrides": {},
+      "replications": [
+        300,
+        301
+      ],
+      "scenarios": [
+        "S0",
+        "S0_JOINED",
+        "S7",
+        "S7_RECOVERY",
+        "S7_RECOVERY_JOINED"
+      ]
+    }
+  ],
+  "contrasts": [
+    {
+      "reference": "S7_RECOVERY",
+      "scenario": "S7_RECOVERY_JOINED"
+    }
+  ],
+  "limitations": [
+    "Annual period/phase interpretation and availability remain prototype assumptions, not observed demand.",
+    "All cases and participant identities are synthetic; source stock is person-topic records, not unique people.",
+    "No group practice, shorter practice, instruction efficacy or extra trainer capacity is assumed.",
+    "Joined follow-ups use the declared horizon as their planning limit; failed full bundles retain first-start scheduling and escalate.",
+    "Drain extends planning availability as well as observation; its joined first-year booking prefix need not equal the year-only run.",
+    "Zero-age frozen backlog is an explicit convention; its exact old-state competence/proof breakdown is unknown.",
+    "Twenty paired replications may miss precision targets; no posthoc stopping or global ranking.",
+    "Cost is valued consumed work including participant time, not cash spend; unknown IT/implementation/room costs remain excluded."
+  ],
+  "metrics": [
+    "training_completed",
+    "ongoing_completed",
+    "initial_completed",
+    "initial_priority1_completed",
+    "initial_priority1_remaining",
+    "year_end_training_stock",
+    "net_chf",
+    "trainer_used_hours",
+    "common_target_service",
+    "actual_policy_breaches",
+    "full_cohort_reconciled",
+    "theory_group_sessions",
+    "theory_individual_sessions",
+    "practice_sessions",
+    "lower_priority_backlog_request_days",
+    "practice_required_needs",
+    "practice_completed",
+    "theory_complete_practice_unfinished",
+    "practice_waiting_request_days",
+    "practice_started",
+    "practice_ready_censored",
+    "joined_practice_reservations",
+    "joined_bundles",
+    "joined_planning_failures"
+  ],
+  "minimum_n": 2,
+  "plan_id": "handover-mechanism-smoke-v1",
+  "precision_targets": {
+    "common_target_service": 0.05,
+    "initial_priority1_completed": 10,
+    "net_chf": 3000,
+    "training_completed": 10
+  },
+  "rationale": "Two paired replications for portable execution verification; not selection evidence.",
+  "source_status": "assumption",
+  "value_kind": "fixed_paired_experiment_plan"
+}

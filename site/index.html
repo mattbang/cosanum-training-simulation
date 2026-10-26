@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f5fa">
+  <meta name="description" data-i18n-attr="content" content="Cosanum-Praxisprojekt im ZHAW CAS Process Digitalization: Simulation des manuellen Schulungsprozesses als Grundlage für Terminplanung, digitale Zertifizierung und E-Learning-Prüfung.">
+  <title>Cosanum · Fallstudie zur Schulungskapazität</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <script src="i18n.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n-text>Zum Inhalt springen</a>
+  <header class="site-header">
+    <a class="brand" href="#top" data-i18n-attr="aria-label" aria-label="Cosanum Fallstudie, zum Anfang">
+      <span class="brand-mark" aria-hidden="true" data-i18n-text>C</span>
+      <span><strong data-i18n-text>Cosanum</strong><small data-i18n-text>Praxisprojekt · Simulationsdemo</small></span>
+    </a>
+    <nav data-i18n-attr="aria-label" aria-label="Hauptnavigation">
+      <a href="#comparison" data-i18n-text>Variantenvergleich</a>
+      <a href="#frontier" data-i18n-text>Praxiskapazität</a>
+      <a href="#lessons" data-i18n-text>Erkenntnisse</a>
+      <a href="#explore" data-i18n-text>Sensitivität</a>
+      <a href="#method" data-i18n-text>Methode</a>
+      <a href="#local" data-i18n-text>Selbst testen</a>
+    </nav>
+    <div class="language-switch" role="group" data-i18n-attr="aria-label" aria-label="Sprache wählen">
+      <button type="button" data-language="de" lang="de" data-i18n-attr="aria-label" aria-label="Deutsch anzeigen" aria-pressed="true" data-i18n-text>DE</button>
+      <button type="button" data-language="en" lang="en" data-i18n-attr="aria-label" aria-label="Englisch anzeigen" aria-pressed="false" data-i18n-text>EN</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n-text><span class="demo-pill" data-i18n-text>[DEMO]</span> Reales Praxisprojekt</p>
+        <h1 id="hero-title" data-i18n-text>Wo Schulungen ins Stocken geraten</h1>
+        <p class="hero-context" data-i18n-text>Bei Cosanum, einem Schweizer Gesundheitslogistiker, analysierte ich im CAS Process Digitalization an der ZHAW den manuellen Schulungsprozess der Logistik. Wir entwickeln automatisierte Terminplanung und digitale Zertifizierung und prüfen eine E-Learning-Plattform für Selbstlernmodule.</p>
+        <p class="lead" data-i18n-text>Ich habe IST und SOLL in einer Python-Ereignissimulation und einem Dashboard modelliert, um Effizienzpotenziale von Prozessregeln, LMS und Praxiskapazität zu prüfen.</p>
+        <div class="hero-result"><strong data-i18n-text>Das Modell zeigt einen Praxisengpass</strong><p data-i18n-text>Eine zweite qualifizierte Praxisbegleitung samt Platz erhöht vollständige Abschlüsse im Mittel um 35.76 gegenüber dem kombinierten SOLL; LMS um 0.54.</p><small data-i18n-text>50 gepaarte synthetische Jahresläufe · keine gemessene Betriebswirkung</small></div>
+        <div class="hero-actions"><a class="button primary" href="#comparison" data-i18n-text>Varianten vergleichen <span aria-hidden="true">↗</span></a><a class="button secondary" href="#explore" data-i18n-text>Einflussgrössen erkunden</a></div>
+      </div>
+      <div class="hero-visual" data-i18n-attr="aria-label" aria-label="Modellweg vom Schulungsbedarf bis zum Abschluss">
+        <div class="visual-top"><span data-i18n-text>DER MODELLWEG</span><span class="visual-status" data-i18n-text>Quelle + Annahme getrennt</span></div>
+        <ol class="process-flow">
+          <li><span class="step-no">01</span><div><strong data-i18n-text>Bedarf erkannt</strong><small data-i18n-text>Jeder Fall behält seine eigene Uhr und Frist.</small></div></li>
+          <li><span class="step-no">02</span><div><strong data-i18n-text>Theorie geplant</strong><small data-i18n-text>Kompatible Fälle können eine Gruppe bilden.</small></div></li>
+          <li class="flow-focus"><span class="step-no">03</span><div><strong data-i18n-text>Praxis, falls nötig</strong><small data-i18n-text>Coach, Person und Ort müssen gleichzeitig frei sein.</small></div><span class="focus-label" data-i18n-text>Engpass</span></li>
+          <li><span class="step-no">04</span><div><strong data-i18n-text>Kompetenz &amp; Nachweis</strong><small data-i18n-text>Schulung und Dokumentation sind getrennte Ergebnisse.</small></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section comparison-section" id="comparison" aria-labelledby="comparison-title">
+      <div class="wrap">
+        <div class="section-heading"><div><p class="eyebrow" data-i18n-text>50 GEPAARTE JAHRESLÄUFE</p><h2 id="comparison-title" data-i18n-text>Vier Varianten, derselbe Bedarf</h2></div><p data-i18n-text>Jeder der 50 Läufe nutzt dieselben 350 angenommenen synthetischen Person-Thema-Fälle für alle vier Varianten. Die Karten zeigen mittlere vollständige Schulungsabschlüsse, keine beobachteten Betriebsergebnisse.</p></div>
+        <div class="comparison-grid" id="comparison-grid" data-i18n-attr="aria-label" aria-label="Vergleich von vier Modellvarianten"><p data-i18n-text>Geprüfte Vergleichswerte werden geladen …</p></div>
+        <p class="comparison-clearance" id="comparison-clearance" data-i18n-text>Vollständige Jahresabschlüsse werden geladen …</p>
+        <div class="comparison-notes">
+          <p data-i18n-text><strong data-i18n-text>Zwei getrennte Modellvarianten:</strong> LMS und zusätzliche Praxiskapazität starten jeweils beim kombinierten SOLL. Karte 4 baut nicht auf Karte 3 auf. Im LMS-Modellfall bereitet ein Projektteam Kurse vor der Einführung vor und übernimmt ihre Pflege; die zweite qualifizierte Praxisbegleitung samt Platz ist eine angenommene Kapazitätssensitivität.</p>
+          <p data-i18n-text><strong data-i18n-text>Kostengrenze:</strong> Ein volles zusätzliches Gehalt, Rekrutierung und Qualifizierung der zweiten Praxisbegleitung sind nicht eingepreist. Die Abschlusszahlen allein begründen daher keine Personalentscheidung. <a href="data/comparison.json" data-i18n-text>Aggregierte Vergleichsdaten und Quellen-Hashes ansehen</a>.</p>
+        </div>
+        <div class="decision-panel" aria-labelledby="decision-title">
+          <div class="decision-intro"><p class="eyebrow" data-i18n-text>ENTSCHEIDUNGSGRUNDLAGE AUS DEM MODELL</p><h3 id="decision-title" data-i18n-text>Drei Optionen und ihre offenen Fragen für die Umsetzung</h3><p data-i18n-text>Im modellierten Vergleich ist die individuelle Praxis der verbleibende Engpass. Die Differenzen beziehen sich auf dieselben 50 Jahreslagen; die Kosten sind modellierter Nettoaufwand, keine beobachteten Einsparungen.</p></div>
+          <div class="decision-list">
+            <article><h4 data-i18n-text>Kombiniertes SOLL</h4><p data-i18n-text><strong data-i18n-text>+2.74 Abschlüsse gegenüber IST.</strong> Bedarf früher erkennen, geeignete Theorie gruppieren und Fristen sowie Rückstände gezielt steuern – mit unveränderter modellierter Schulungskapazität.</p><p class="decision-check" data-i18n-text><strong data-i18n-text>Prüfen:</strong> Umsetzungsaufwand, echte Fristen und reale Kalenderbelegung.</p></article>
+            <article><h4 data-i18n-text>LMS mit Projektteam vor Einführung</h4><p data-i18n-text><strong data-i18n-text>+0.54 Abschlüsse gegenüber SOLL.</strong> Weniger Trainerzeit für Theorie, aber kaum mehr vollständige Fälle; der modellierte Nettoaufwand im ersten Jahr steigt um CHF 34’266.</p><p class="decision-check" data-i18n-text><strong data-i18n-text>Prüfen:</strong> Lernwirksamkeit, Kursfreigabe und tatsächliche Einführungs- und Betriebskosten.</p></article>
+            <article><h4 data-i18n-text>Zweite qualifizierte Praxisbegleitung + Platz</h4><p data-i18n-text><strong data-i18n-text>+35.76 Abschlüsse gegenüber SOLL.</strong> Im Modell werden 348.72 von 350 Fällen vollständig abgeschlossen; in 46 von 50 Läufen alle 350.</p><p class="decision-check" data-i18n-text><strong data-i18n-text>Prüfen:</strong> Reale Praxisnachfrage, Dienstplan und volle Personal-, Raum- und Qualifizierungskosten.</p></article>
+          </div>
+          <p class="decision-next" data-i18n-text><strong data-i18n-text>Stand der Umsetzung:</strong> Automatisierte Terminplanung und digitale Zertifizierung sind in Entwicklung; eine E-Learning-Plattform für Selbstlernmodule wird evaluiert. Zusätzliche Praxiskapazität bleibt eine zu validierende Modelloption.</p>
+          <p class="decision-study-note" data-i18n-text>Die Entscheidungstabelle nutzt den 50-Läufe-Vergleich. Die Abschnitte darunter prüfen separat höhere Nachfrage und veränderte Annahmen; ihre Mittelwerte stammen aus anderen Testläufen und sind nicht direkt miteinander zu verrechnen.</p>
+        </div>
+        <aside class="volume-stress" aria-labelledby="volume-stress-title">
+          <div><p class="eyebrow" data-i18n-text>SEPARATER NACHFRAGE-STRESSTEST · FÜNF AUSGANGSLAGEN</p><h3 id="volume-stress-title" data-i18n-text>Fünf weitere Gruppen erhöhen die Fallzahl</h3><p data-i18n-text>Bei gleicher Schulungskapazität werden aus 15 Gruppen à 20 plus 50 Einzelfällen 20 Gruppen à 20 plus 50 Einzelfälle. Der Nenner steigt von 350 auf 450; zugleich verschiebt sich der Anteil gruppierter Fälle. Mehr absolute Abschlüsse bedeuten hier keine höhere Abschlussquote. <a href="#explore" data-i18n-text>Zum separaten Sensitivitätsscreen</a>.</p></div>
+          <div class="volume-values" id="volume-stress-values" data-i18n-attr="aria-label" aria-label="Abschlüsse bei 350 und 450 Fällen"><p data-i18n-text>Gespeicherte Stresswerte werden geladen …</p></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section frontier-section" id="frontier" aria-labelledby="frontier-title">
+      <div class="wrap">
+        <div class="section-heading"><div><p class="eyebrow" data-i18n-text>SEPARATE KAPAZITÄTSSENSITIVITÄT · 20 GEPAARTE LÄUFE JE PUNKT</p><h2 id="frontier-title" data-i18n-text>Wie weit reicht die Praxiskapazität?</h2></div><p data-i18n-text>Vier angenommene Jahresmengen von 350 bis 650 Person-Thema-Fällen treffen im kombinierten SOLL auf einen oder zwei qualifizierte Praxis-Coaches samt Plätzen. Regeln und übrige Ressourcen bleiben gleich; zusätzliche Fälle entstehen durch weitere 20er-Gruppen.</p></div>
+        <div class="frontier-layout">
+          <div class="frontier-primary">
+            <figure class="frontier-figure"><img src="data/completion_frontier.svg" data-i18n-attr="alt src" alt="Linienvergleich der ursprünglichen 20 gepaarten Jahresläufe je Bedarfsmenge: Zwei Praxis-Coaches liegen an allen vier Punkten über einem Coach. Bei 350 Fällen erreicht die Zwei-Coach-Kurve die Nachfrage; der separate 50-Läufe-Check zeigt ein anderes Mittel." width="820" height="505" loading="lazy"><figcaption data-i18n-text>Gestrichelte Linie: angenommener Bedarf. Durchgezogene Linien: mittlere vollständige Abschlüsse aus den ursprünglichen 20 gepaarten Läufen je Nachfragepunkt. Der adaptive 50-Läufe-Check ergänzt die Werte für 350 und 450; die Tabelle nennt die ursprünglichen 20er-Werte.</figcaption></figure>
+            <div class="frontier-table-intro"><h3 data-i18n-text>Abschlüsse bis Tag 365</h3><p data-i18n-text>Vollständig frei bedeutet: Alle angenommenen Fälle dieses Jahres sind bis Tag 365 geschult. Die Anzahl rechts bezieht sich auf die Variante mit zwei Praxis-Coaches.</p><p class="frontier-scroll-hint" data-i18n-text>Tabelle seitlich wischen oder mit Pfeiltasten verschieben.</p></div>
+            <div class="frontier-table-scroll" id="frontier-table" role="region" tabindex="0" data-i18n-attr="aria-label" aria-label="Tabelle der vollständigen Abschlüsse nach Jahresmenge und Praxis-Coaches"><p data-i18n-text>Geprüfte Kapazitätswerte werden geladen …</p></div>
+            <p class="frontier-arithmetic" id="frontier-arithmetic" data-i18n-text>Der Vergleich von rechnerischer Termingrenze und tatsächlicher Planung wird geladen …</p>
+          </div>
+          <div class="frontier-aside">
+            <div class="frontier-bound" id="frontier-bound"><p data-i18n-text>Geprüfte Kalendergrenzen werden geladen …</p></div>
+            <div class="frontier-confirmation" id="frontier-confirmation" aria-live="polite"><p data-i18n-text>Die zusätzlichen Checks bei 350 und 450 Fällen werden geladen …</p></div>
+          </div>
+        </div>
+        <p class="frontier-footnote" data-i18n-text>Dieser Stresstest nutzt synthetische Bedarfsfälle bei festem 45-Personen-Pool und gleichem Modellbetrieb. Die zweite Fachperson und der zusätzliche Praxisplatz sind angenommen; ein volles zusätzliches Gehalt sowie Rekrutierung und Qualifizierung sind im bewerteten Nettoaufwand nicht enthalten. <a href="data/frontier.json" data-i18n-text>Aggregierte Daten und Quellen-Hashes ansehen</a>.</p>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="lessons" aria-labelledby="lessons-title">
+      <div class="wrap">
+        <div class="section-heading"><div><p class="eyebrow" data-i18n-text>SEPARATER SENSITIVITÄTSSCREEN · FÜNF AUSGANGSLAGEN</p><h2 id="lessons-title" data-i18n-text>Vier Befunde, die den Entscheid verändern</h2></div><p data-i18n-text>Diese Zahlen stammen aus einem separaten jährlichen Screen mit fünf gepaarten Ausgangslagen. Drei Karten zeigen Einzelfaktor-Tests im kombinierten SOLL; die vierte vergleicht zwei LMS-Basiskonfigurationen.</p></div>
+        <div class="lesson-grid">
+          <article class="lesson-card featured">
+            <div class="card-top"><span class="card-index" data-i18n-text>01 / Kalender</span><span class="card-symbol" aria-hidden="true">◷</span></div>
+            <h3 data-i18n-text>Verfügbare Trainingstage begrenzen den Durchsatz</h3>
+            <p class="lesson-value"><strong>306.4 → 227.4</strong><span data-i18n-text>volle Abschlüsse bei kombiniertem SOLL, wenn beide Trainingsrollen statt zwei nur einen Tag pro Woche verfügbar sind.</span></p>
+            <details class="explain"><summary data-i18n-text>Was bedeutet das? <span aria-hidden="true">+</span></summary><p data-i18n-text>Bei vier Tagen erreicht derselbe Test 350 Abschlüsse. Der Faktor ändert die Kalender von Theorie und Praxis zugleich; er beweist keinen isolierten Personalbedarf.</p></details>
+          </article>
+          <article class="lesson-card">
+            <div class="card-top"><span class="card-index" data-i18n-text>02 / Praxis</span><span class="card-symbol" aria-hidden="true">↘</span></div>
+            <h3 data-i18n-text>Individuelle Praxis bleibt der Engpass</h3>
+            <p class="lesson-value"><strong>306.4 → 229.2</strong><span data-i18n-text>volle Abschlüsse, wenn die angenommene Praxisdauer von 180 auf 240 Minuten steigt.</span></p>
+            <details class="explain"><summary data-i18n-text>Warum ist das wichtig? <span aria-hidden="true">+</span></summary><p data-i18n-text>Bei 120 Minuten entstehen 348.2 Abschlüsse. Das ist ein Testbereich für Arbeitslast, keine gemessene Verkürzung durch eine neue Schulungsmethode.</p></details>
+          </article>
+          <article class="lesson-card">
+            <div class="card-top"><span class="card-index" data-i18n-text>03 / Gruppierung</span><span class="card-symbol" aria-hidden="true">◇</span></div>
+            <h3 data-i18n-text>Kleinere Zielgruppen helfen hier kaum</h3>
+            <p class="lesson-value"><strong data-i18n-text>+ CHF 18’039</strong><span data-i18n-text>bewerteter Nettoaufwand bei Zielgrösse 5 statt 30, während volle Abschlüsse nahezu gleich bleiben: 306.2 statt 306.4.</span></p>
+            <details class="explain"><summary data-i18n-text>Was steckt dahinter? <span aria-hidden="true">+</span></summary><p data-i18n-text>Die begrenzte Erststart-Wartezeit steigt von 2.90 auf 6.05 Tage. Die physische Kapazität bleibt 45; getestet wurde nur die bevorzugte Zielgrösse.</p></details>
+          </article>
+          <article class="lesson-card">
+            <div class="card-top"><span class="card-index" data-i18n-text>04 / LMS-Einführung</span><span class="card-symbol" aria-hidden="true">↗</span></div>
+            <h3 data-i18n-text>Materialarbeit braucht eigene Kalenderzeit</h3>
+            <p class="lesson-value"><strong>290.0 → 306.8</strong><span data-i18n-text>volle Abschlüsse: Ein Projektteam erstellt LMS-Kurse vor Start, statt den Schulungskalender einer Fachperson aus Process &amp; Quality (P&amp;Q) mit dem Aufbau zu belegen.</span></p>
+            <details class="explain"><summary data-i18n-text>Wie ist das zu lesen? <span aria-hidden="true">+</span></summary><p data-i18n-text>Die begrenzte Erststart-Wartezeit sinkt von 14.64 auf 1.04 Tage; der bewertete Nettoaufwand im ersten Jahr steigt um CHF 4’953.17. Das Projektteam übernimmt auch die laufende Pflege. Die Variante ändert verfügbare Lehrzeit und Kursfreigabe zugleich; sie isoliert keinen einzelnen Effekt.</p></details>
+          </article>
+        </div>
+        <p class="section-footnote" data-i18n-text>„Abschluss“ bedeutet vollständige Schulung eines Person-Thema-Zyklus. Niedrigere Kosten bei weniger Abschlüssen sind keine Einsparung bei gleicher Leistung.</p>
+      </div>
+    </section>
+
+    <section class="section wrap" id="explore" aria-labelledby="explore-title">
+      <div class="section-heading"><div><p class="eyebrow" data-i18n-text>INTERAKTIVER EINBLICK</p><h2 id="explore-title" data-i18n-text>Welche Annahme bewegt welches Ergebnis?</h2></div><p data-i18n-text>Wähle eine Variante, eine der vier markierten Einflussgrössen und eine Kennzahl. Die Balken zeigen Basis, Test A und Test B – keine Prognose zwischen diesen Punkten.</p></div>
+      <div class="study-banner"><span class="study-icon" aria-hidden="true">✦</span><div><strong data-i18n-text>Aktuelle jährliche Sensitivität · Version 0.10.0</strong><small data-i18n-text>365 Tage · kein Altbestand · Basis: 350 synthetische Person-Thema-Fälle · 51 Faktoren × 2 Testwerte · 4 Varianten · 2’060 bedingte Ergebnisse inklusive Basis</small></div><details class="tip"><summary data-i18n-attr="aria-label" aria-label="Versuchsaufbau erklären" data-i18n-text>i</summary><p data-i18n-text>Fünf gepaarte Seed-IDs (600–604): Die vier Varianten teilen Bedarfsfälle innerhalb jedes Testpunkts. Nachfragefaktoren können die Fallzahl ändern. Die 2’060 Ergebnisse enthalten 20 Basiswerte und sind keine unabhängigen Stichproben. Hier gibt es keine Konfidenzintervalle.</p></details></div>
+      <div class="baseline-grid" id="baseline-grid" data-i18n-attr="aria-label" aria-label="Basiswerte des fünf-Fixture-Screens"><p data-i18n-text>Gespeicherte Studienwerte werden geladen …</p></div>
+      <div class="explorer">
+        <div class="explorer-controls">
+          <label class="field-label" for="scenario-select" data-i18n-text>Modellvariante</label><select id="scenario-select" aria-describedby="scenario-description"></select>
+          <p id="scenario-description" class="control-note" data-i18n-text>Wähle die Variante für den Einflussindex.</p>
+          <div class="factor-heading"><h3 data-i18n-text>Vier markierte Einflussgrössen</h3><details class="tip"><summary data-i18n-attr="aria-label" aria-label="Einflussindex erklären" data-i18n-text>i</summary><p data-i18n-text>Der Index vergleicht die Grösse der getesteten A/B-Reaktionen innerhalb einer Variante. Vier Kennzahlen zählen gleich. Er hängt von Testbereichen und Gewichtung ab; hohe Werte bedeuten weder Nutzen noch eine statistisch gesicherte Rangfolge.</p></details></div>
+          <div id="factor-list" class="factor-list" role="group" data-i18n-attr="aria-label" aria-label="Einflussgrösse wählen"></div>
+        </div>
+        <div class="explorer-result" aria-live="polite">
+          <div class="result-head"><div><p class="eyebrow" data-i18n-text>VERGLEICH VON DREI PUNKTEN</p><h3 id="factor-title" data-i18n-text>Einflussgrösse</h3><p id="factor-settings" class="control-note"></p></div><span id="factor-rank" class="rank-badge"></span></div>
+          <div class="metric-heading"><span data-i18n-text>Kennzahl</span><details class="tip"><summary data-i18n-attr="aria-label" aria-label="Kennzahlen erklären" data-i18n-text>i</summary><p data-i18n-text><strong data-i18n-text>Abschlüsse</strong> zählen vollständig geschulte Person-Thema-Fälle. <strong data-i18n-text>Erststart-Warten</strong> zählt bei noch ungestarteten Fällen bis Tag 365. <strong data-i18n-text>14-Tage-Start</strong> nutzt nur fällige Fälle als Nenner. <strong data-i18n-text>CHF</strong> ist bewerteter Nettoaufwand: Arbeit und LMS-Portfolio abzüglich Praxisgutschrift, keine beobachtete Einsparung.</p></details></div>
+          <div class="metric-tabs" id="metric-tabs" role="group" data-i18n-attr="aria-label" aria-label="Kennzahl wählen"></div>
+          <div class="chart" id="factor-chart" role="img" data-i18n-attr="aria-label" aria-label="Vergleich der drei getesteten Werte"></div>
+          <div class="result-insight"><span aria-hidden="true">↳</span><p id="factor-insight"></p></div>
+          <p class="chart-footnote" data-i18n-text>Die Balken zeigen Mittelwerte der fünf gepaarten Seed-IDs. Die Höhe kodiert einen Wert, keine Empfehlung. Noch nicht gestartete Fälle zählen in der Wartekennzahl bis Tag 365.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-method" id="method" aria-labelledby="method-title"><div class="wrap">
+      <div class="section-heading"><div><p class="eyebrow" data-i18n-text>EVIDENZ RICHTIG LESEN</p><h2 id="method-title" data-i18n-text>Was diese Ergebnisse zeigen – und was offen bleibt</h2></div><p data-i18n-text>Das Modell macht Wirkmechanismen prüfbar. Es ersetzt keine Messung im Betrieb.</p></div>
+      <div class="method-grid">
+        <article><span class="method-no">01</span><h3 data-i18n-text>Gleiche Ausgangslage</h3><p data-i18n-text>Die 350 Fälle entstehen aus ungefähr 15 genannten Gruppenterminen × angenommener Gruppengrösse 20 plus 50 genannten Einzelterminen. Der Zeitraum der Angabe ist unklar; 45 synthetische Personen verteilen die Fälle. Varianten teilen Bedarf und Zufallsströme je Testpunkt.</p></article>
+        <article><span class="method-no">02</span><h3 data-i18n-text>Zwei Werte pro Faktor</h3><p data-i18n-text>Die Testpunkte bilden weder eine ganze Wirkungsfläche noch Wechselwirkungen zwischen Annahmen ab. Die markierten Faktoren sind ein Leseweg, keine Siegerliste.</p></article>
+        <article><span class="method-no">03</span><h3 data-i18n-text>Grenzen sichtbar</h3><p data-i18n-text>Kalender, Schichtdeckung, Lernwirksamkeit und Qualifikation enthalten unbestätigte Annahmen. Ein Abgleich mit gemessener Jahresnachfrage, Falldauern und Kalenderbelegung steht aus. CHF zeigt modellierten Nettoaufwand, keine beobachtete Einsparung.</p></article>
+      </div>
+      <details class="method-details"><summary data-i18n-text>Begriffe und Quellen öffnen <span aria-hidden="true">+</span></summary><div class="glossary"><p data-i18n-text><strong data-i18n-text>Ein Fall:</strong> Ein Schulungsbedarf für eine Person zu einem Thema in einem Bedarfszyklus; eine Person kann mehrere Fälle haben. Die 350 Fälle pro Modelljahr sind eine Testannahme, keine gemessene Jahresfallzahl.</p><p data-i18n-text><strong data-i18n-text>Begrenzte Erststart-Wartezeit:</strong> Tage vom erkannten Bedarf bis zum ersten Start; ohne Start zählt die Zeit bis Tag 365.</p><p data-i18n-text><strong data-i18n-text>Start binnen 14 Tagen:</strong> Anteil rechtzeitiger erster Starts unter Fällen, deren Vergleichsfrist bis Tag 365 fällig wurde. Das ist keine Abschlussquote und keine IST-Timeout-Regel.</p><p data-i18n-text><strong data-i18n-text>Bewerteter Nettoaufwand:</strong> Bruttobewertung der Tätigkeiten plus LMS-Portfolio abzüglich Praxisgutschrift. Unterschiedliche Abschlüsse machen den Kostenunterschied nicht zu einer Einsparung bei gleicher Leistung.</p><p data-i18n-text><strong data-i18n-text>Quellen:</strong> Der Variantenvergleich kommt aus 50 neu geprüften gepaarten Läufen vom 26.10.2026; seine Auswahl steht in <a href="data/comparison.json" data-i18n-text>comparison.json</a>. Der Kapazitätssweep mit ursprünglich 20 Läufen je Bedarfsmenge und adaptiven Zusatzchecks bei 350 und 450 Fällen steht in <a href="data/frontier.json" data-i18n-text>frontier.json</a>. Der separate Sensitivitätsscreen nutzt <code data-i18n-text>Sensitivitaet_Detailwerte.csv</code>, <code data-i18n-text>Sensitivitaet_Parameterbereiche.csv</code>, <code data-i18n-text>Sensitivitaet_Top4.csv</code> und das geprüfte Jahresaudit vom 07.10.2026. Seine Auswahl steht in <a href="data/sensitivity.json" data-i18n-text>sensitivity.json</a>.</p></div></details>
+    </div></section>
+
+    <section class="section wrap local-section" id="local" aria-labelledby="local-title"><div><p class="eyebrow" data-i18n-text>DIE ENGINE SELBST TESTEN</p><h2 id="local-title" data-i18n-text>Gespeicherte Einblicke hier. Neue Läufe im lokalen Dashboard.</h2><p data-i18n-text>Diese Seite erklärt geprüfte Ergebnisse aus dem 50-Paar-Vergleich, dem separaten Kapazitätssweep und dem fünf-Fixture-Sensitivitätsscreen. Das Python-Dashboard erlaubt neue gepaarte Experimente mit sichtbaren Annahmen, Seedmap, Ereignissen und Kostennachweis.</p></div><div class="command-card"><div class="command-top"><span data-i18n-text>LOKALER START</span><span data-i18n-text>Python 3.9+</span></div><code data-i18n-text>python3 dashboard/app.py</code><p data-i18n-text>Im Repository-Hauptverzeichnis starten. Das Dashboard öffnet sich auf 127.0.0.1; die README erklärt die Installation.</p></div></section>
+  </main>
+  <footer class="site-footer"><div class="wrap"><span data-i18n-text>Cosanum · Schulungssimulation · [DEMO]</span><span data-i18n-text>Quellenbasierte Annahmen · synthetische Personen · keine Betriebsmessung</span></div></footer>
+</body>
+</html>

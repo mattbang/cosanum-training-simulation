@@ -1,0 +1,22 @@
+{
+  "excluded": [
+    "data/raw",
+    "references",
+    "original source paths and filenames",
+    "employee source snapshots",
+    "historic run outputs"
+  ],
+  "limits": [
+    "No independent original-source verification in this bundle",
+    "All people and demand are synthetic",
+    "No employee reidentification or modelled revenue"
+  ],
+  "schema_version": "1.0",
+  "supplied_plan_sha256": "627e315801cf7498d63979ee7dc99372c93c472732a7e0692263abcefa637b16",
+  "transformations": [
+    "Topic titles and source sheet anonymized; numerical aggregate flags/counts unchanged",
+    "Private source manifest replaced with explicit included-input integrity scope"
+  ],
+  "upstream_catalogue_sha256": "1c185c98b7f031ba87071b8c53b7fb35f2d44c8e6bd8c418e59412aac7eeb089",
+  "upstream_source_manifest_sha256": "1c0a3ecea51d19617db0e6ad8901208edc1853e255179ba2b5efda30b31014f8"
+}

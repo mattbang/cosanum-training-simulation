@@ -1,0 +1,703 @@
+{
+  "schema_version": 1,
+  "metadata": {
+    "engine_version": "0.10.0",
+    "study_mode": "annual demand without initial backlog",
+    "horizon_days": 365,
+    "paired_fixture_ids": [
+      600,
+      601,
+      602,
+      603,
+      604
+    ],
+    "factor_count": 51,
+    "settings_per_factor": 2,
+    "scenario_count": 4,
+    "conditional_outputs": 2060,
+    "source_sha256": {
+      "detail_values_csv": "05e481c19d29d36c6ddb32f9473c5fbd67a2d1d86acfcb4c1b7e0364f258f834",
+      "parameter_ranges_csv": "9352744fb728e6ab94c4ddf2dae586ad50a9c7736394aeafc7e7250f9fd33e16",
+      "top_four_csv": "565da9c42ec2607960af0c50c8c6ac5ea1d19b300e50a23a1ec260d322e93950",
+      "readme_md": "74d6cbd9b1b4f1a8fa054fa2a198773532e54e2d3b66a609c3ad3673921e8ce4",
+      "replications_csv": "ae7c670f2f570061455362416f486fa29de573345180e727a787718629920e67",
+      "plan_json": "67073b48b93b9226feedd750f3906006cef00fb1939289f164f73caa8b77c4e3"
+    },
+    "influence_score_method": "Within each scenario, take the larger absolute mean paired A/B change for each of four metrics, divide by that metric's largest factor change, then average the four normalized magnitudes equally and multiply by 100.",
+    "caveats": [
+      "Five paired fixtures make this a descriptive screen, without confidence intervals or a reliable policy ranking.",
+      "One factor changes per test. Two settings do not describe every intermediate value or interaction.",
+      "Influence measures change, not improvement; scores depend on tested ranges and equal metric weights and are not comparable across scenarios.",
+      "Unstarted requests contribute waiting time up to day 365; this is not an eventual observed start time.",
+      "The same analytical 14-day start target is applied to all scenarios; it does not impose an IST deadline.",
+      "Full training completion, first start and completed documentation are distinct outcomes.",
+      "Costs value consumed work and the LMS portfolio, not observed cash savings or equal-output savings.",
+      "The separate LMS team frees one modelled P&Q teaching calendar and makes courses available at day 0; setup and upkeep remain costed.",
+      "Demand-volume settings can change annual case counts and completion denominators; topic mix changes practice demand without changing the case count."
+    ]
+  },
+  "metrics": {
+    "completed": {
+      "label_en": "Full training completions",
+      "unit": "cases"
+    },
+    "net_chf": {
+      "label_en": "Modelled net cost",
+      "unit": "CHF"
+    },
+    "mean_time_to_start_or_year_end_days": {
+      "label_en": "Bounded wait until first start or year end",
+      "unit": "days"
+    },
+    "common_14day_start_service": {
+      "label_en": "First start within 14 days",
+      "unit": "fraction",
+      "display_as": "percent"
+    }
+  },
+  "scenarios": [
+    {
+      "id": "S0",
+      "label_de": "IST",
+      "baseline": {
+        "completed": 303.0,
+        "net_chf": 84867.75,
+        "mean_time_to_start_or_year_end_days": 6.015963095238095,
+        "common_14day_start_service": 0.9885714285714285
+      },
+      "top_factors": [
+        {
+          "factor_id": "pq_qualification",
+          "label_de": "P&Q darf auch Praxis schulen",
+          "rank": 1,
+          "score": 78.42245444489724,
+          "settings": {
+            "base": false,
+            "A": false,
+            "B": true,
+            "unit": "ja/nein",
+            "range_rationale": "Declared screening bounds; original evidence and baseline remain unchanged. No probability assigned to bounds."
+          },
+          "values": {
+            "completed": {
+              "base": 303.0,
+              "A": 303.0,
+              "B": 350.0
+            },
+            "net_chf": {
+              "base": 84867.75,
+              "A": 84867.75,
+              "B": 99379.0
+            },
+            "mean_time_to_start_or_year_end_days": {
+              "base": 6.015963095238095,
+              "A": 6.015963095238095,
+              "B": 13.124611507936509
+            },
+            "common_14day_start_service": {
+              "base": 0.9885714285714285,
+              "A": 0.9885714285714285,
+              "B": 0.7011428571428572
+            }
+          }
+        },
+        {
+          "factor_id": "training_days",
+          "label_de": "Trainingstage pro Woche",
+          "rank": 2,
+          "score": 74.72450670567217,
+          "settings": {
+            "base": 2,
+            "A": 1,
+            "B": 4,
+            "unit": "Tage",
+            "range_rationale": "Both roles have same1–4 eight-hour calendar including preparation/follow-up; actual weekday patterns retained."
+          },
+          "values": {
+            "completed": {
+              "base": 303.0,
+              "A": 225.8,
+              "B": 350.0
+            },
+            "net_chf": {
+              "base": 84867.75,
+              "A": 61032.25,
+              "B": 99379.0
+            },
+            "mean_time_to_start_or_year_end_days": {
+              "base": 6.015963095238095,
+              "A": 10.003405555555556,
+              "B": 4.373072619047619
+            },
+            "common_14day_start_service": {
+              "base": 0.9885714285714285,
+              "A": 0.8274285714285715,
+              "B": 1.0
+            }
+          }
+        },
+        {
+          "factor_id": "unformed",
+          "label_de": "Ungeformte Einzelankünfte",
+          "rank": 3,
+          "score": 61.62804298351566,
+          "settings": {
+            "base": 0,
+            "A": 0.5,
+            "B": 1,
+            "unit": "Anteil",
+            "range_rationale": "Same annual people/topic/cycle demand; selected requests get independent identity-keyed arrival times and no preformed IST delivery hint. Stock unchanged."
+          },
+          "values": {
+            "completed": {
+              "base": 303.0,
+              "A": 316.2,
+              "B": 323.0
+            },
+            "net_chf": {
+              "base": 84867.75,
+              "A": 100828.75,
+              "B": 109661.5
+            },
+            "mean_time_to_start_or_year_end_days": {
+              "base": 6.015963095238095,
+              "A": 10.389579365079364,
+              "B": 11.976973412698413
+            },
+            "common_14day_start_service": {
+              "base": 0.9885714285714285,
+              "A": 0.9148571428571428,
+              "B": 0.8548571428571429
+            }
+          }
+        },
+        {
+          "factor_id": "practice_mix",
+          "label_de": "Praxisanteil im Neuzugang",
+          "rank": 4,
+          "score": 42.41052681290099,
+          "settings": {
+            "base": "uniformer Themenkatalog",
+            "A": 0.25,
+            "B": 0.75,
+            "unit": "Anteil",
+            "range_rationale": "Reassign ongoing topics to source-eligible pure/mixed banks; source phase flags and1305 stock records stay unchanged."
+          },
+          "values": {
+            "completed": {
+              "base": 303.0,
+              "A": 348.8,
+              "B": 285.2
+            },
+            "net_chf": {
+              "base": 84867.75,
+              "A": 57389.0,
+              "B": 87152.5
+            },
+            "mean_time_to_start_or_year_end_days": {
+              "base": 6.015963095238095,
+              "A": 5.565307539682539,
+              "B": 6.159664682539683
+            },
+            "common_14day_start_service": {
+              "base": 0.9885714285714285,
+              "A": 1.0,
+              "B": 1.0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "S7_RECOVERY",
+      "label_de": "SOLL kombiniert",
+      "baseline": {
+        "completed": 306.4,
+        "net_chf": 83512.5,
+        "mean_time_to_start_or_year_end_days": 2.8992690476190477,
+        "common_14day_start_service": 1.0
+      },
+      "top_factors": [
+        {
+          "factor_id": "training_days",
+          "label_de": "Trainingstage pro Woche",
+          "rank": 1,
+          "score": 70.99239525221716,
+          "settings": {
+            "base": 2,
+            "A": 1,
+            "B": 4,
+            "unit": "Tage",
+            "range_rationale": "Both roles have same1–4 eight-hour calendar including preparation/follow-up; actual weekday patterns retained."
+          },
+          "values": {
+            "completed": {
+              "base": 306.4,
+              "A": 227.4,
+              "B": 350.0
+            },
+            "net_chf": {
+              "base": 83512.5,
+              "A": 59977.083333333336,
+              "B": 96501.66666666667
+            },
+            "mean_time_to_start_or_year_end_days": {
+              "base": 2.8992690476190477,
+              "A": 5.969356746031746,
+              "B": 1.1529309523809523
+            },
+            "common_14day_start_service": {
+              "base": 1.0,
+              "A": 0.9948571428571429,
+              "B": 1.0
+            }
+          }
+        },
+        {
+          "factor_id": "preferred_group",
+          "label_de": "SOLL: Bevorzugte Gruppengrösse",
+          "rank": 2,
+          "score": 64.54818180062539,
+          "settings": {
+            "base": 30,
+            "A": 5,
+            "B": 30,
+            "unit": "Personen",
+            "range_rationale": "One-variable operating range5–30 with15staff retained.45-person class is a separate coupled stress, not attributed to this single parameter."
+          },
+          "values": {
+            "completed": {
+              "base": 306.4,
+              "A": 306.2,
+              "B": 306.4
+            },
+            "net_chf": {
+              "base": 83512.5,
+              "A": 101551.5,
+              "B": 83512.5
+            },
+            "mean_time_to_start_or_year_end_days": {
+              "base": 2.8992690476190477,
+              "A": 6.051295634920635,
+              "B": 2.8992690476190477
+            },
+            "common_14day_start_service": {
+              "base": 1.0,
+              "A": 0.9531428571428572,
+              "B": 1.0
+            }
+          }
+        },
+        {
+          "factor_id": "pq_qualification",
+          "label_de": "P&Q darf auch Praxis schulen",
+          "rank": 3,
+          "score": 44.36219033425829,
+          "settings": {
+            "base": false,
+            "A": false,
+            "B": true,
+            "unit": "ja/nein",
+            "range_rationale": "Declared screening bounds; original evidence and baseline remain unchanged. No probability assigned to bounds."
+          },
+          "values": {
+            "completed": {
+              "base": 306.4,
+              "A": 306.4,
+              "B": 350.0
+            },
+            "net_chf": {
+              "base": 83512.5,
+              "A": 83512.5,
+              "B": 96501.66666666667
+            },
+            "mean_time_to_start_or_year_end_days": {
+              "base": 2.8992690476190477,
+              "A": 2.8992690476190477,
+              "B": 5.4378769841269845
+            },
+            "common_14day_start_service": {
+              "base": 1.0,
+              "A": 1.0,
+              "B": 1.0
+            }
+          }
+        },
+        {
+          "factor_id": "practice_minutes",
+          "label_de": "Individuelle Praxisdauer",
+          "rank": 4,
+          "score": 42.85693256387189,
+          "settings": {
+            "base": 180,
+            "A": 120,
+            "B": 240,
+            "unit": "Min.",
+            "range_rationale": "Prototype workload stress around sourced180min; not a claimed benefit of the unmodelled NIST/Suva instruction proposal."
+          },
+          "values": {
+            "completed": {
+              "base": 306.4,
+              "A": 348.2,
+              "B": 229.2
+            },
+            "net_chf": {
+              "base": 83512.5,
+              "A": 75119.91666666667,
+              "B": 69756.33333333333
+            },
+            "mean_time_to_start_or_year_end_days": {
+              "base": 2.8992690476190477,
+              "A": 2.5072531746031745,
+              "B": 1.9687055555555555
+            },
+            "common_14day_start_service": {
+              "base": 1.0,
+              "A": 1.0,
+              "B": 1.0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "LMS_PQ_IN_SERVICE",
+      "label_de": "SOLL + LMS (P&Q im Betrieb)",
+      "baseline": {
+        "completed": 290.0,
+        "net_chf": 112577.37293333333,
+        "mean_time_to_start_or_year_end_days": 14.643739285714286,
+        "common_14day_start_service": 0.7971428571428572
+      },
+      "top_factors": [
+        {
+          "factor_id": "training_days",
+          "label_de": "Trainingstage pro Woche",
+          "rank": 1,
+          "score": 100.0,
+          "settings": {
+            "base": 2,
+            "A": 1,
+            "B": 4,
+            "unit": "Tage",
+            "range_rationale": "Both roles have same1–4 eight-hour calendar including preparation/follow-up; actual weekday patterns retained."
+          },
+          "values": {
+            "completed": {
+              "base": 290.0,
+              "A": 209.6,
+              "B": 350.0
+            },
+            "net_chf": {
+              "base": 112577.37293333333,
+              "A": 88640.45626666666,
+              "B": 130400.5396
+            },
+            "mean_time_to_start_or_year_end_days": {
+              "base": 14.643739285714286,
+              "A": 76.92332301587301,
+              "B": 3.6364083333333332
+            },
+            "common_14day_start_service": {
+              "base": 0.7971428571428572,
+              "A": 0.42742857142857144,
+              "B": 0.9222857142857143
+            }
+          }
+        },
+        {
+          "factor_id": "content",
+          "label_de": "LMS: Material pro Thema",
+          "rank": 2,
+          "score": 76.82139402138584,
+          "settings": {
+            "base": 500,
+            "A": 250,
+            "B": 1000,
+            "unit": "CHF/Thema",
+            "range_rationale": "Half/double prototype budget; changes cost and course preparation/calendar together, not supplier pricing."
+          },
+          "values": {
+            "completed": {
+              "base": 290.0,
+              "A": 299.6,
+              "B": 245.6
+            },
+            "net_chf": {
+              "base": 112577.37293333333,
+              "A": 99635.5396,
+              "B": 131254.95626666668
+            },
+            "mean_time_to_start_or_year_end_days": {
+              "base": 14.643739285714286,
+              "A": 4.498205952380952,
+              "B": 64.60175357142857
+            },
+            "common_14day_start_service": {
+              "base": 0.7971428571428572,
+              "A": 0.9194285714285714,
+              "B": 0.4502857142857143
+            }
+          }
+        },
+        {
+          "factor_id": "practice_mix",
+          "label_de": "Praxisanteil im Neuzugang",
+          "rank": 3,
+          "score": 52.02933529717221,
+          "settings": {
+            "base": "uniformer Themenkatalog",
+            "A": 0.25,
+            "B": 0.75,
+            "unit": "Anteil",
+            "range_rationale": "Reassign ongoing topics to source-eligible pure/mixed banks; source phase flags and1305 stock records stay unchanged."
+          },
+          "values": {
+            "completed": {
+              "base": 290.0,
+              "A": 349.0,
+              "B": 256.4
+            },
+            "net_chf": {
+              "base": 112577.37293333333,
+              "A": 88969.7896,
+              "B": 110977.12293333333
+            },
+            "mean_time_to_start_or_year_end_days": {
+              "base": 14.643739285714286,
+              "A": 11.857213492063492,
+              "B": 20.095110317460318
+            },
+            "common_14day_start_service": {
+              "base": 0.7971428571428572,
+              "A": 0.7554285714285714,
+              "B": 0.6960000000000001
+            }
+          }
+        },
+        {
+          "factor_id": "author_binding",
+          "label_de": "Autorenzeit aus Budget ableiten",
+          "rank": 4,
+          "score": 40.07989820222765,
+          "settings": {
+            "base": "pq_hourly_chf",
+            "A": "pq_hourly_chf",
+            "B": "coach_hourly_chf",
+            "unit": "Bindung",
+            "range_rationale": "CHF100/h vs65/h task valuation; fixed material budget implies different author hours, not different payroll."
+          },
+          "values": {
+            "completed": {
+              "base": 290.0,
+              "A": 290.0,
+              "B": 263.2
+            },
+            "net_chf": {
+              "base": 112577.37293333333,
+              "A": 112577.37293333333,
+              "B": 105054.0396
+            },
+            "mean_time_to_start_or_year_end_days": {
+              "base": 14.643739285714286,
+              "A": 14.643739285714286,
+              "B": 39.69515494505495
+            },
+            "common_14day_start_service": {
+              "base": 0.7971428571428572,
+              "A": 0.7971428571428572,
+              "B": 0.5925714285714285
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "LMS_PRELAUNCH_TEAM",
+      "label_de": "SOLL + LMS (Projektteam vor Start)",
+      "baseline": {
+        "completed": 306.8,
+        "net_chf": 117530.53960000005,
+        "mean_time_to_start_or_year_end_days": 1.0410694444444444,
+        "common_14day_start_service": 1.0
+      },
+      "top_factors": [
+        {
+          "factor_id": "training_days",
+          "label_de": "Trainingstage pro Woche",
+          "rank": 1,
+          "score": 50.5242600990905,
+          "settings": {
+            "base": 2,
+            "A": 1,
+            "B": 4,
+            "unit": "Tage",
+            "range_rationale": "Both roles have same1–4 eight-hour calendar including preparation/follow-up; actual weekday patterns retained."
+          },
+          "values": {
+            "completed": {
+              "base": 306.8,
+              "A": 228.4,
+              "B": 350.0
+            },
+            "net_chf": {
+              "base": 117530.53960000005,
+              "A": 94173.87293333326,
+              "B": 130400.53960000021
+            },
+            "mean_time_to_start_or_year_end_days": {
+              "base": 1.0410694444444444,
+              "A": 1.65698373015873,
+              "B": 0.7066039682539682
+            },
+            "common_14day_start_service": {
+              "base": 1.0,
+              "A": 1.0,
+              "B": 1.0
+            }
+          }
+        },
+        {
+          "factor_id": "practice_mix",
+          "label_de": "Praxisanteil im Neuzugang",
+          "rank": 2,
+          "score": 41.049237466127195,
+          "settings": {
+            "base": "uniformer Themenkatalog",
+            "A": 0.25,
+            "B": 0.75,
+            "unit": "Anteil",
+            "range_rationale": "Reassign ongoing topics to source-eligible pure/mixed banks; source phase flags and1305 stock records stay unchanged."
+          },
+          "values": {
+            "completed": {
+              "base": 306.8,
+              "A": 349.0,
+              "B": 288.6
+            },
+            "net_chf": {
+              "base": 117530.53960000005,
+              "A": 88917.95626666662,
+              "B": 120428.62293333342
+            },
+            "mean_time_to_start_or_year_end_days": {
+              "base": 1.0410694444444444,
+              "A": 0.815361507936508,
+              "B": 1.4716055555555554
+            },
+            "common_14day_start_service": {
+              "base": 1.0,
+              "A": 1.0,
+              "B": 1.0
+            }
+          }
+        },
+        {
+          "factor_id": "practice_minutes",
+          "label_de": "Individuelle Praxisdauer",
+          "rank": 3,
+          "score": 37.501896757619534,
+          "settings": {
+            "base": 180,
+            "A": 120,
+            "B": 240,
+            "unit": "Min.",
+            "range_rationale": "Prototype workload stress around sourced180min; not a claimed benefit of the unmodelled NIST/Suva instruction proposal."
+          },
+          "values": {
+            "completed": {
+              "base": 306.8,
+              "A": 348.4,
+              "B": 229.2
+            },
+            "net_chf": {
+              "base": 117530.53960000005,
+              "A": 109058.87293333327,
+              "B": 103655.20626666657
+            },
+            "mean_time_to_start_or_year_end_days": {
+              "base": 1.0410694444444444,
+              "A": 0.9504992063492063,
+              "B": 0.8872650793650794
+            },
+            "common_14day_start_service": {
+              "base": 1.0,
+              "A": 1.0,
+              "B": 1.0
+            }
+          }
+        },
+        {
+          "factor_id": "pq_qualification",
+          "label_de": "P&Q darf auch Praxis schulen",
+          "rank": 4,
+          "score": 27.553513592246276,
+          "settings": {
+            "base": false,
+            "A": false,
+            "B": true,
+            "unit": "ja/nein",
+            "range_rationale": "Declared screening bounds; original evidence and baseline remain unchanged. No probability assigned to bounds."
+          },
+          "values": {
+            "completed": {
+              "base": 306.8,
+              "A": 306.8,
+              "B": 350.0
+            },
+            "net_chf": {
+              "base": 117530.53960000005,
+              "A": 117530.53960000005,
+              "B": 130400.5396000002
+            },
+            "mean_time_to_start_or_year_end_days": {
+              "base": 1.0410694444444444,
+              "A": 1.0410694444444444,
+              "B": 1.3552063492063493
+            },
+            "common_14day_start_service": {
+              "base": 1.0,
+              "A": 1.0,
+              "B": 1.0
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "volume_stress": {
+    "paired_fixture_ids": [
+      600,
+      601,
+      602,
+      603,
+      604
+    ],
+    "base_groups": 15,
+    "stress_groups": 20,
+    "group_size": 20,
+    "single_cases": 50,
+    "base_cases": 350,
+    "stress_cases": 450,
+    "scenarios": [
+      {
+        "id": "S0",
+        "label_de": "IST",
+        "base_completed": 303.0,
+        "stress_completed": 343.8
+      },
+      {
+        "id": "S7_RECOVERY",
+        "label_de": "SOLL kombiniert",
+        "base_completed": 306.4,
+        "stress_completed": 346.6
+      },
+      {
+        "id": "LMS_PRELAUNCH_TEAM",
+        "label_de": "SOLL + LMS (Projektteam vor Start)",
+        "base_completed": 306.8,
+        "stress_completed": 347.8
+      }
+    ]
+  }
+}

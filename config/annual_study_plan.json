@@ -1,0 +1,244 @@
+{
+  "plan_id": "annual-daniel-informed-v1",
+  "source_status": "assumption",
+  "value_kind": "fixed_paired_experiment_plan",
+  "minimum_n": 20,
+  "metrics": [
+    "training_completed",
+    "ongoing_completed",
+    "initial_completed",
+    "initial_priority1_completed",
+    "initial_priority1_remaining",
+    "year_end_training_stock",
+    "net_chf",
+    "trainer_used_hours",
+    "theory_group_sessions",
+    "theory_individual_sessions",
+    "practice_sessions",
+    "common_target_service",
+    "actual_policy_breaches",
+    "all_training_complete",
+    "lower_priority_backlog_request_days"
+  ],
+  "precision_targets": {
+    "training_completed": 10,
+    "initial_priority1_completed": 10,
+    "net_chf": 3000,
+    "common_target_service": 0.05
+  },
+  "rationale": "Declared before execution. Main annual volume and first-year backlog use twenty paired replications; fixed-cohort drain separates equal output cost from first-year consumed expenditure. Source annual period, topic mix and training availability remain assumptions.",
+  "cases": [
+    {
+      "case_id": "annual_same_volume",
+      "include_backlog": false,
+      "replications": [
+        300,
+        301,
+        302,
+        303,
+        304,
+        305,
+        306,
+        307,
+        308,
+        309,
+        310,
+        311,
+        312,
+        313,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319
+      ],
+      "profile_overrides": {},
+      "drain_days": 0,
+      "scenarios": [
+        "S0",
+        "S7",
+        "S7_RECOVERY"
+      ]
+    },
+    {
+      "case_id": "annual_backlog",
+      "include_backlog": true,
+      "replications": [
+        300,
+        301,
+        302,
+        303,
+        304,
+        305,
+        306,
+        307,
+        308,
+        309,
+        310,
+        311,
+        312,
+        313,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319
+      ],
+      "profile_overrides": {},
+      "drain_days": 0,
+      "scenarios": [
+        "S0",
+        "S7",
+        "S7_RECOVERY"
+      ]
+    },
+    {
+      "case_id": "same_cohort_drain",
+      "include_backlog": false,
+      "replications": [
+        300,
+        301,
+        302,
+        303,
+        304,
+        305,
+        306,
+        307,
+        308,
+        309,
+        310,
+        311,
+        312,
+        313,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319
+      ],
+      "profile_overrides": {},
+      "drain_days": 365,
+      "scenarios": [
+        "S0",
+        "S7_RECOVERY"
+      ]
+    },
+    {
+      "case_id": "group_size_15",
+      "include_backlog": false,
+      "replications": [
+        300,
+        301,
+        302,
+        303,
+        304
+      ],
+      "profile_overrides": {
+        "group_size": 15
+      },
+      "drain_days": 0,
+      "scenarios": [
+        "S0",
+        "S7",
+        "S7_RECOVERY"
+      ]
+    },
+    {
+      "case_id": "group_size_25",
+      "include_backlog": false,
+      "replications": [
+        300,
+        301,
+        302,
+        303,
+        304
+      ],
+      "profile_overrides": {
+        "group_size": 25
+      },
+      "drain_days": 0,
+      "scenarios": [
+        "S0",
+        "S7",
+        "S7_RECOVERY"
+      ]
+    },
+    {
+      "case_id": "capacity_one_day",
+      "include_backlog": true,
+      "replications": [
+        300,
+        301,
+        302,
+        303,
+        304
+      ],
+      "profile_overrides": {
+        "resource_days_per_week": 1,
+        "resource_calendar_weekdays": [
+          2
+        ]
+      },
+      "drain_days": 0,
+      "scenarios": [
+        "S0",
+        "S7",
+        "S7_RECOVERY"
+      ]
+    },
+    {
+      "case_id": "capacity_three_days",
+      "include_backlog": true,
+      "replications": [
+        300,
+        301,
+        302,
+        303,
+        304
+      ],
+      "profile_overrides": {
+        "resource_days_per_week": 3,
+        "resource_calendar_weekdays": [
+          0,
+          2,
+          4
+        ]
+      },
+      "drain_days": 0,
+      "scenarios": [
+        "S0",
+        "S7",
+        "S7_RECOVERY"
+      ]
+    },
+    {
+      "case_id": "arrivals_full_year",
+      "include_backlog": false,
+      "replications": [
+        300,
+        301,
+        302,
+        303,
+        304
+      ],
+      "profile_overrides": {
+        "arrival_window_days": 365
+      },
+      "drain_days": 0,
+      "scenarios": [
+        "S0",
+        "S7",
+        "S7_RECOVERY"
+      ]
+    }
+  ],
+  "limitations": [
+    "Sensitivity screens below twenty replications are preliminary.",
+    "Fixed counts and independent random topic draws are prototypes; intervals do not validate annual interpretation.",
+    "Two training days per week is independent assumed availability, not inferred historical staffing.",
+    "Drain has no additional arrivals after the original annual cohort. Its total is not annual spend."
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "metadata": {
+    "engine_version": "0.10.0",
+    "horizon_days": 365,
+    "paired_fixture_ids": [
+      600,
+      601,
+      602,
+      603,
+      604,
+      605,
+      606,
+      607,
+      608,
+      609,
+      610,
+      611,
+      612,
+      613,
+      614,
+      615,
+      616,
+      617,
+      618,
+      619
+    ],
+    "annual_volumes": [
+      350,
+      450,
+      550,
+      650
+    ],
+    "synthetic_people_roster": 45,
+    "group_size": 20,
+    "single_cases": 50,
+    "practice_slot_bound": {
+      "one_coach": 208,
+      "two_coaches": 416,
+      "calendar_days": 104,
+      "daily_minutes": 480,
+      "practice_minutes": 180,
+      "coordination_minutes": 5,
+      "booking_minutes": 185,
+      "slots_per_day_per_coach": 2,
+      "fixed_fixture_formula": "theory_only_requests + min(practice_required_requests, coach_count * 208)"
+    },
+    "source_sha256": {
+      "baseline_request_retention.csv": "6122fa05652b682bc218c3ce9dae11806e04f6017387aa1d938c757a76afb1a9",
+      "compact_volume_summary.csv": "815b164c15e7c33ef3274b16553eae70a576f7cd78ce14463511677b38dafae8",
+      "completion_frontier.svg": "fbb3546b75970800a16c8cf2585a48e6461e70d4fe420f1616c7d1c279ee9f7b",
+      "fixed_fixture_upper_bounds.csv": "f172eaee5bf2805062b170fce9a7b916d855ee95361dcd504c4104c526120974",
+      "fixture_checks.csv": "ae1fceacea7b43d5dc69e0901288341f354b31c5fc061b6e5196370c0ae342d1",
+      "full_clearance_rates.csv": "af85f4ae7c38597d9e8a741abdaba804a7ee57a5bb643007eadecda0d22cb103",
+      "matched_350_450_intervals.csv": "0f27a164ab65ca8dd4862e0a933d6d9c3b236960ef2905d7af98cfd32c87f38a",
+      "matched_350_450_per_seed.csv": "3335abffe08e6ed98a1c30f1b6e2a2b95cd43a8370b6f04e188346e0cdf790f5",
+      "paired_intervals.csv": "a01d0f5df5d99bc9ff5887470d81f8a5d5f2d64036d85f5d5fe8226d44548663",
+      "paired_per_seed.csv": "5ab17cf56e986490479fb5d1a7ee444b35dc1e84510e789b899092938cc8e209",
+      "per_seed_results.csv": "686e9fc58f39cca96970d19e7649d504c8ab90a3abaab97eb873923919231061",
+      "pooled_50_coach_effects.csv": "aeadf5c2f719b0de2184a8151a8fde1449380143b6bf03b11371b8875ed761f8",
+      "pooled_50_volume_summary.csv": "6d9686ed8b13612d43aaf76fa558e0cbf63352ea888755515a14c319751b6c71",
+      "volume_summary.csv": "1ecef9f6fcce39aab177b51414c91c857a10d4ddb8edebc66b47cda52371a72e",
+      "PROVENANCE_AND_LIMITATIONS.json": "7a74bf3e34d0aacbb8088ff779f53c6ad09b4bd02dbd0fca13912aaa1712ac7d",
+      "protocol.json": "412ece9965dd8c1e6eaa58af0ebcc071008be5bd0dfdc8aeaa18c8e71768ee73",
+      "confirmation_450/PROVENANCE_AND_LIMITATIONS.json": "adb21c18a432f303380a846bf4d3c55c5d07d3ba803e1c233e07efb9a82655b8",
+      "confirmation_450/baseline_request_retention.csv": "419366eaceb7a7af549c5452fefd41985f18c61e0bccc5eb27e56b7d64882671",
+      "confirmation_450/fixture_checks.csv": "435b3603f491f821d41bb83821871f35192495fe14eedd169e3cdfd12bb6bd98",
+      "confirmation_450/paired_450.csv": "e9847eda40499e414fbe168fe16461a539fab59a17a4c7703aa1eb6a6eaeb3a0",
+      "confirmation_450/per_seed_additional_30.csv": "8abafec88f60e26f1997485c6e82d0f18820f71e7c80dd0b7e77a6df84954874",
+      "confirmation_450/summary_450.csv": "6a9c5cb2171d321ac6ae2fd91287ae53e273f2d3a86411885163028241297ce6",
+      "confirmation_350/PROVENANCE_AND_LIMITATIONS.json": "1053016a7bbb222599c2b8a62198694e9531c01eef41c19ae58ad9788899454e",
+      "confirmation_350/baseline_request_retention.csv": "1d9ef4421c9de5b4ead1c3999a56080e5047f658bdeeb251f89a42ba009c9f70",
+      "confirmation_350/cross_volume_retention.csv": "7cf6ba9e22674a0220f54713494bd8430f9995c104995b59ec6e2ab12992a15e",
+      "confirmation_350/fixture_checks.csv": "5fc72b81dfa41a9e9c2ac4850d3583074ea4257703dca56dfb3c396f46324602",
+      "confirmation_350/per_seed_additional_30.csv": "3d24e00999ea774dc5ce4487e959cded5cd0cbf2e66b8f399f61766b5fe4e5f5"
+    },
+    "german_svg_sha256": "4aa7c8d69a1fb8c4af771ee1030a47b1694ea280fb4cc720fe96d82601382e2d"
+  },
+  "rows": [
+    {
+      "annual_volume": 350,
+      "one_coach": {
+        "completed_mean": 316.6,
+        "full_clearance_count": 1
+      },
+      "two_coaches": {
+        "completed_mean": 350.0,
+        "full_clearance_count": 20
+      }
+    },
+    {
+      "annual_volume": 450,
+      "one_coach": {
+        "completed_mean": 364.75,
+        "full_clearance_count": 0
+      },
+      "two_coaches": {
+        "completed_mean": 448.95,
+        "full_clearance_count": 19
+      }
+    },
+    {
+      "annual_volume": 550,
+      "one_coach": {
+        "completed_mean": 412.05,
+        "full_clearance_count": 0
+      },
+      "two_coaches": {
+        "completed_mean": 538.65,
+        "full_clearance_count": 12
+      }
+    },
+    {
+      "annual_volume": 650,
+      "one_coach": {
+        "completed_mean": 461.35,
+        "full_clearance_count": 0
+      },
+      "two_coaches": {
+        "completed_mean": 617.4,
+        "full_clearance_count": 6
+      }
+    }
+  ],
+  "fixed_fixture_bound_examples": [
+    {
+      "annual_volume": 550,
+      "paired_fixtures": 20,
+      "slot_feasible_fixtures": 20,
+      "slot_infeasible_fixtures": 0,
+      "full_clearance_fixtures": 12
+    },
+    {
+      "annual_volume": 650,
+      "paired_fixtures": 20,
+      "slot_feasible_fixtures": 13,
+      "slot_infeasible_fixtures": 7,
+      "full_clearance_fixtures": 6
+    }
+  ],
+  "confirmations": [
+    {
+      "annual_volume": 350,
+      "additional_paired_fixtures": 30,
+      "pooled_paired_fixtures": 50,
+      "one_coach": {
+        "completed_mean": 312.96,
+        "full_clearance_count": 3
+      },
+      "two_coaches": {
+        "completed_mean": 348.72,
+        "full_clearance_count": 46
+      },
+      "selection": "adaptive post-sweep exploratory check"
+    },
+    {
+      "annual_volume": 450,
+      "additional_paired_fixtures": 30,
+      "pooled_paired_fixtures": 50,
+      "one_coach": {
+        "completed_mean": 360.98,
+        "full_clearance_count": 1
+      },
+      "two_coaches": {
+        "completed_mean": 445.64,
+        "full_clearance_count": 37
+      },
+      "selection": "adaptive post-sweep exploratory check"
+    }
+  ]
+}

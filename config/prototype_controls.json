@@ -1,0 +1,1273 @@
+{
+  "schema_version": "1.0",
+  "template_only": false,
+  "executable_configuration": true,
+  "instructions": "Resolve needed controls to explicit provisional assumptions at the first implementation increment; do not turn null into zero or block on unavailable historical data. Null optional target/phase deadline can be a deliberate disabled control once recorded.",
+  "controls": [
+    {
+      "input_id": "initial_open_case_interpretation",
+      "value": "training_needed",
+      "unit": "case_kind",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "User permits assumptions; initial training-demand interpretation of open records",
+      "sensitivity_plan": "Vary proof-only fraction; preserve source unknowns",
+      "state": "proposed",
+      "scope": "Future model control; inactive unless explicitly resolved",
+      "limitation": "Unmeasured prototype choice; not a source fact"
+    },
+    {
+      "input_id": "synthetic_person_mapping",
+      "value": true,
+      "unit": "boolean",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Dated source mapping unavailable; do not claim reconstructed employees",
+      "sensitivity_plan": "Alternative cross-topic mapping and external pool if ranking sensitive",
+      "state": "proposed",
+      "scope": "Future model control; inactive unless explicitly resolved",
+      "limitation": "Unmeasured prototype choice; not a source fact"
+    },
+    {
+      "input_id": "normal_session_selection",
+      "value": "oldest_first_up_to_capacity",
+      "unit": "rule",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Proposed reversible default, separate from threshold; user did not require exactly threshold members",
+      "sensitivity_plan": "Compare explicit target size when relevant",
+      "state": "proposed",
+      "scope": "Future model control; inactive unless explicitly resolved",
+      "limitation": "Unmeasured prototype choice; not a source fact"
+    },
+    {
+      "input_id": "first_start_deadline_semantics",
+      "value": "latest_actual_start",
+      "unit": "rule",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Current interpretation of user deadline; record visible capacity breaches",
+      "sensitivity_plan": "Completion/phase deadlines are separate controls",
+      "state": "proposed",
+      "scope": "Future model control; inactive unless explicitly resolved",
+      "limitation": "Unmeasured prototype choice; not a source fact"
+    },
+    {
+      "input_id": "fallback_membership",
+      "value": "compatible_waiters_up_to_capacity",
+      "unit": "rule",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Due oldest request permits younger compatible members; one case means individual",
+      "sensitivity_plan": null,
+      "state": "proposed",
+      "scope": "Future model control; inactive unless explicitly resolved",
+      "limitation": "Unmeasured prototype choice; not a source fact"
+    },
+    {
+      "input_id": "simultaneous_event_order",
+      "value": "arrivals_and_resource_releases_then_queue_decision",
+      "unit": "rule",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Deterministic boundary convention; stale timers must check state",
+      "sensitivity_plan": null,
+      "state": "proposed",
+      "scope": "Future model control; inactive unless explicitly resolved",
+      "limitation": "Unmeasured prototype choice; not a source fact"
+    },
+    {
+      "input_id": "preferred_group_threshold",
+      "value": 4,
+      "unit": "people",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Small demonstration threshold; not an observed Cosanum rule",
+      "sensitivity_plan": "Low/base/high threshold within capacity",
+      "state": "active_first_phase_slice",
+      "scope": "Synthetic deterministic first theory phase",
+      "limitation": "Unmeasured prototype choice; not a source fact",
+      "sensitivity_range": [
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "input_id": "target_session_size",
+      "value": null,
+      "unit": "people_or_null",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Deliberate no target cap: fill to hard capacity",
+      "sensitivity_plan": "Capacity-fill versus target cap",
+      "state": "active_first_phase_slice",
+      "scope": "Synthetic deterministic first theory phase",
+      "limitation": "Unmeasured prototype choice; not a source fact",
+      "sensitivity_range": [
+        4,
+        6,
+        null
+      ]
+    },
+    {
+      "input_id": "max_session_capacity",
+      "value": 6,
+      "unit": "people",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Small synthetic teaching/room capacity",
+      "sensitivity_plan": "Feasible small/large capacity",
+      "state": "active_first_phase_slice",
+      "scope": "Synthetic deterministic first theory phase",
+      "limitation": "Unmeasured prototype choice; not a source fact",
+      "sensitivity_range": [
+        4,
+        6,
+        10
+      ]
+    },
+    {
+      "input_id": "max_wait_minutes",
+      "value": 20160,
+      "unit": "elapsed_minutes",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Provisional fourteen calendar days to first actual start",
+      "sensitivity_plan": "Short/base/long policy limit",
+      "state": "active_first_phase_slice",
+      "scope": "Synthetic deterministic first theory phase",
+      "limitation": "Unmeasured prototype choice; not a source fact",
+      "sensitivity_range": [
+        10080,
+        20160,
+        40320
+      ]
+    },
+    {
+      "input_id": "later_phase_max_wait_minutes",
+      "value": null,
+      "unit": "elapsed_minutes_or_null",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Separate phase deadline control; preserve original request deadline",
+      "sensitivity_plan": "Expose prolonged practice waits",
+      "state": "choose_explicitly_at_first_increment",
+      "scope": "Future model control; inactive unless explicitly resolved",
+      "limitation": "Unmeasured prototype choice; not a source fact"
+    },
+    {
+      "input_id": "initial_backlog_age_minutes",
+      "value": 0,
+      "unit": "elapsed_minutes_or_distribution",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Zero age at model start is a convention, not a historical claim",
+      "sensitivity_plan": "Fresh versus aged initial cohort",
+      "state": "active_stochastic_ist",
+      "scope": "Assumed IST stochastic experiments",
+      "limitation": "Unmeasured prototype choice; not a source fact",
+      "sensitivity_range": "Aged initial cohorts remain a later sensitivity extension"
+    },
+    {
+      "input_id": "trainer_capacity_by_role",
+      "value": null,
+      "unit": "resources",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Reported shared P&Q role but actual availability unknown",
+      "sensitivity_plan": "Scarce/base/ample capacity",
+      "state": "choose_explicitly_at_first_increment",
+      "scope": "Future model control; inactive unless explicitly resolved",
+      "limitation": "Unmeasured prototype choice; not a source fact"
+    },
+    {
+      "input_id": "resource_calendar",
+      "value": null,
+      "unit": "available_intervals",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Simple assumed calendar sufficient initially",
+      "sensitivity_plan": "Calendar constraint sensitivity",
+      "state": "choose_explicitly_at_first_increment",
+      "scope": "Future model control; inactive unless explicitly resolved",
+      "limitation": "Unmeasured prototype choice; not a source fact"
+    },
+    {
+      "input_id": "pq_activity_split",
+      "value": {
+        "preparation": 90,
+        "delivery": 60,
+        "follow_up": 90
+      },
+      "unit": "minutes_by_activity",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Four included P&Q hours scheduled as one contiguous trainer block; room/participant only during delivery. Follow-up includes group administration.",
+      "sensitivity_plan": "Preparation/follow-up placement and shared workload",
+      "state": "active_full_workflow",
+      "scope": "Synthetic full workflow",
+      "limitation": "Unmeasured prototype choice; not a source fact",
+      "sensitivity_range": {
+        "preparation": [
+          30,
+          90,
+          150
+        ],
+        "follow_up": "180 minus preparation; keep delivery/source total fixed"
+      }
+    },
+    {
+      "input_id": "detection_intensity",
+      "value": 0.8,
+      "unit": "events_per_calendar_day",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Assumed independent detection events per calendar day; not derived from 1305 stock or historical session estimates",
+      "sensitivity_plan": "Sparse/base/dense demand",
+      "state": "active_stochastic_ist",
+      "scope": "Assumed IST stochastic experiments",
+      "limitation": "Unmeasured prototype choice; not a source fact",
+      "sensitivity_range": [
+        0.2,
+        0.8,
+        2.0
+      ]
+    },
+    {
+      "input_id": "batch_size_distribution",
+      "value": {
+        "1": 0.6,
+        "2": 0.3,
+        "5": 0.1
+      },
+      "unit": "integer_probability_map",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Illustrative independent batch-size mix; one compatible topic per event",
+      "sensitivity_plan": "Individual-heavy versus batch-heavy demand",
+      "state": "active_stochastic_ist",
+      "scope": "Assumed IST stochastic experiments",
+      "limitation": "Unmeasured prototype choice; not a source fact",
+      "sensitivity_range": "Compare all-single, base and batch-heavy distributions"
+    },
+    {
+      "input_id": "topic_demand_distribution",
+      "value": {
+        "uniform_catalogue": 1
+      },
+      "unit": "probability_map",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Equal ongoing event probability across all catalogue topics; stock is not an arrival probability",
+      "sensitivity_plan": "Backlog-weighted versus alternative mix",
+      "state": "active_stochastic_ist",
+      "scope": "Assumed IST stochastic experiments",
+      "limitation": "Unmeasured prototype choice; not a source fact",
+      "sensitivity_range": "Uniform versus explicitly supplied probability map"
+    },
+    {
+      "input_id": "phase_duration_variability",
+      "value": "constant_source_allowances",
+      "unit": "distribution",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Keep standard 60/180-minute durations; duration stream reserved but inactive",
+      "sensitivity_plan": "Constant versus plausible variability",
+      "state": "active_stochastic_ist",
+      "scope": "Assumed IST stochastic experiments",
+      "limitation": "Unmeasured prototype choice; not a source fact",
+      "sensitivity_range": "Introduce stable work-item variability only with explicit assumptions"
+    },
+    {
+      "input_id": "proof_only_fraction",
+      "value": 0.0,
+      "unit": "fraction",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Deliberately treat all initial open records as training-needed in base runs; source case reasons remain unknown",
+      "sensitivity_plan": "Zero-to-plausible-high proof-only share",
+      "state": "active_stochastic_ist",
+      "scope": "Assumed IST stochastic experiments",
+      "limitation": "Unmeasured prototype choice; not a source fact",
+      "sensitivity_range": [
+        0.0,
+        0.1,
+        0.3
+      ]
+    },
+    {
+      "input_id": "recognition_and_reporting_delay",
+      "value": null,
+      "unit": "elapsed_minutes_or_distribution",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Needed to quantify S2; no measured delay",
+      "sensitivity_plan": "Explicit IST/S2 ranges on common underlying needs",
+      "state": "choose_explicitly_at_first_increment",
+      "scope": "Future model control; inactive unless explicitly resolved",
+      "limitation": "Unmeasured prototype choice; not a source fact"
+    },
+    {
+      "input_id": "proof_effort_and_rework",
+      "value": null,
+      "unit": "minutes_and_probabilities",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Needed to quantify S3; no measured values",
+      "sensitivity_plan": "Explicit IST/S3 ranges",
+      "state": "choose_explicitly_at_first_increment",
+      "scope": "Future model control; inactive unless explicitly resolved",
+      "limitation": "Unmeasured prototype choice; not a source fact"
+    },
+    {
+      "input_id": "coordination_and_rescheduling",
+      "value": null,
+      "unit": "minutes_and_probabilities",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Needed to quantify S4; old verbal loops not auto-mapped",
+      "sensitivity_plan": "Explicit IST/S4 ranges",
+      "state": "choose_explicitly_at_first_increment",
+      "scope": "Future model control; inactive unless explicitly resolved",
+      "limitation": "Unmeasured prototype choice; not a source fact"
+    },
+    {
+      "input_id": "priority_ageing_safeguard",
+      "value": null,
+      "unit": "rule_and_minutes",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "S5 should avoid lower-priority starvation",
+      "sensitivity_plan": "Strict priority versus ageing guard",
+      "state": "choose_explicitly_at_first_increment",
+      "scope": "Future model control; inactive unless explicitly resolved",
+      "limitation": "Unmeasured prototype choice; not a source fact"
+    },
+    {
+      "input_id": "lms_controls",
+      "value": null,
+      "unit": "eligibility_time_success_cost",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "S6 entirely hypothetical; equivalent learning must be stated",
+      "sensitivity_plan": "Separate LMS hypothesis range",
+      "state": "choose_explicitly_at_first_increment",
+      "scope": "Future model control; inactive unless explicitly resolved",
+      "limitation": "Unmeasured prototype choice; not a source fact"
+    },
+    {
+      "input_id": "cost_scope_exclusions",
+      "value": [
+        "materials",
+        "room_cash_cost",
+        "systems_and_licences",
+        "implementation_cost",
+        "extra_individual_preparation",
+        "extra_individual_documentation_effort"
+      ],
+      "unit": "component_list",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Unmeasured costs explicitly excluded, not valued as real zero. Group administration remains included in allowance. Individual completion recording is assumed within standard delivery/assessment.",
+      "sensitivity_plan": "Included scope versus additional cost ranges",
+      "state": "active_full_workflow",
+      "scope": "Synthetic full workflow",
+      "limitation": "Unmeasured prototype choice; not a source fact",
+      "sensitivity_range": "Vary extra overheads in later cost-scope sensitivity"
+    },
+    {
+      "input_id": "horizon_minutes",
+      "value": 60480,
+      "unit": "elapsed_minutes",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Six calendar weeks for the deterministic demonstration",
+      "sensitivity_plan": "Clearance and ongoing observation separately",
+      "state": "active_first_phase_slice",
+      "scope": "Synthetic deterministic first theory phase",
+      "limitation": "Unmeasured prototype choice; not a source fact",
+      "sensitivity_range": [
+        30240,
+        60480,
+        80640
+      ]
+    },
+    {
+      "input_id": "replications_and_precision_goal",
+      "value": null,
+      "unit": "count_and_interval_target",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Start small then determine useful comparison precision",
+      "sensitivity_plan": "Increase when uncertainty can change choice",
+      "state": "choose_explicitly_at_first_increment",
+      "scope": "Future model control; inactive unless explicitly resolved",
+      "limitation": "Unmeasured prototype choice; not a source fact"
+    },
+    {
+      "input_id": "management_clearance_target",
+      "value": null,
+      "unit": "fraction_or_due_date",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "No agreed target; full initial cohort clearance is separately measurable",
+      "sensitivity_plan": "Conditional recommendation if target unconfirmed",
+      "state": "choose_explicitly_at_first_increment",
+      "scope": "Future model control; inactive unless explicitly resolved",
+      "limitation": "Unmeasured prototype choice; not a source fact"
+    },
+    {
+      "input_id": "slice_group_preferred",
+      "value": true,
+      "unit": "boolean",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Systematic grouping for eligible theory; demonstration component, not a full S1 scenario",
+      "sensitivity_range": [
+        false,
+        true
+      ],
+      "scope": "Synthetic first theory phase",
+      "limitation": "Not a measured resource roster or real calendar",
+      "state": "active_first_phase_slice"
+    },
+    {
+      "input_id": "slice_deadline_enabled",
+      "value": true,
+      "unit": "boolean",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Explicit SOLL deadline component; not applied to IST",
+      "sensitivity_range": [
+        false,
+        true
+      ],
+      "scope": "Synthetic first theory phase",
+      "limitation": "Not a measured resource roster or real calendar",
+      "state": "active_first_phase_slice"
+    },
+    {
+      "input_id": "slice_resources",
+      "value": [
+        {
+          "resource_id": "synthetic-trainer-1",
+          "role": "trainer",
+          "topic_ids": [
+            "TC_R006",
+            "TC_R007"
+          ],
+          "intervals": [
+            [
+              0,
+              80640
+            ]
+          ]
+        },
+        {
+          "resource_id": "synthetic-room-1",
+          "role": "room",
+          "topic_ids": [
+            "TC_R006",
+            "TC_R007"
+          ],
+          "intervals": [
+            [
+              0,
+              80640
+            ]
+          ]
+        }
+      ],
+      "unit": "resources_and_elapsed_minute_intervals",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "One trainer and room qualified only for demo topics; continuous availability isolates batching. Participants continuously available unless calendar supplied. Delivery only; P&Q preparation/follow-up not yet scheduled.",
+      "sensitivity_range": "Test no slots, split calendars, one/two resources and shared participants",
+      "scope": "Synthetic first theory phase",
+      "limitation": "Not a measured resource roster or real calendar",
+      "state": "active_first_phase_slice"
+    },
+    {
+      "input_id": "proof_recording_delay_minutes",
+      "value": 30,
+      "unit": "elapsed_minutes",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Passive recording lag after required delivery and included follow-up; no new competence or additional paid effort.",
+      "sensitivity_range": [
+        0,
+        30,
+        120
+      ],
+      "scope": "Synthetic full workflow",
+      "limitation": "Unmeasured prototype assumption",
+      "state": "active_full_workflow"
+    },
+    {
+      "input_id": "proof_recovery_minutes",
+      "value": 12,
+      "unit": "work_minutes",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Proof-only recovery uses P&Q-capable trainer, without participant or room; preexisting training is assumed, never generated.",
+      "sensitivity_range": [
+        6,
+        12,
+        24
+      ],
+      "scope": "Synthetic full workflow",
+      "limitation": "Unmeasured prototype assumption",
+      "state": "active_full_workflow"
+    },
+    {
+      "input_id": "workflow_resources",
+      "value": [
+        {
+          "resource_id": "synthetic-trainer-1",
+          "role": "trainer",
+          "topic_ids": [
+            "TC_R006",
+            "TC_R007"
+          ],
+          "phases": [
+            "theory",
+            "practice",
+            "proof"
+          ],
+          "intervals": [
+            [
+              0,
+              80640
+            ]
+          ]
+        },
+        {
+          "resource_id": "synthetic-room-1",
+          "role": "room",
+          "topic_ids": [
+            "TC_R006",
+            "TC_R007"
+          ],
+          "phases": [
+            "theory",
+            "practice"
+          ],
+          "intervals": [
+            [
+              0,
+              80640
+            ]
+          ]
+        }
+      ],
+      "unit": "resources_and_elapsed_minute_intervals",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "One cross-qualified synthetic trainer switches between P&Q theory/admin and coach practice/individual theory; one room. Continuous calendars isolate mechanics.",
+      "sensitivity_range": "Test split calendars, unavailable phases and separate trainers",
+      "scope": "Synthetic full workflow",
+      "limitation": "Unmeasured prototype assumption",
+      "state": "active_full_workflow"
+    },
+    {
+      "input_id": "cancelled_allowance_valuation",
+      "value": "proportional_consumed_pq_work",
+      "unit": "rule",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Accrue the allowance by consumed P&Q time, preserving preparation on cancellation; this is work valuation, not a claim about vendor refund/payment terms.",
+      "sensitivity_range": "Compare full committed allowance if real payment terms require it",
+      "scope": "Synthetic full workflow",
+      "limitation": "Unmeasured prototype assumption",
+      "state": "active_full_workflow"
+    },
+    {
+      "input_id": "practice_credit_scope",
+      "value": "all_synthetic_practice_participants",
+      "unit": "rule",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Apply Daniel's 50% participant credit to all synthetic practice cases for this prototype; actual HCM1/other participant mix is unresolved.",
+      "sensitivity_range": "Vary 0 to sourced fraction; never reduce busy time",
+      "scope": "Synthetic full workflow",
+      "limitation": "Unmeasured prototype assumption",
+      "state": "active_full_workflow"
+    },
+    {
+      "input_id": "training_completion_rule",
+      "value": "required_sessions_delivered",
+      "unit": "rule",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Successful delivery of every required phase produces modelled training completion; no empirical effectiveness or assessment-failure rate is claimed.",
+      "sensitivity_range": "Assessment failures and efficacy remain future explicit mechanisms",
+      "scope": "Synthetic full workflow",
+      "limitation": "Perfect successful-delivery efficacy assumption, not measured competence",
+      "state": "active_full_workflow"
+    },
+    {
+      "input_id": "stochastic_horizon_minutes",
+      "value": 60480,
+      "unit": "elapsed_minutes",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Six calendar weeks; ongoing mode stops arrivals at horizon; frozen mode has no replenishment",
+      "sensitivity_range": [
+        30240,
+        60480,
+        120960
+      ],
+      "scope": "Assumed IST stochastic experiments",
+      "limitation": "Not empirically calibrated",
+      "state": "active_stochastic_ist"
+    },
+    {
+      "input_id": "ist_group_topic_fraction",
+      "value": 0.25,
+      "unit": "fraction",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Seeded illustrative routing: a subset of eligible topics uses batching; remaining topics use individual theory. Not inferred from historical 15/50 estimates.",
+      "sensitivity_range": [
+        0,
+        0.25,
+        0.5,
+        1
+      ],
+      "scope": "Assumed IST stochastic experiments",
+      "limitation": "Not empirically calibrated",
+      "state": "active_stochastic_ist"
+    },
+    {
+      "input_id": "ist_urgent_review_probability",
+      "value": 0.2,
+      "unit": "fraction_per_review",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Unmeasured chance that a waiting request needs urgent individual teaching at each three-week review. Nonurgent cases may continue waiting.",
+      "sensitivity_range": [
+        0,
+        0.2,
+        1
+      ],
+      "scope": "Assumed IST stochastic experiments",
+      "limitation": "Not empirically calibrated",
+      "state": "active_stochastic_ist"
+    },
+    {
+      "input_id": "ist_calendar",
+      "value": {
+        "weekdays": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "start_minute": 540,
+        "end_minute": 1020
+      },
+      "unit": "elapsed_minute_calendar",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Assumed Monday-first model week, 09:00\u201317:00 weekdays, no dated holiday reconstruction.",
+      "sensitivity_range": "Shorter/longer shifts and weekend access",
+      "scope": "Assumed IST stochastic experiments",
+      "limitation": "Not empirically calibrated",
+      "state": "active_stochastic_ist"
+    },
+    {
+      "input_id": "ist_trainer_count",
+      "value": 1,
+      "unit": "resources",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "One synthetic cross-qualified trainer; availability is a sensitivity, not a source fact.",
+      "sensitivity_range": [
+        1,
+        2,
+        4
+      ],
+      "scope": "Assumed IST stochastic experiments",
+      "limitation": "Not empirically calibrated",
+      "state": "active_stochastic_ist"
+    },
+    {
+      "input_id": "ist_room_count",
+      "value": 1,
+      "unit": "resources",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "One synthetic room with shared training calendar.",
+      "sensitivity_range": [
+        1,
+        2
+      ],
+      "scope": "Assumed IST stochastic experiments",
+      "limitation": "Not empirically calibrated",
+      "state": "active_stochastic_ist"
+    },
+    {
+      "input_id": "synthetic_external_pool_size",
+      "value": 12,
+      "unit": "synthetic_people",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Explicit external/special placeholder pool alongside the reported reference population. Identities are shuffled without replacement per topic/batch; no employee or external classification is reconstructed.",
+      "sensitivity_range": [
+        1,
+        12,
+        30
+      ],
+      "scope": "Assumed IST stochastic experiments",
+      "limitation": "Not empirically calibrated",
+      "state": "active_stochastic_ist"
+    },
+    {
+      "input_id": "stochastic_master_seed",
+      "value": 20261003,
+      "unit": "seed",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Reproducible smoke experiment seed, independent streams and identity-keyed draws.",
+      "sensitivity_range": "Repeat using independent replication IDs",
+      "scope": "Assumed IST stochastic experiments",
+      "limitation": "Not empirically calibrated",
+      "state": "active_stochastic_ist"
+    },
+    {
+      "input_id": "stochastic_smoke_replications",
+      "value": 3,
+      "unit": "replications",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Small integration/behaviour smoke set, not a precision target or policy ranking.",
+      "sensitivity_range": "Later precision plan determines statistical replication count",
+      "scope": "Assumed IST stochastic experiments",
+      "limitation": "Not empirically calibrated",
+      "state": "active_stochastic_ist"
+    },
+    {
+      "input_id": "stochastic_disruption_probability",
+      "value": 0.0,
+      "unit": "fraction",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "No random no-shows/cancellations yet; deterministic cancellation mechanics remain tested. Disruption stream reserved but inactive.",
+      "sensitivity_range": "Activate an explicit identified disruption process in a later increment",
+      "scope": "Assumed IST stochastic experiments",
+      "limitation": "Not empirically calibrated",
+      "state": "active_stochastic_ist"
+    },
+    {
+      "input_id": "comparison_ist_recognition_delay",
+      "value": 2880,
+      "unit": "elapsed_minutes",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "New comparison-only hypothesis: underlying ongoing needs take two calendar days to be noticed. Frozen stock is already noticed. Not measured; prior IST smoke baseline stays unchanged.",
+      "sensitivity_range": [
+        0,
+        2880,
+        7200
+      ],
+      "scope": "S0/S1-S5/S7 hypothetical policy comparisons",
+      "limitation": "Unmeasured effect; not a forecast or verified improvement",
+      "state": "active_policy_comparisons"
+    },
+    {
+      "input_id": "soll_recognition_delay",
+      "value": 0,
+      "unit": "elapsed_minutes",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Hypothetical same-day detection for S2/S7. Zero-delay baseline sensitivity must show no S2 effect.",
+      "sensitivity_range": [
+        0,
+        1440,
+        2880
+      ],
+      "scope": "S0/S1-S5/S7 hypothetical policy comparisons",
+      "limitation": "Unmeasured effect; not a forecast or verified improvement",
+      "state": "active_policy_comparisons"
+    },
+    {
+      "input_id": "comparison_ist_planning_delay",
+      "value": 1440,
+      "unit": "elapsed_minutes_per_ready_phase",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "New comparison-only hypothesis: one day coordination latency before a phase/retry can be booked. Passive elapsed delay, not added labour or lost capacity.",
+      "sensitivity_range": [
+        0,
+        1440,
+        4320
+      ],
+      "scope": "S0/S1-S5/S7 hypothetical policy comparisons",
+      "limitation": "Unmeasured effect; not a forecast or verified improvement",
+      "state": "active_policy_comparisons"
+    },
+    {
+      "input_id": "soll_planning_delay",
+      "value": 0,
+      "unit": "elapsed_minutes_per_ready_phase",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "S4/S7 remove the assumed coordination latency. Trainer/participant/room availability is unchanged.",
+      "sensitivity_range": [
+        0,
+        720,
+        1440
+      ],
+      "scope": "S0/S1-S5/S7 hypothetical policy comparisons",
+      "limitation": "Unmeasured effect; not a forecast or verified improvement",
+      "state": "active_policy_comparisons"
+    },
+    {
+      "input_id": "soll_proof_recording_delay",
+      "value": 5,
+      "unit": "elapsed_minutes",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "S3/S7 hypothesis reduces passive proof-recording lag; training competence unchanged.",
+      "sensitivity_range": [
+        0,
+        5,
+        30
+      ],
+      "scope": "S0/S1-S5/S7 hypothetical policy comparisons",
+      "limitation": "Unmeasured effect; not a forecast or verified improvement",
+      "state": "active_policy_comparisons"
+    },
+    {
+      "input_id": "soll_proof_recovery_minutes",
+      "value": 6,
+      "unit": "work_minutes",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "S3/S7 hypothesis halves proof-only recovery work; not measured digitalisation gain.",
+      "sensitivity_range": [
+        6,
+        9,
+        12
+      ],
+      "scope": "S0/S1-S5/S7 hypothetical policy comparisons",
+      "limitation": "Unmeasured effect; not a forecast or verified improvement",
+      "state": "active_policy_comparisons"
+    },
+    {
+      "input_id": "priority_imminent_minutes",
+      "value": 1440,
+      "unit": "elapsed_minutes",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "S5 protects starts due within one day (and operational urgency) before ordinary priority ordering.",
+      "sensitivity_range": [
+        0,
+        1440,
+        4320
+      ],
+      "scope": "S0/S1-S5/S7 hypothetical policy comparisons",
+      "limitation": "Unmeasured effect; not a forecast or verified improvement",
+      "state": "active_policy_comparisons"
+    },
+    {
+      "input_id": "priority_ageing_minutes",
+      "value": 40320,
+      "unit": "elapsed_minutes",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "S5 gives phase waiters aged 28 days an individual release and precedence over fresh ordinary priority work. Hard imminent/urgent work still precedes them.",
+      "sensitivity_range": [
+        20160,
+        40320,
+        60480
+      ],
+      "scope": "S0/S1-S5/S7 hypothetical policy comparisons",
+      "limitation": "Unmeasured effect; not a forecast or verified improvement",
+      "state": "active_policy_comparisons"
+    },
+    {
+      "input_id": "policy_initial_smoke_replications",
+      "value": 1,
+      "unit": "replications",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "One full-stock paired run checks scale and mechanism interactions; precision replications belong to the next increment.",
+      "sensitivity_range": "Increase under the later statistical precision plan",
+      "scope": "Policy mechanism smoke tests",
+      "limitation": "Not a reliable ranking",
+      "state": "active_policy_comparisons"
+    },
+    {
+      "input_id": "lms_suitable_topic_ids",
+      "value": [
+        "TC_R006",
+        "TC_R007",
+        "TC_R008",
+        "TC_R009",
+        "TC_R010",
+        "TC_R011",
+        "TC_R012",
+        "TC_R013",
+        "TC_R014",
+        "TC_R015"
+      ],
+      "unit": "topic_ids",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Explicit ten-topic pilot hypothesis chosen as the first ten catalogue rows to exercise both theory-only and practice-required cases. This is not sourced LMS suitability.",
+      "sensitivity_range": [
+        "empty pilot",
+        "explicit alternative topic subsets"
+      ],
+      "scope": "Separate S6 and optional S7_PLUS_LMS hypotheses",
+      "limitation": "No measured suitability, learning equivalence, efficacy or supplier quote. General unmeasured overhead exclusions remain.",
+      "state": "active_learning_hypothesis"
+    },
+    {
+      "input_id": "lms_study_minutes",
+      "value": 60,
+      "unit": "minutes",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Keep the standard theory time allowance as self-study time; do not assume a speed gain.",
+      "sensitivity_range": [
+        30,
+        60,
+        120
+      ],
+      "scope": "Separate S6 and optional S7_PLUS_LMS hypotheses",
+      "limitation": "No measured suitability, learning equivalence, efficacy or supplier quote. General unmeasured overhead exclusions remain.",
+      "state": "active_learning_hypothesis"
+    },
+    {
+      "input_id": "lms_assessment_minutes",
+      "value": 15,
+      "unit": "minutes",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Expert assessment of equivalent theory outcomes after self-study; duration and learning equivalence are unmeasured hypotheses.",
+      "sensitivity_range": [
+        15,
+        30,
+        60
+      ],
+      "scope": "Separate S6 and optional S7_PLUS_LMS hypotheses",
+      "limitation": "No measured suitability, learning equivalence, efficacy or supplier quote. General unmeasured overhead exclusions remain.",
+      "state": "active_learning_hypothesis"
+    },
+    {
+      "input_id": "lms_support_minutes",
+      "value": 15,
+      "unit": "minutes",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Scheduled participant/expert support immediately before assessment. Uses existing qualified trainer capacity.",
+      "sensitivity_range": [
+        0,
+        15,
+        30
+      ],
+      "scope": "Separate S6 and optional S7_PLUS_LMS hypotheses",
+      "limitation": "No measured suitability, learning equivalence, efficacy or supplier quote. General unmeasured overhead exclusions remain.",
+      "state": "active_learning_hypothesis"
+    },
+    {
+      "input_id": "lms_pass_probability",
+      "value": 0.8,
+      "unit": "probability",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Illustrative first-assessment pass rate. Failure requires full instructor-led theory; no competence from attendance alone.",
+      "sensitivity_range": [
+        0,
+        0.5,
+        0.8,
+        1
+      ],
+      "scope": "Separate S6 and optional S7_PLUS_LMS hypotheses",
+      "limitation": "No measured suitability, learning equivalence, efficacy or supplier quote. General unmeasured overhead exclusions remain.",
+      "state": "active_learning_hypothesis"
+    },
+    {
+      "input_id": "lms_implementation_chf",
+      "value": 2000,
+      "unit": "CHF/deployment",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Illustrative all-in pre-go-live configuration and deployment cost charged once at time zero; implementation capacity before observation is outside the simulated calendar.",
+      "sensitivity_range": [
+        0,
+        2000,
+        10000
+      ],
+      "scope": "Separate S6 and optional S7_PLUS_LMS hypotheses",
+      "limitation": "No measured suitability, learning equivalence, efficacy or supplier quote. General unmeasured overhead exclusions remain.",
+      "state": "active_learning_hypothesis"
+    },
+    {
+      "input_id": "lms_content_chf_per_topic",
+      "value": 500,
+      "unit": "CHF/topic",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Illustrative all-in initial content production and validation cost for each explicitly suitable topic, whether used or not.",
+      "sensitivity_range": [
+        0,
+        500,
+        2000
+      ],
+      "scope": "Separate S6 and optional S7_PLUS_LMS hypotheses",
+      "limitation": "No measured suitability, learning equivalence, efficacy or supplier quote. General unmeasured overhead exclusions remain.",
+      "state": "active_learning_hypothesis"
+    },
+    {
+      "input_id": "lms_licence_chf_per_day",
+      "value": 10,
+      "unit": "CHF/calendar_day",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Illustrative flat platform licence covering the synthetic population with no concurrent-seat bottleneck; charged throughout horizon, including idle days.",
+      "sensitivity_range": [
+        0,
+        10,
+        50
+      ],
+      "scope": "Separate S6 and optional S7_PLUS_LMS hypotheses",
+      "limitation": "No measured suitability, learning equivalence, efficacy or supplier quote. General unmeasured overhead exclusions remain.",
+      "state": "active_learning_hypothesis"
+    },
+    {
+      "input_id": "lms_maintenance_chf_per_day",
+      "value": 5,
+      "unit": "CHF/calendar_day",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Illustrative all-in recurring content/platform maintenance service cost, separate from trainer support sessions.",
+      "sensitivity_range": [
+        0,
+        5,
+        25
+      ],
+      "scope": "Separate S6 and optional S7_PLUS_LMS hypotheses",
+      "limitation": "No measured suitability, learning equivalence, efficacy or supplier quote. General unmeasured overhead exclusions remain.",
+      "state": "active_learning_hypothesis"
+    },
+    {
+      "input_id": "comparison_participant_calendar",
+      "value": "same_as_ist_calendar",
+      "unit": "calendar_rule",
+      "source_status": "assumption",
+      "value_kind": "prototype_control",
+      "source_id": "CURRENT_USER_DECISIONS",
+      "observed_period": null,
+      "assumed_in_use": true,
+      "rationale": "Make participant availability explicit for every compared policy. Use the same weekday calendar as IST trainers/rooms so LMS cannot silently gain overnight or weekend attendance. Synthetic identities only.",
+      "sensitivity_range": "Alternative explicitly configured participant shifts in later capacity analysis",
+      "scope": "All policy comparisons",
+      "limitation": "Not actual shifts or employee availability",
+      "state": "active_learning_hypothesis"
+    }
+  ],
+  "execution_scope": "Deterministic initial-phase slice or full theory/practice/proof workflow; unresolved stochastic controls inactive"
+}

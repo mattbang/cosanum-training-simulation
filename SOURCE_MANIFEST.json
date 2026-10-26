@@ -1,0 +1,81 @@
+{
+  "files": [
+    {
+      "snapshot_path": "config/annual_feasibility_plan.json",
+      "bytes": 2031,
+      "sha256": "5133618150e26295af663e13f8751332d7bf122bb0587ed3f5e49a4167777ae6"
+    },
+    {
+      "snapshot_path": "config/annual_joined_study_plan.json",
+      "bytes": 5502,
+      "sha256": "627e315801cf7498d63979ee7dc99372c93c472732a7e0692263abcefa637b16"
+    },
+    {
+      "snapshot_path": "config/annual_profile.json",
+      "bytes": 14693,
+      "sha256": "e2e2ddf1705375302765a15f5ccb0d90060eb2e6327da0f0f2cef5964a34771b"
+    },
+    {
+      "snapshot_path": "config/annual_study_plan.json",
+      "bytes": 4887,
+      "sha256": "2e2a3eee8b1e564036d9e344b9a76173034bd56699a381c889e6d8b40e031304"
+    },
+    {
+      "snapshot_path": "config/deterministic_fixture.json",
+      "bytes": 1132,
+      "sha256": "b02a0110294a1c27b00c7351d201d9f15cae5987aa4a34ce355426c608537622"
+    },
+    {
+      "snapshot_path": "config/experiment_plan.json",
+      "bytes": 15630,
+      "sha256": "ecd9476448b67204a0883804618bcccbb0f8544aeab4dfd25d4f20a7282d1fe4"
+    },
+    {
+      "snapshot_path": "config/group_capacity_screen.json",
+      "bytes": 2783,
+      "sha256": "8464016bb073b18bab8dc59b619a42ad23ac9187472e5854c876707d1c7ddb98"
+    },
+    {
+      "snapshot_path": "config/handover_smoke_plan.json",
+      "bytes": 2604,
+      "sha256": "15db2a8018d1c280d1ae1ef209adb110bc79ab50a6afb7477ba9c0415a1c468c"
+    },
+    {
+      "snapshot_path": "config/integrated_smoke_plan.json",
+      "bytes": 2934,
+      "sha256": "7b5857899567a408023dadf78c7f19708687b0f9194d30f499e176267b369f67"
+    },
+    {
+      "snapshot_path": "config/integrated_study_plan.json",
+      "bytes": 12480,
+      "sha256": "082e4d9234c4c6a36c89610b205341863d636df6cf165dfebbecdb51c09667a7"
+    },
+    {
+      "snapshot_path": "config/operating_configuration.json",
+      "bytes": 18050,
+      "sha256": "bb86d3eefe8cb16ab24c8a32bd090034934138cf51a5b35bef1d80eafcfe6552"
+    },
+    {
+      "snapshot_path": "config/prototype_controls.json",
+      "bytes": 49103,
+      "sha256": "ca3db1cf8171f0e9f6337806670df5ed978c3d9b207fba700330bcd95af9f09b"
+    },
+    {
+      "snapshot_path": "config/scenario_registry.json",
+      "bytes": 15348,
+      "sha256": "bc0d754bababe8264ecea324d124f9de0f58ebca690baaad9bd62ae68a8744c9"
+    },
+    {
+      "snapshot_path": "config/source_values.json",
+      "bytes": 15678,
+      "sha256": "f28b56ac771a46f8a54f29b329aeb6b3fc44c81266be28cb71f04d12a7d30a8f"
+    },
+    {
+      "snapshot_path": "config/workflow_fixture.json",
+      "bytes": 1266,
+      "sha256": "2fd69e6ada8c9f56009127e10ec32286e19dae2233e1118cb04d06369c34ca4f"
+    }
+  ],
+  "schema_version": "1.0",
+  "scope": "public packaged input integrity only; no original private-source verification"
+}

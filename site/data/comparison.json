@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "metadata": {
+    "engine_version": "0.10.0",
+    "horizon_days": 365,
+    "annual_synthetic_cases": 350,
+    "paired_fixture_ids": [
+      600,
+      601,
+      602,
+      603,
+      604,
+      605,
+      606,
+      607,
+      608,
+      609,
+      610,
+      611,
+      612,
+      613,
+      614,
+      615,
+      616,
+      617,
+      618,
+      619,
+      620,
+      621,
+      622,
+      623,
+      624,
+      625,
+      626,
+      627,
+      628,
+      629,
+      630,
+      631,
+      632,
+      633,
+      634,
+      635,
+      636,
+      637,
+      638,
+      639,
+      640,
+      641,
+      642,
+      643,
+      644,
+      645,
+      646,
+      647,
+      648,
+      649
+    ],
+    "study_manifest_sha256": "c4251b673644fb0ee3db757a37c0a6fb1b54f54fa8598a7633fd1c83bd45fe8f",
+    "source_sha256": {
+      "absolute_intervals.csv": "132937406da68923370b8f016afcb48c8a5b6c8d5c01304f4a78d22afb66d672",
+      "compact_card_summary.csv": "615dadd7a19739d45fdd70f3e495ef74fdfb181a92809958845b18cedf78c3e1",
+      "fixture_checks.csv": "e530fa487bbad04230d2942fe5c1f8c7fc1cf9edc90207b7a5912b8174e4c6ec",
+      "historical_reproduction.csv": "6300d22b6c4b60c2d7ac92a8440128e2b7314a346038abd90510e2ef7429594d",
+      "paired_intervals.csv": "96fa5b1a7a949cb8eab841c94e279ac52770f3f53292bdb68fe6dccf5df6e104",
+      "paired_per_seed.csv": "53b631bf3ff5e60d9ae8a2d2125c152a8df88737dc8b2993c582a9cd0b0f3c9f",
+      "per_seed_results.csv": "a77842f733137e2b3193bf19c5e783abe02a5d652937d4f535b14599258315a6",
+      "PROVENANCE_AND_LIMITATIONS.json": "cc839ac7da64558fe0730fbde2b986e3bab8670f0cde2223a1bb5ee33c8b5a25",
+      "protocol.json": "3cde4ee4d609dd22aafb23dd1e33ab0a18306ae2e24891167f6c7f3f0becbe34",
+      "study/artifact_audit.json": "747ccba95f02202c3354b6e18f0530524cd7c7331ffd7e2e6c7c365bc7887c79"
+    },
+    "capacity_branch": {
+      "practice_coach_count": 2,
+      "extra_practice_place": 1
+    },
+    "scope": "50 paired synthetic annual fixtures; cards 3 and 4 are separate branches from combined SOLL"
+  },
+  "cards": [
+    {
+      "id": "IST",
+      "training_completed": 310.22,
+      "theory_complete_practice_unfinished": 39.78,
+      "full_clearance_count": 1
+    },
+    {
+      "id": "SOLL",
+      "training_completed": 312.96,
+      "theory_complete_practice_unfinished": 37.04,
+      "full_clearance_count": 3
+    },
+    {
+      "id": "SOLL_LMS_TEAM",
+      "training_completed": 313.5,
+      "theory_complete_practice_unfinished": 36.5,
+      "full_clearance_count": 3
+    },
+    {
+      "id": "SOLL_COACH2",
+      "training_completed": 348.72,
+      "theory_complete_practice_unfinished": 1.28,
+      "full_clearance_count": 46
+    }
+  ]
+}
